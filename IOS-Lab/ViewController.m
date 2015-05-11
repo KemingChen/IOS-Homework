@@ -11,7 +11,7 @@
 #import "CheckInTableViewCell.h"
 
 @interface ViewController () {
-    NSArray* checkIns;
+    NSMutableArray* checkIns;
 }
 
 @end
@@ -21,7 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    checkIns = [DataProvider checkIns];
+    checkIns = [NSMutableArray arrayWithArray:[DataProvider checkIns]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,14 +86,33 @@
     return 294.0;
 }
 
+- (BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView*)tableView editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    NSMutableArray* day = checkIns[indexPath.section];
+
+    [day removeObjectAtIndex:indexPath.row];
+    
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-//    NSArray* day = checkIns[indexPath.section];
-//    CheckIn* checkIn = day[indexPath.row];
-//    User* user = checkIn.poster;
-//
-//    UIAlertView* alert = [[UIAlertView alloc] initWithTitle : user.name message : checkIn.checkInDesc delegate : nil cancelButtonTitle : @"OK" otherButtonTitles : nil, nil];
-//    
-//    [alert show];
+    //    NSArray* day = checkIns[indexPath.section];
+    //    CheckIn* checkIn = day[indexPath.row];
+    //    User* user = checkIn.poster;
+    //
+    //    UIAlertView* alert = [[UIAlertView alloc] initWithTitle : user.name message : checkIn.checkInDesc delegate : nil cancelButtonTitle : @"OK" otherButtonTitles : nil, nil];
+    //
+    //    [alert show];
 }
 @end
