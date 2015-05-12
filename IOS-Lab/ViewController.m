@@ -112,17 +112,6 @@
     }
 }
 
-- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
-{
-    //    NSArray* day = checkIns[indexPath.section];
-    //    CheckIn* checkIn = day[indexPath.row];
-    //    User* user = checkIn.poster;
-    //
-    //    UIAlertView* alert = [[UIAlertView alloc] initWithTitle : user.name message : checkIn.checkInDesc delegate : nil cancelButtonTitle : @"OK" otherButtonTitles : nil, nil];
-    //
-    //    [alert show];
-}
-
 #pragma mark - CollectionView DataSource
 - (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -153,5 +142,17 @@
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView
 {
     return checkIns.count;
+}
+
+#pragma mark - CollectionView Delegates
+- (void)collectionView:(UICollectionView*)collectionView didSelectItemAtIndexPath:(NSIndexPath*)indexPath
+{
+    NSArray* day = checkIns[indexPath.section];
+    CheckIn* checkIn = day[indexPath.row];
+    User* user = checkIn.poster;
+
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:user.name message:checkIn.checkInDesc delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alert show];
 }
 @end
