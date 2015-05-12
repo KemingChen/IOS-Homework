@@ -17,7 +17,6 @@
 		7F8CE39D1B00AAB000745463 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8CE39B1B00AAB000745463 /* LaunchScreen.xib */; };
 		7F8CE3A91B00AAB000745463 /* IOS_LabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3A81B00AAB000745463 /* IOS_LabTests.m */; };
 		7F8CE3B51B00AC8700745463 /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3B31B00AC8700745463 /* DataProvider.m */; };
-		7F8CE3B61B00AC8700745463 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 7F8CE3B41B00AC8700745463 /* Images */; };
 		7F8CE3BD1B00BB0400745463 /* CheckInTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		7F8CE3A81B00AAB000745463 /* IOS_LabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOS_LabTests.m; sourceTree = "<group>"; };
 		7F8CE3B21B00AC8700745463 /* DataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 		7F8CE3B31B00AC8700745463 /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
-		7F8CE3B41B00AC8700745463 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		7F8CE3BB1B00BB0400745463 /* CheckInTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInTableViewCell.h; sourceTree = "<group>"; };
 		7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,7 +94,6 @@
 			children = (
 				7F8CE3B21B00AC8700745463 /* DataProvider.h */,
 				7F8CE3B31B00AC8700745463 /* DataProvider.m */,
-				7F8CE3B41B00AC8700745463 /* Images */,
 				7F8CE38D1B00AAB000745463 /* AppDelegate.h */,
 				7F8CE38E1B00AAB000745463 /* AppDelegate.m */,
 				7F8CE3931B00AAB000745463 /* ViewController.h */,
@@ -220,7 +217,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8CE3B61B00AC8700745463 /* Images in Resources */,
 				7F8CE3981B00AAB000745463 /* Main.storyboard in Resources */,
 				7F8CE39D1B00AAB000745463 /* LaunchScreen.xib in Resources */,
 				7F8CE39A1B00AAB000745463 /* Images.xcassets in Resources */,
