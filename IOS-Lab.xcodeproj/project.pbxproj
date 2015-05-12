@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F2D7E741B01C1D3004538B8 /* ChekcInCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D7E731B01C1D3004538B8 /* ChekcInCollectionViewCell.m */; };
 		7F8CE38C1B00AAB000745463 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE38B1B00AAB000745463 /* main.m */; };
 		7F8CE38F1B00AAB000745463 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE38E1B00AAB000745463 /* AppDelegate.m */; };
 		7F8CE3921B00AAB000745463 /* IOS_Lab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3901B00AAB000745463 /* IOS_Lab.xcdatamodeld */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F2D7E721B01C1D3004538B8 /* ChekcInCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChekcInCollectionViewCell.h; sourceTree = "<group>"; };
+		7F2D7E731B01C1D3004538B8 /* ChekcInCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChekcInCollectionViewCell.m; sourceTree = "<group>"; };
 		7F8CE3861B00AAB000745463 /* IOS-Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8CE38A1B00AAB000745463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F8CE38B1B00AAB000745463 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				7F8CE3891B00AAB000745463 /* Supporting Files */,
 				7F8CE3BB1B00BB0400745463 /* CheckInTableViewCell.h */,
 				7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */,
+				7F2D7E721B01C1D3004538B8 /* ChekcInCollectionViewCell.h */,
+				7F2D7E731B01C1D3004538B8 /* ChekcInCollectionViewCell.m */,
 			);
 			path = "IOS-Lab";
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				7F8CE3951B00AAB000745463 /* ViewController.m in Sources */,
 				7F8CE3BD1B00BB0400745463 /* CheckInTableViewCell.m in Sources */,
 				7F8CE38C1B00AAB000745463 /* main.m in Sources */,
+				7F2D7E741B01C1D3004538B8 /* ChekcInCollectionViewCell.m in Sources */,
 				7F8CE3B51B00AC8700745463 /* DataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +444,7 @@
 				7F8CE3AE1B00AAB000745463 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F8CE3AF1B00AAB000745463 /* Build configuration list for PBXNativeTarget "IOS-LabTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +453,7 @@
 				7F8CE3B11B00AAB000745463 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "DataProvider.h"
 #import "CheckInTableViewCell.h"
+#import "ChekcInCollectionViewCell.h"
 
 @interface ViewController () {
     NSMutableArray* checkIns;
@@ -30,7 +31,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table View DataProvider
+#pragma mark - TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
     return checkIns.count;
@@ -120,5 +121,37 @@
     //    UIAlertView* alert = [[UIAlertView alloc] initWithTitle : user.name message : checkIn.checkInDesc delegate : nil cancelButtonTitle : @"OK" otherButtonTitles : nil, nil];
     //
     //    [alert show];
+}
+
+#pragma mark - CollectionView DataSource
+- (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [checkIns[section] count];
+}
+
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (UICollectionViewCell*)collectionView:(UICollectionView*)collectionView cellForItemAtIndexPath:(NSIndexPath*)indexPath
+{
+    static NSString* CellIdentitier = @"CheckInCell";
+    ChekcInCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentitier forIndexPath:indexPath];
+
+    assert([cell isKindOfClass:[ChekcInCollectionViewCell class]]);
+
+    NSArray* day = checkIns[indexPath.section];
+    CheckIn* checkIn = day[indexPath.row];
+    User* user = checkIn.poster;
+
+    [cell.userImageView setImage:[UIImage imageNamed:user.profileName]];
+    cell.userImageView.layer.cornerRadius = 40.0;
+    cell.userImageView.clipsToBounds = YES;
+
+    [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
+
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView
+{
+    return checkIns.count;
 }
 @end
