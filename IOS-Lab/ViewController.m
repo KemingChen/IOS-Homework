@@ -31,6 +31,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Click Tabs
+- (void)clickTableViewTab:(id)sender
+{
+    [self.parentView bringSubviewToFront:self.tableView];
+}
+
+- (void)clickCollectionViewTab:(id)sender
+{
+    [self.collectionView reloadData];
+    [self.parentView bringSubviewToFront:self.collectionView];
+}
+
 #pragma mark - TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {

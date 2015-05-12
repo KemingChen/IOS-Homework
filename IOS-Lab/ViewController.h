@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@property (strong, nonatomic) IBOutlet UIView *parentView;
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+- (IBAction)clickTableViewTab:(id)sender;
+- (IBAction)clickCollectionViewTab:(id)sender;
 
 @end
