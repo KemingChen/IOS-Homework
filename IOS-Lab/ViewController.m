@@ -19,6 +19,8 @@
 
 @implementation ViewController
 
+bool isOpenSlideMenu = false;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,11 +33,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)closeOrOpenSlideMenu
+{
+    double newWidth = self.view.frame.size.width - 80.0f;
+    
+    if(isOpenSlideMenu)
+        newWidth = 0.0f;
+    isOpenSlideMenu = !isOpenSlideMenu;
+    
+    self.leftOffsetConstrain.constant = newWidth;
+    [self.view layoutIfNeeded];
+}
+
 - (void)clickSlideMenuButton:(id)sender
 {
     [UIView animateWithDuration:0.25 animations:^{
-        self.leftOffsetConstrain.constant = self.view.frame.size.width - 80.0f;
-        [self.view layoutIfNeeded];
+        [self closeOrOpenSlideMenu];
     }];
 }
 
