@@ -135,11 +135,10 @@
                             <constraint firstItem="ueE-w3-VEh" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="Ffp-5t-sHA"/>
                             <constraint firstItem="ueE-w3-VEh" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="KrZ-Vn-5ry"/>
                             <constraint firstAttribute="trailing" secondItem="yuF-E0-hhA" secondAttribute="trailing" id="L70-Zl-bnk"/>
-                            <constraint firstItem="yuF-E0-hhA" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="Mp4-ZZ-0aT"/>
-                            <constraint firstItem="yuF-E0-hhA" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="R9G-NY-Gqn"/>
                             <constraint firstItem="ueE-w3-VEh" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="RAZ-7y-G8N"/>
                             <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="ueE-w3-VEh" secondAttribute="bottom" id="UIe-bs-iV8"/>
                             <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="bottom" id="VCF-tu-QBS"/>
+                            <constraint firstAttribute="width" secondItem="yuF-E0-hhA" secondAttribute="width" id="bIP-Ma-syr"/>
                             <constraint firstAttribute="trailing" secondItem="ueE-w3-VEh" secondAttribute="trailing" id="ckE-9B-XkW"/>
                             <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="bottom" id="iE3-Hc-8HA"/>
                             <constraint firstItem="ueE-w3-VEh" firstAttribute="top" secondItem="sQL-sG-KtJ" secondAttribute="top" constant="20" id="oK4-M6-Txd"/>
@@ -154,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-138" y="351"/>
+            <point key="canvasLocation" x="-285" y="353"/>
         </scene>
     </scenes>
 </document>
