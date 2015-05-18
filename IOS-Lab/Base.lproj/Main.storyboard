@@ -61,11 +61,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlT-Cu-0A5" userLabel="SlideButton">
-                                                <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                                <rect key="frame" x="10" y="10" width="30" height="30"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="LOL-PT-KBs"/>
-                                                    <constraint firstAttribute="height" constant="40" id="S6L-QY-cC0"/>
+                                                    <constraint firstAttribute="width" constant="30" id="LOL-PT-KBs"/>
+                                                    <constraint firstAttribute="height" constant="30" id="S6L-QY-cC0"/>
                                                 </constraints>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,8 +83,8 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="PlT-Cu-0A5" firstAttribute="leading" secondItem="cdp-kU-9Y9" secondAttribute="leading" constant="5" id="2BK-SS-YWi"/>
-                                            <constraint firstAttribute="bottom" secondItem="PlT-Cu-0A5" secondAttribute="bottom" constant="5" id="4Gq-fS-d9o"/>
+                                            <constraint firstItem="PlT-Cu-0A5" firstAttribute="leading" secondItem="cdp-kU-9Y9" secondAttribute="leading" constant="10" id="2BK-SS-YWi"/>
+                                            <constraint firstAttribute="bottom" secondItem="PlT-Cu-0A5" secondAttribute="bottom" constant="10" id="4Gq-fS-d9o"/>
                                             <constraint firstAttribute="centerX" secondItem="QMe-Wa-pvI" secondAttribute="centerX" id="Dcc-zR-SQv"/>
                                             <constraint firstAttribute="height" constant="50" id="SVJ-BJ-6Iz"/>
                                             <constraint firstAttribute="centerY" secondItem="QMe-Wa-pvI" secondAttribute="centerY" id="qp1-7j-QPA"/>
@@ -123,9 +123,11 @@
                                             </collectionViewCell>
                                         </cells>
                                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckInHeader" id="QfY-0e-PMH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionReusableView>
                                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckInFooter" id="SfD-3v-U2v">
+                                            <rect key="frame" x="0.0" y="185" width="320" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionReusableView>
                                         <connections>
