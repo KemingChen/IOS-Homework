@@ -16,10 +16,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ueE-w3-VEh" userLabel="SlideMenuTableView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsn-OS-50I" userLabel="SlideMenuView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVo-X9-a01" userLabel="TableViewButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="KvG-Ti-Fbx"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="TableView">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickTableViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="th9-S0-i6z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3i-zo-eYL" userLabel="CollectionViewButton">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="CollectionView">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickCollectionViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IC4-cE-42E"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                                <constraints>
+                                    <constraint firstItem="b3i-zo-eYL" firstAttribute="top" secondItem="YVo-X9-a01" secondAttribute="bottom" constant="5" id="Gch-nN-dsB"/>
+                                    <constraint firstItem="YVo-X9-a01" firstAttribute="top" secondItem="nsn-OS-50I" secondAttribute="top" id="Mou-e2-Wdf"/>
+                                    <constraint firstItem="YVo-X9-a01" firstAttribute="top" secondItem="nsn-OS-50I" secondAttribute="top" id="Uh4-mJ-rLX"/>
+                                    <constraint firstItem="YVo-X9-a01" firstAttribute="width" secondItem="b3i-zo-eYL" secondAttribute="width" id="ZvI-XY-3tw"/>
+                                    <constraint firstItem="YVo-X9-a01" firstAttribute="leading" secondItem="nsn-OS-50I" secondAttribute="leading" id="uUv-R4-lOt"/>
+                                    <constraint firstItem="YVo-X9-a01" firstAttribute="leading" secondItem="b3i-zo-eYL" secondAttribute="leading" id="zHv-DA-rOE"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuF-E0-hhA" userLabel="Container">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
@@ -131,24 +166,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nsn-OS-50I" secondAttribute="trailing" id="03h-r8-DYo"/>
+                            <constraint firstItem="nsn-OS-50I" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="5bv-1X-Lgb"/>
                             <constraint firstItem="yuF-E0-hhA" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="7oC-Mt-FRq"/>
-                            <constraint firstItem="ueE-w3-VEh" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="Ffp-5t-sHA"/>
-                            <constraint firstItem="ueE-w3-VEh" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="KrZ-Vn-5ry"/>
                             <constraint firstAttribute="trailing" secondItem="yuF-E0-hhA" secondAttribute="trailing" id="L70-Zl-bnk"/>
-                            <constraint firstItem="ueE-w3-VEh" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="RAZ-7y-G8N"/>
-                            <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="ueE-w3-VEh" secondAttribute="bottom" id="UIe-bs-iV8"/>
                             <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="bottom" id="VCF-tu-QBS"/>
                             <constraint firstAttribute="width" secondItem="yuF-E0-hhA" secondAttribute="width" id="bIP-Ma-syr"/>
-                            <constraint firstAttribute="trailing" secondItem="ueE-w3-VEh" secondAttribute="trailing" id="ckE-9B-XkW"/>
                             <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="bottom" id="iE3-Hc-8HA"/>
-                            <constraint firstItem="ueE-w3-VEh" firstAttribute="top" secondItem="sQL-sG-KtJ" secondAttribute="top" constant="20" id="oK4-M6-Txd"/>
+                            <constraint firstItem="nsn-OS-50I" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="k6c-SY-Wyv"/>
+                            <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="nsn-OS-50I" secondAttribute="bottom" id="vcU-4y-fyn"/>
                             <constraint firstItem="yuF-E0-hhA" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="w1F-Jl-8M9"/>
-                            <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="ueE-w3-VEh" secondAttribute="bottom" id="zlm-GZ-swp"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="leftOffsetConstrain" destination="7oC-Mt-FRq" id="EzQ-R7-ZZ7"/>
+                        <outlet property="slideMenuButtonWidth" destination="KvG-Ti-Fbx" id="bGb-XY-iYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

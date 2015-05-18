@@ -89,7 +89,7 @@ static NSArray *_gCheckIns = nil;
 {
     [self setup];
     
-    return [NSDate dateWithTimeIntervalSinceNow:(section * 36400)];
+    return [NSDate dateWithTimeIntervalSinceNow:(section * 86400)];
 }
 
 + (void)setup

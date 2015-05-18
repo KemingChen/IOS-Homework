@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
-@property (strong, nonatomic) IBOutlet UIView *parentView;
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftOffsetConstrain;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *slideMenuButtonWidth;
 
-- (IBAction)clickTableViewTab:(id)sender;
-- (IBAction)clickCollectionViewTab:(id)sender;
 - (IBAction)clickSlideMenuButton:(id)sender;
+- (IBAction)clickTableViewButton:(id)sender;
+- (IBAction)clickCollectionViewButton:(id)sender;
 
 @end

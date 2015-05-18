@@ -47,25 +47,23 @@ bool isOpenSlideMenu = false;
 
 - (void)clickSlideMenuButton:(id)sender
 {
+    self.slideMenuButtonWidth.constant = self.view.frame.size.width - 80.0f;
     [UIView animateWithDuration:0.25 animations:^{
         [self closeOrOpenSlideMenu];
     }];
 }
 
 #pragma mark - Click Tabs
-- (void)clickTableViewTab:(id)sender
-{
-    [self.parentView bringSubviewToFront:self.tableView];
+- (IBAction)clickTableViewButton:(id)sender {
+    [self.view bringSubviewToFront:self.tableView];
+    [self clickSlideMenuButton:nil];
+//    [self.parentView bringSubviewToFront:self.tableView];
 }
 
-- (void)clickCollectionViewTab:(id)sender
-{
+- (IBAction)clickCollectionViewButton:(id)sender {
     [self.collectionView reloadData];
-    [self.parentView bringSubviewToFront:self.collectionView];
-}
-
-- (IBAction)slideMenuButton:(id)sender
-{
+    [self.view bringSubviewToFront:self.collectionView];
+    [self clickSlideMenuButton:nil];
 }
 
 #pragma mark - TableView DataSource
