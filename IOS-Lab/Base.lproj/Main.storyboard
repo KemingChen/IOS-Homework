@@ -48,11 +48,83 @@
                                             <constraint firstAttribute="height" constant="50" id="SVJ-BJ-6Iz"/>
                                         </constraints>
                                     </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Unw-tt-Fn5" userLabel="CheckInTableView">
+                                        <rect key="frame" x="0.0" y="50" width="320" height="498"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckInCell" rowHeight="294" id="DYh-Nl-wGh" customClass="CheckInTableViewCell">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DYh-Nl-wGh" id="F6m-xU-AWF">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KDF-7f-mgx" userLabel="UserImageView">
+                                                            <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="2AH-6W-Sou"/>
+                                                                <constraint firstAttribute="height" constant="80" id="XaY-mO-Ol8"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1E-dL-F0t" userLabel="CheckInImageView">
+                                                            <rect key="frame" x="0.0" y="113" width="320" height="180"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="180" id="47l-BS-fnd"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zc-48-lAQ" userLabel="UserName">
+                                                            <rect key="frame" x="96" y="8" width="216" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="rVg-yv-T2E"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserDescription" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5w-Mu-9cg" userLabel="CheckInDescription">
+                                                            <rect key="frame" x="96" y="46" width="216" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="60" id="b18-mf-ShC"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="1Zc-48-lAQ" secondAttribute="trailing" constant="8" id="1iK-ab-b6e"/>
+                                                        <constraint firstItem="z1E-dL-F0t" firstAttribute="leading" secondItem="F6m-xU-AWF" secondAttribute="leading" id="FQG-Um-88y"/>
+                                                        <constraint firstItem="1Zc-48-lAQ" firstAttribute="leading" secondItem="KDF-7f-mgx" secondAttribute="trailing" constant="8" id="JNV-pi-rtg"/>
+                                                        <constraint firstItem="KDF-7f-mgx" firstAttribute="leading" secondItem="F6m-xU-AWF" secondAttribute="leading" constant="8" id="O6N-C6-Dbt"/>
+                                                        <constraint firstItem="e5w-Mu-9cg" firstAttribute="leading" secondItem="KDF-7f-mgx" secondAttribute="trailing" constant="8" id="Oei-4g-gMp"/>
+                                                        <constraint firstItem="KDF-7f-mgx" firstAttribute="top" secondItem="F6m-xU-AWF" secondAttribute="top" constant="8" id="c7F-NZ-Tga"/>
+                                                        <constraint firstAttribute="trailing" secondItem="e5w-Mu-9cg" secondAttribute="trailing" constant="8" id="fRL-IH-afy"/>
+                                                        <constraint firstItem="e5w-Mu-9cg" firstAttribute="top" secondItem="1Zc-48-lAQ" secondAttribute="bottom" constant="8" id="h2d-yH-bKb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="z1E-dL-F0t" secondAttribute="bottom" id="pxy-oC-C9a"/>
+                                                        <constraint firstAttribute="trailing" secondItem="z1E-dL-F0t" secondAttribute="trailing" id="sj7-Fk-XlX"/>
+                                                        <constraint firstItem="1Zc-48-lAQ" firstAttribute="top" secondItem="F6m-xU-AWF" secondAttribute="top" constant="8" id="txD-ws-zg3"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="checkInDesView" destination="e5w-Mu-9cg" id="V7v-Yu-3Gj"/>
+                                                    <outlet property="checkInImageView" destination="z1E-dL-F0t" id="7Gq-3e-FFP"/>
+                                                    <outlet property="userImageView" destination="KDF-7f-mgx" id="sfC-b6-z76"/>
+                                                    <outlet property="userNameView" destination="1Zc-48-lAQ" id="9fN-Zw-Z6Y"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="oO7-K3-rcl"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="c6j-9a-b6v"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Unw-tt-Fn5" firstAttribute="top" secondItem="cdp-kU-9Y9" secondAttribute="bottom" id="3jG-0K-heI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Unw-tt-Fn5" secondAttribute="bottom" id="8nq-kD-r4C"/>
+                                    <constraint firstItem="Unw-tt-Fn5" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="HEy-Xf-pEc"/>
                                     <constraint firstItem="cdp-kU-9Y9" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="top" id="Txr-de-w0k"/>
                                     <constraint firstItem="cdp-kU-9Y9" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="eCv-YK-0yS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Unw-tt-Fn5" secondAttribute="trailing" id="i3f-oH-Ueu"/>
                                     <constraint firstAttribute="trailing" secondItem="cdp-kU-9Y9" secondAttribute="trailing" id="mRh-n7-J3I"/>
                                 </constraints>
                             </view>
