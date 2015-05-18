@@ -55,14 +55,13 @@ bool isOpenSlideMenu = false;
 
 #pragma mark - Click Tabs
 - (IBAction)clickTableViewButton:(id)sender {
-    [self.view bringSubviewToFront:self.tableView];
+    [self.parentView bringSubviewToFront:self.tableView];
     [self clickSlideMenuButton:nil];
-//    [self.parentView bringSubviewToFront:self.tableView];
 }
 
 - (IBAction)clickCollectionViewButton:(id)sender {
     [self.collectionView reloadData];
-    [self.view bringSubviewToFront:self.collectionView];
+    [self.parentView bringSubviewToFront:self.collectionView];
     [self clickSlideMenuButton:nil];
 }
 
