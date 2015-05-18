@@ -74,12 +74,20 @@
                                                     <action selector="clickSlideMenuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MHI-yU-yse"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="103598011" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-Wa-pvI">
+                                                <rect key="frame" x="117" y="14" width="86" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="PlT-Cu-0A5" firstAttribute="leading" secondItem="cdp-kU-9Y9" secondAttribute="leading" constant="5" id="2BK-SS-YWi"/>
                                             <constraint firstAttribute="bottom" secondItem="PlT-Cu-0A5" secondAttribute="bottom" constant="5" id="4Gq-fS-d9o"/>
+                                            <constraint firstAttribute="centerX" secondItem="QMe-Wa-pvI" secondAttribute="centerX" id="Dcc-zR-SQv"/>
                                             <constraint firstAttribute="height" constant="50" id="SVJ-BJ-6Iz"/>
+                                            <constraint firstAttribute="centerY" secondItem="QMe-Wa-pvI" secondAttribute="centerY" id="qp1-7j-QPA"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hpX-pb-z0f" userLabel="CheckInCollectionView">
