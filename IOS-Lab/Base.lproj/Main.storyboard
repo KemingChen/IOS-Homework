@@ -45,7 +45,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="b3i-zo-eYL" firstAttribute="top" secondItem="YVo-X9-a01" secondAttribute="bottom" constant="5" id="Gch-nN-dsB"/>
                                     <constraint firstItem="YVo-X9-a01" firstAttribute="top" secondItem="nsn-OS-50I" secondAttribute="top" id="Mou-e2-Wdf"/>
@@ -151,16 +151,63 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="c6j-9a-b6v"/>
                                         </connections>
                                     </tableView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hpX-pb-z0f" userLabel="CheckInCollectionView">
+                                        <rect key="frame" x="0.0" y="50" width="320" height="498"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="omr-Df-ans">
+                                            <size key="itemSize" width="160" height="160"/>
+                                            <size key="headerReferenceSize" width="50" height="25"/>
+                                            <size key="footerReferenceSize" width="50" height="25"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckInCell" id="it9-KG-jvL" customClass="ChekcInCollectionViewCell">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C0W-AA-iIc" userLabel="CheckInImage">
+                                                            <rect key="frame" x="10" y="10" width="140" height="140"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-7s-JL6" userLabel="UserImage">
+                                                            <rect key="frame" x="40" y="8" width="80" height="80"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <connections>
+                                                    <outlet property="checkInImageView" destination="C0W-AA-iIc" id="KCh-3H-qxq"/>
+                                                    <outlet property="userImageView" destination="tS3-7s-JL6" id="HU4-kp-cIW"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckInHeader" id="QfY-0e-PMH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionReusableView>
+                                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckInFooter" id="SfD-3v-U2v">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionReusableView>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="tOk-7g-ZdV"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="v4z-dn-IdF"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Unw-tt-Fn5" firstAttribute="top" secondItem="cdp-kU-9Y9" secondAttribute="bottom" id="3jG-0K-heI"/>
                                     <constraint firstAttribute="bottom" secondItem="Unw-tt-Fn5" secondAttribute="bottom" id="8nq-kD-r4C"/>
+                                    <constraint firstItem="hpX-pb-z0f" firstAttribute="top" secondItem="cdp-kU-9Y9" secondAttribute="bottom" id="AnD-N4-fOA"/>
                                     <constraint firstItem="Unw-tt-Fn5" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="HEy-Xf-pEc"/>
+                                    <constraint firstAttribute="bottom" secondItem="hpX-pb-z0f" secondAttribute="bottom" id="T2R-kr-WDa"/>
                                     <constraint firstItem="cdp-kU-9Y9" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="top" id="Txr-de-w0k"/>
                                     <constraint firstItem="cdp-kU-9Y9" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="eCv-YK-0yS"/>
                                     <constraint firstAttribute="trailing" secondItem="Unw-tt-Fn5" secondAttribute="trailing" id="i3f-oH-Ueu"/>
+                                    <constraint firstAttribute="trailing" secondItem="hpX-pb-z0f" secondAttribute="trailing" id="lli-KC-cTV"/>
                                     <constraint firstAttribute="trailing" secondItem="cdp-kU-9Y9" secondAttribute="trailing" id="mRh-n7-J3I"/>
+                                    <constraint firstItem="hpX-pb-z0f" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="veC-0D-HhM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -186,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="353"/>
+            <point key="canvasLocation" x="-222" y="328"/>
         </scene>
     </scenes>
 </document>
