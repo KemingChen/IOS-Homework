@@ -9,208 +9,80 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="AVx-H0-2Tf"/>
+                        <viewControllerLayoutGuide type="bottom" id="mTo-3S-PkY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="sQL-sG-KtJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gr8-Og-dKB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ueE-w3-VEh" userLabel="SlideMenuTableView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8Vv-Be-McT">
-                                    <size key="itemSize" width="160" height="160"/>
-                                    <size key="headerReferenceSize" width="50" height="25"/>
-                                    <size key="footerReferenceSize" width="50" height="25"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckInCell" id="4ca-rx-MT8" customClass="ChekcInCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FWw-au-tvZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="10" y="10" width="140" height="140"/>
-                                                    </variation>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Dm-TY-w70">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="40" y="8" width="80" height="80"/>
-                                                    </variation>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <size key="customSize" width="160" height="160"/>
-                                        <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="FWw-au-tvZ"/>
-                                                <exclude reference="6Dm-TY-w70"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="subviews">
-                                                <include reference="FWw-au-tvZ"/>
-                                                <include reference="6Dm-TY-w70"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <outlet property="checkInImageView" destination="FWw-au-tvZ" id="mAK-FD-l6E"/>
-                                            <outlet property="userImageView" destination="6Dm-TY-w70" id="8zO-DC-MKt"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckInHeader" id="kEk-0U-Kl8">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckInFooter" id="nXP-4Y-Gbc">
-                                    <rect key="frame" x="0.0" y="185" width="320" height="25"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="50" width="320" height="550"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="U0i-8r-50w"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UEd-bI-Lwt"/>
-                                </connections>
-                            </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-Hm-ULc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckInCell" rowHeight="294" id="86L-mM-ajo" customClass="CheckInTableViewCell">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="86L-mM-ajo" id="uZg-E1-HRX">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cPl-CG-9RO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="8" width="80" height="80"/>
-                                                    </variation>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMP-eI-Ujr">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="96" y="8" width="216" height="30"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrv-UG-JML">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="96" y="46" width="216" height="60"/>
-                                                    </variation>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eb5-Ya-eJM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="114" width="320" height="180"/>
-                                                    </variation>
-                                                </imageView>
-                                            </subviews>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="cPl-CG-9RO"/>
-                                                    <exclude reference="xMP-eI-Ujr"/>
-                                                    <exclude reference="zrv-UG-JML"/>
-                                                    <exclude reference="eb5-Ya-eJM"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="cPl-CG-9RO"/>
-                                                    <include reference="xMP-eI-Ujr"/>
-                                                    <include reference="zrv-UG-JML"/>
-                                                    <include reference="eb5-Ya-eJM"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="checkInDesView" destination="zrv-UG-JML" id="xKa-cn-4W0"/>
-                                            <outlet property="checkInImageView" destination="eb5-Ya-eJM" id="Ecf-rI-pJv"/>
-                                            <outlet property="userImageView" destination="cPl-CG-9RO" id="WOa-ka-Czh"/>
-                                            <outlet property="userNameView" destination="xMP-eI-Ujr" id="yNe-eF-6Ky"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="50" width="320" height="550"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="t7S-Ro-4hA"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0cp-1I-yd0"/>
-                                </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkj-kO-wil">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <state key="normal" title="TableView">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="2" y="2" width="156" height="46"/>
-                                </variation>
-                                <connections>
-                                    <action selector="clickTableViewTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CRM-n8-FJu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rco-m0-Shb">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <state key="normal" title="CollectionView">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="162" y="2" width="156" height="46"/>
-                                </variation>
-                                <connections>
-                                    <action selector="clickCollectionViewTab:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5a-yF-KnQ"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuF-E0-hhA" userLabel="Container">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdp-kU-9Y9" userLabel="Header">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlT-Cu-0A5" userLabel="SlideButton">
+                                                <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="LOL-PT-KBs"/>
+                                                    <constraint firstAttribute="height" constant="40" id="S6L-QY-cC0"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickSlideMenuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MHI-yU-yse"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="PlT-Cu-0A5" firstAttribute="leading" secondItem="cdp-kU-9Y9" secondAttribute="leading" constant="5" id="2BK-SS-YWi"/>
+                                            <constraint firstAttribute="bottom" secondItem="PlT-Cu-0A5" secondAttribute="bottom" constant="5" id="4Gq-fS-d9o"/>
+                                            <constraint firstAttribute="height" constant="50" id="SVJ-BJ-6Iz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="cdp-kU-9Y9" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="top" id="Txr-de-w0k"/>
+                                    <constraint firstItem="cdp-kU-9Y9" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="eCv-YK-0yS"/>
+                                    <constraint firstAttribute="trailing" secondItem="cdp-kU-9Y9" secondAttribute="trailing" id="mRh-n7-J3I"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Gr8-Og-dKB"/>
-                                <exclude reference="sXZ-Hm-ULc"/>
-                                <exclude reference="Xkj-kO-wil"/>
-                                <exclude reference="Rco-m0-Shb"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Gr8-Og-dKB"/>
-                                <include reference="sXZ-Hm-ULc"/>
-                                <include reference="Xkj-kO-wil"/>
-                                <include reference="Rco-m0-Shb"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yuF-E0-hhA" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="7oC-Mt-FRq"/>
+                            <constraint firstItem="ueE-w3-VEh" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="Ffp-5t-sHA"/>
+                            <constraint firstItem="ueE-w3-VEh" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="KrZ-Vn-5ry"/>
+                            <constraint firstAttribute="trailing" secondItem="yuF-E0-hhA" secondAttribute="trailing" id="L70-Zl-bnk"/>
+                            <constraint firstItem="yuF-E0-hhA" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="Mp4-ZZ-0aT"/>
+                            <constraint firstItem="yuF-E0-hhA" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="R9G-NY-Gqn"/>
+                            <constraint firstItem="ueE-w3-VEh" firstAttribute="leading" secondItem="sQL-sG-KtJ" secondAttribute="leading" id="RAZ-7y-G8N"/>
+                            <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="ueE-w3-VEh" secondAttribute="bottom" id="UIe-bs-iV8"/>
+                            <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="bottom" id="VCF-tu-QBS"/>
+                            <constraint firstAttribute="trailing" secondItem="ueE-w3-VEh" secondAttribute="trailing" id="ckE-9B-XkW"/>
+                            <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="bottom" id="iE3-Hc-8HA"/>
+                            <constraint firstItem="ueE-w3-VEh" firstAttribute="top" secondItem="sQL-sG-KtJ" secondAttribute="top" constant="20" id="oK4-M6-Txd"/>
+                            <constraint firstItem="yuF-E0-hhA" firstAttribute="top" secondItem="AVx-H0-2Tf" secondAttribute="bottom" id="w1F-Jl-8M9"/>
+                            <constraint firstItem="mTo-3S-PkY" firstAttribute="top" secondItem="ueE-w3-VEh" secondAttribute="bottom" id="zlm-GZ-swp"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="collectionView" destination="Gr8-Og-dKB" id="1oZ-gd-rmp"/>
-                        <outlet property="parentView" destination="8bC-Xf-vdC" id="Mwg-I0-0H4"/>
-                        <outlet property="tableView" destination="sXZ-Hm-ULc" id="hgz-Bs-rJc"/>
+                        <outlet property="leftOffsetConstrain" destination="7oC-Mt-FRq" id="EzQ-R7-ZZ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-424.5" y="304"/>
+            <point key="canvasLocation" x="-138" y="351"/>
         </scene>
     </scenes>
 </document>

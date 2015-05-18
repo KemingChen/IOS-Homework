@@ -31,6 +31,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)clickSlideMenuButton:(id)sender
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        self.leftOffsetConstrain.constant = self.view.frame.size.width - 80.0f;
+        [self.view layoutIfNeeded];
+    }];
+}
+
 #pragma mark - Click Tabs
 - (void)clickTableViewTab:(id)sender
 {
@@ -41,6 +49,10 @@
 {
     [self.collectionView reloadData];
     [self.parentView bringSubviewToFront:self.collectionView];
+}
+
+- (IBAction)slideMenuButton:(id)sender
+{
 }
 
 #pragma mark - TableView DataSource

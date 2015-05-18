@@ -12,8 +12,10 @@
 @property (strong, nonatomic) IBOutlet UIView *parentView;
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftOffsetConstrain;
 
 - (IBAction)clickTableViewTab:(id)sender;
 - (IBAction)clickCollectionViewTab:(id)sender;
+- (IBAction)clickSlideMenuButton:(id)sender;
 
 @end
