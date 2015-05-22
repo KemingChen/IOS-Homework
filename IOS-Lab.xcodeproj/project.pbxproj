@@ -71,6 +71,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F17AB081B0EE2670025CFC6 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				7F17AB0A1B0EE2AA0025CFC6 /* CheckInTableView */,
+				7F17AB091B0EE27A0025CFC6 /* CheckInCollectionView */,
+			);
+			name = component;
+			sourceTree = "<group>";
+		};
+		7F17AB091B0EE27A0025CFC6 /* CheckInCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7F2D7E721B01C1D3004538B8 /* ChekcInCollectionViewCell.h */,
+				7F2D7E731B01C1D3004538B8 /* ChekcInCollectionViewCell.m */,
+			);
+			name = CheckInCollectionView;
+			sourceTree = "<group>";
+		};
+		7F17AB0A1B0EE2AA0025CFC6 /* CheckInTableView */ = {
+			isa = PBXGroup;
+			children = (
+				7F8CE3BB1B00BB0400745463 /* CheckInTableViewCell.h */,
+				7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */,
+			);
+			name = CheckInTableView;
+			sourceTree = "<group>";
+		};
+		7F17AB0B1B0EE2C40025CFC6 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				7F8CE3B21B00AC8700745463 /* DataProvider.h */,
+				7F8CE3B31B00AC8700745463 /* DataProvider.m */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
 		7F8CE37D1B00AAB000745463 = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +128,8 @@
 		7F8CE3881B00AAB000745463 /* IOS-Lab */ = {
 			isa = PBXGroup;
 			children = (
-				7F8CE3B21B00AC8700745463 /* DataProvider.h */,
-				7F8CE3B31B00AC8700745463 /* DataProvider.m */,
+				7F17AB0B1B0EE2C40025CFC6 /* core */,
+				7F17AB081B0EE2670025CFC6 /* component */,
 				7F8CE38D1B00AAB000745463 /* AppDelegate.h */,
 				7F8CE38E1B00AAB000745463 /* AppDelegate.m */,
 				7F8CE3931B00AAB000745463 /* ViewController.h */,
@@ -103,10 +139,6 @@
 				7F8CE39B1B00AAB000745463 /* LaunchScreen.xib */,
 				7F8CE3901B00AAB000745463 /* IOS_Lab.xcdatamodeld */,
 				7F8CE3891B00AAB000745463 /* Supporting Files */,
-				7F8CE3BB1B00BB0400745463 /* CheckInTableViewCell.h */,
-				7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */,
-				7F2D7E721B01C1D3004538B8 /* ChekcInCollectionViewCell.h */,
-				7F2D7E731B01C1D3004538B8 /* ChekcInCollectionViewCell.m */,
 			);
 			path = "IOS-Lab";
 			sourceTree = "<group>";
