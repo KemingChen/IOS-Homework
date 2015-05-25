@@ -105,7 +105,7 @@ static NSArray *_gCheckIns = nil;
         //Day 1
         NSMutableArray *day1 = [NSMutableArray array];
         
-        [day1 addObject:[CheckIn checkInWithPoster:cooper desc:@"我女兒問我為什麼要用一個蠢定律的名字為她命名？" imageName:@"day1_1.jpg"]];
+        [day1 addObject:[CheckIn checkInWithPoster:cooper desc:@"我女兒問我為什麼要用一個蠢定律的名字為她命名？我女兒問我為什麼要用一個蠢定律的名字為她命名？我女兒問我為什麼要用一個蠢定律的名字為她命名？我女兒問我為什麼要用一個蠢定律的名字為她命名？我女兒問我為什麼要用一個蠢定律的名字為她命名？" imageName:@"day1_1.jpg"]];
         
         [day1 addObject:[CheckIn checkInWithPoster:cooper desc:@"書都掉下來...我嚇傻了！" imageName:@"day1_2.jpg"]];
         
