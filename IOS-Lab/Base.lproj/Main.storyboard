@@ -87,7 +87,7 @@
                                             <constraint firstAttribute="bottom" secondItem="PlT-Cu-0A5" secondAttribute="bottom" constant="10" id="4Gq-fS-d9o"/>
                                             <constraint firstAttribute="height" constant="50" id="8pc-Lh-SKj"/>
                                             <constraint firstAttribute="centerX" secondItem="QMe-Wa-pvI" secondAttribute="centerX" id="Dcc-zR-SQv"/>
-                                            <constraint firstAttribute="height" id="SVJ-BJ-6Iz"/>
+                                            <constraint firstAttribute="height" constant="20" id="SVJ-BJ-6Iz"/>
                                             <constraint firstAttribute="centerY" secondItem="QMe-Wa-pvI" secondAttribute="centerY" id="qp1-7j-QPA"/>
                                         </constraints>
                                         <variation key="default">
@@ -261,15 +261,17 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="collectionView" destination="hpX-pb-z0f" id="dZt-9a-mYl"/>
+                        <outlet property="headerTitle" destination="QMe-Wa-pvI" id="CuZ-wB-SFH"/>
                         <outlet property="leftOffsetConstrain" destination="7oC-Mt-FRq" id="EzQ-R7-ZZ7"/>
                         <outlet property="parentView" destination="yuF-E0-hhA" id="bI7-O8-uvP"/>
+                        <outlet property="slideMenuButton" destination="PlT-Cu-0A5" id="Dcs-KN-F0g"/>
                         <outlet property="slideMenuButtonWidth" destination="KvG-Ti-Fbx" id="bGb-XY-iYO"/>
                         <outlet property="tableView" destination="Unw-tt-Fn5" id="QPO-1B-1sS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="229"/>
+            <point key="canvasLocation" x="-94" y="230"/>
         </scene>
     </scenes>
 </document>

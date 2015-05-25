@@ -37,11 +37,15 @@ bool isOpenSlideMenu = false;
     switch (orientation) {
     case UIDeviceOrientationPortrait:
         self.tableView.hidden = false;
+        self.slideMenuButton.hidden = false;
+        self.headerTitle.hidden = false;
         break;
 
     case UIDeviceOrientationLandscapeLeft:
     case UIDeviceOrientationLandscapeRight:
         self.tableView.hidden = true;
+        self.slideMenuButton.hidden = true;
+        self.headerTitle.hidden = true;
         if (isOpenSlideMenu) {
             [self closeOrOpenSlideMenu];
         }
@@ -155,16 +159,12 @@ bool isOpenSlideMenu = false;
 
     [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell.frame.size.height)];
 
-    CheckIn* checkIn = [DataProvider checkIns][indexPath.section][indexPath.row];
-
+    CheckIn* checkIn = checkIns[indexPath.section][indexPath.row];
     [cell.checkInDesView setText:checkIn.checkInDesc];
-
     [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
 
     CGFloat aspectRatioMult = cell.checkInImageView.image.size.width / cell.checkInImageView.image.size.height;
-
     [cell layoutIfNeeded];
-
     return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.width / aspectRatioMult + 20;
 }
 
@@ -190,6 +190,8 @@ bool isOpenSlideMenu = false;
     else {
         [checkIns removeObjectAtIndex:indexPath.section];
         [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+
+        [self.collectionView reloadData];
     }
 }
 
@@ -203,6 +205,7 @@ bool isOpenSlideMenu = false;
 - (UICollectionViewCell*)collectionView:(UICollectionView*)collectionView cellForItemAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* CellIdentitier = @"CheckInCell";
+
     ChekcInCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentitier forIndexPath:indexPath];
 
     assert([cell isKindOfClass:[ChekcInCollectionViewCell class]]);
