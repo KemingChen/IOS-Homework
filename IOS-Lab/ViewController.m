@@ -25,6 +25,26 @@ bool isOpenSlideMenu = false;
 {
     [super viewDidLoad];
     checkIns = [NSMutableArray arrayWithArray:[DataProvider checkIns]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChangeNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)deviceOrientationDidChangeNotification:(NSNotification*)note
+{
+    [self.tableView reloadData];
+    [self.collectionView reloadData];
+    
+    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    switch (orientation) {
+    case UIDeviceOrientationPortrait:
+        break;
+
+    case UIDeviceOrientationLandscapeLeft:
+    case UIDeviceOrientationLandscapeRight:
+        break;
+
+    default:
+        break;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,7 +147,7 @@ bool isOpenSlideMenu = false;
     if (cell == nil) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"CheckInCell"];
     }
-    
+
     [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell.frame.size.height)];
 
     CheckIn* checkIn = [DataProvider checkIns][indexPath.section][indexPath.row];
