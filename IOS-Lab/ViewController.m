@@ -121,7 +121,7 @@ bool isOpenSlideMenu = false;
     NSArray* day = checkIns[indexPath.section];
     CheckIn* checkIn = day[indexPath.row];
     [cell setCheckIn:checkIn];
-
+    
     return cell;
 }
 
@@ -145,13 +145,14 @@ bool isOpenSlideMenu = false;
         cell = [tableView dequeueReusableCellWithIdentifier:@"CheckInCell"];
     }
 
-    [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell.frame.size.height)];
+    [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0)];
 
     NSArray* day = checkIns[indexPath.section];
     CheckIn* checkIn = day[indexPath.row];
     [cell setCheckIn:checkIn];
     
     [cell layoutIfNeeded];
+    [tableView layoutIfNeeded];
     return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.height;
 }
 

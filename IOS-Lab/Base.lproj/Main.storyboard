@@ -180,7 +180,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1E-dL-F0t" userLabel="CheckInImageView">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z1E-dL-F0t" userLabel="CheckInImageView">
                                                             <rect key="frame" x="0.0" y="97" width="320" height="200"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" priority="750" constant="200" id="9gg-bB-L5x"/>
@@ -271,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="230"/>
+            <point key="canvasLocation" x="-469" y="109"/>
         </scene>
     </scenes>
 </document>
