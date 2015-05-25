@@ -126,9 +126,9 @@ bool isOpenSlideMenu = false;
 
     if (cell == nil) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"CheckInCell"];
-
-        [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell.frame.size.height)];
     }
+    
+    [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell.frame.size.height)];
 
     CheckIn* checkIn = [DataProvider checkIns][indexPath.section][indexPath.row];
 
@@ -140,7 +140,7 @@ bool isOpenSlideMenu = false;
 
     [cell layoutIfNeeded];
 
-    return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.width / aspectRatioMult;
+    return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.width / aspectRatioMult + 20;
 }
 
 - (BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath
