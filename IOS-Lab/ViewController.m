@@ -32,14 +32,19 @@ bool isOpenSlideMenu = false;
 {
     [self.tableView reloadData];
     [self.collectionView reloadData];
-    
+
     UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
     switch (orientation) {
     case UIDeviceOrientationPortrait:
+        self.tableView.hidden = false;
         break;
 
     case UIDeviceOrientationLandscapeLeft:
     case UIDeviceOrientationLandscapeRight:
+        self.tableView.hidden = true;
+        if (isOpenSlideMenu) {
+            [self closeOrOpenSlideMenu];
+        }
         break;
 
     default:
