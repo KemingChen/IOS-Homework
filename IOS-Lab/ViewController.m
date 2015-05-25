@@ -120,19 +120,7 @@ bool isOpenSlideMenu = false;
 
     NSArray* day = checkIns[indexPath.section];
     CheckIn* checkIn = day[indexPath.row];
-    User* user = checkIn.poster;
-
-    [cell.userNameView setText:user.name];
-
-    [cell.userImageView setImage:[UIImage imageNamed:user.profileName]];
-    cell.userImageView.layer.cornerRadius = 40.0;
-    cell.userImageView.clipsToBounds = YES;
-
-    [cell.checkInDesView setText:checkIn.checkInDesc];
-
-    [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
-    CGFloat aspectRatioMult = cell.checkInImageView.image.size.width / cell.checkInImageView.image.size.height;
-    cell.checkInConstrainHeight.constant = cell.checkInImageView.frame.size.width / aspectRatioMult;
+    [cell setCheckIn:checkIn];
 
     return cell;
 }
@@ -159,13 +147,12 @@ bool isOpenSlideMenu = false;
 
     [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell.frame.size.height)];
 
-    CheckIn* checkIn = checkIns[indexPath.section][indexPath.row];
-    [cell.checkInDesView setText:checkIn.checkInDesc];
-    [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
-
-    CGFloat aspectRatioMult = cell.checkInImageView.image.size.width / cell.checkInImageView.image.size.height;
+    NSArray* day = checkIns[indexPath.section];
+    CheckIn* checkIn = day[indexPath.row];
+    [cell setCheckIn:checkIn];
+    
     [cell layoutIfNeeded];
-    return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.width / aspectRatioMult + 20;
+    return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.height;
 }
 
 - (BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath

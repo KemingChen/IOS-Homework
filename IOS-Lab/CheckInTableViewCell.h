@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataProvider.h"
 
 @interface CheckInTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
-@property (weak, nonatomic) IBOutlet UILabel *userNameView;
-@property (weak, nonatomic) IBOutlet UILabel *checkInDesView;
-@property (weak, nonatomic) IBOutlet UIImageView *checkInImageView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *checkInConstrainHeight;
+@property (weak, nonatomic) IBOutlet UIImageView* userImageView;
+@property (weak, nonatomic) IBOutlet UILabel* userNameView;
+@property (weak, nonatomic) IBOutlet UILabel* checkInDesView;
+@property (weak, nonatomic) IBOutlet UIImageView* checkInImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* checkInConstrainHeight;
+
+- (void)setCheckIn:(CheckIn*)checkIn;
 
 @end
