@@ -103,7 +103,7 @@ bool isOpenSlideMenu = false;
 
     [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
     CGFloat aspectRatioMult = cell.checkInImageView.image.size.width / cell.checkInImageView.image.size.height;
-    [cell.checkInImageView addConstraint:[NSLayoutConstraint constraintWithItem:cell.checkInImageView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:cell.checkInImageView attribute:NSLayoutAttributeHeight multiplier:aspectRatioMult constant:0]];
+    cell.checkInConstrainHeight.constant = cell.checkInImageView.frame.size.width / aspectRatioMult;
 
     return cell;
 }
@@ -136,9 +136,11 @@ bool isOpenSlideMenu = false;
 
     [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
 
+    CGFloat aspectRatioMult = cell.checkInImageView.image.size.width / cell.checkInImageView.image.size.height;
+
     [cell layoutIfNeeded];
 
-    return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.height;
+    return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.width / aspectRatioMult;
 }
 
 - (BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath

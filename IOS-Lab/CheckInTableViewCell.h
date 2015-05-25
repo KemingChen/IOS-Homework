@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameView;
 @property (weak, nonatomic) IBOutlet UILabel *checkInDesView;
 @property (weak, nonatomic) IBOutlet UIImageView *checkInImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *checkInConstrainHeight;
 
 @end
