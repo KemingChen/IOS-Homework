@@ -36,11 +36,11 @@ bool isOpenSlideMenu = false;
 - (void)closeOrOpenSlideMenu
 {
     double newWidth = self.view.frame.size.width - 80.0f;
-    
-    if(isOpenSlideMenu)
+
+    if (isOpenSlideMenu)
         newWidth = 0.0f;
     isOpenSlideMenu = !isOpenSlideMenu;
-    
+
     self.leftOffsetConstrain.constant = newWidth;
     [self.view layoutIfNeeded];
 }
@@ -54,12 +54,14 @@ bool isOpenSlideMenu = false;
 }
 
 #pragma mark - Click Tabs
-- (IBAction)clickTableViewButton:(id)sender {
+- (IBAction)clickTableViewButton:(id)sender
+{
     [self.parentView bringSubviewToFront:self.tableView];
     [self clickSlideMenuButton:nil];
 }
 
-- (IBAction)clickCollectionViewButton:(id)sender {
+- (IBAction)clickCollectionViewButton:(id)sender
+{
     [self.collectionView reloadData];
     [self.parentView bringSubviewToFront:self.collectionView];
     [self clickSlideMenuButton:nil];
@@ -100,6 +102,8 @@ bool isOpenSlideMenu = false;
     [cell.checkInDesView setText:checkIn.checkInDesc];
 
     [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
+    CGFloat aspectRatioMult = cell.checkInImageView.image.size.width / cell.checkInImageView.image.size.height;
+    [cell.checkInImageView addConstraint:[NSLayoutConstraint constraintWithItem:cell.checkInImageView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:cell.checkInImageView attribute:NSLayoutAttributeHeight multiplier:aspectRatioMult constant:0]];
 
     return cell;
 }
@@ -118,7 +122,23 @@ bool isOpenSlideMenu = false;
 #pragma mark - Table View Delegate
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    return 294.0;
+    static CheckInTableViewCell* cell = nil;
+
+    if (cell == nil) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"CheckInCell"];
+
+        [cell setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, cell.frame.size.height)];
+    }
+
+    CheckIn* checkIn = [DataProvider checkIns][indexPath.section][indexPath.row];
+
+    [cell.checkInDesView setText:checkIn.checkInDesc];
+
+    [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
+
+    [cell layoutIfNeeded];
+
+    return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.height;
 }
 
 - (BOOL)tableView:(UITableView*)tableView canEditRowAtIndexPath:(NSIndexPath*)indexPath
