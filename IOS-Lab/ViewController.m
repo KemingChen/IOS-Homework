@@ -25,10 +25,11 @@ bool isOpenSlideMenu = false;
 {
     [super viewDidLoad];
     [DataProvider syncFromServer:^(bool success) {
-        checkIns = [DataProvider checkIns];
-        NSLog(@"%lu", (unsigned long)checkIns.count);
-        [self.tableView reloadData];
-//        [self.collectionView reloadData];
+        if(success){
+            checkIns = [DataProvider checkIns];
+            [self.tableView reloadData];
+            [self.collectionView reloadData];
+        }
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChangeNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
@@ -205,14 +206,8 @@ bool isOpenSlideMenu = false;
 
     NSArray* day = checkIns[indexPath.section];
     CheckIn* checkIn = day[indexPath.row];
-    User* user = checkIn.poster;
-
-    [cell.userImageView setImage:[UIImage imageNamed:user.profileName]];
-    cell.userImageView.layer.cornerRadius = 40.0;
-    cell.userImageView.clipsToBounds = YES;
-
-    [cell.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
-
+    [cell setCheckIn:checkIn];
+    
     return cell;
 }
 
