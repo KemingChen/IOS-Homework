@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F2D7E741B01C1D3004538B8 /* ChekcInCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D7E731B01C1D3004538B8 /* ChekcInCollectionViewCell.m */; };
+		7F6A9E3E1B1C59A3005B0517 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7F6A9E3D1B1C59A3005B0517 /* Podfile */; };
 		7F8CE38C1B00AAB000745463 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE38B1B00AAB000745463 /* main.m */; };
 		7F8CE38F1B00AAB000745463 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE38E1B00AAB000745463 /* AppDelegate.m */; };
 		7F8CE3921B00AAB000745463 /* IOS_Lab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3901B00AAB000745463 /* IOS_Lab.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 		7F8CE3A91B00AAB000745463 /* IOS_LabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3A81B00AAB000745463 /* IOS_LabTests.m */; };
 		7F8CE3B51B00AC8700745463 /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3B31B00AC8700745463 /* DataProvider.m */; };
 		7F8CE3BD1B00BB0400745463 /* CheckInTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */; };
+		BC17E772C38167C0BFDC20DD /* libPods-IOS-Lab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFCBC9180DF265BDB9285A7 /* libPods-IOS-Lab.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5AA1AB6A700B9816C821CB88 /* Pods-IOS-Lab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-Lab.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOS-Lab/Pods-IOS-Lab.release.xcconfig"; sourceTree = "<group>"; };
+		5FFCBC9180DF265BDB9285A7 /* libPods-IOS-Lab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOS-Lab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2D7E721B01C1D3004538B8 /* ChekcInCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChekcInCollectionViewCell.h; sourceTree = "<group>"; };
 		7F2D7E731B01C1D3004538B8 /* ChekcInCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChekcInCollectionViewCell.m; sourceTree = "<group>"; };
+		7F6A9E3D1B1C59A3005B0517 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		7F8CE3861B00AAB000745463 /* IOS-Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8CE38A1B00AAB000745463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F8CE38B1B00AAB000745463 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 		7F8CE3B31B00AC8700745463 /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
 		7F8CE3BB1B00BB0400745463 /* CheckInTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInTableViewCell.h; sourceTree = "<group>"; };
 		7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTableViewCell.m; sourceTree = "<group>"; };
+		84E2B26E4F77C2BEB0158B73 /* Pods-IOS-Lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-Lab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOS-Lab/Pods-IOS-Lab.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC17E772C38167C0BFDC20DD /* libPods-IOS-Lab.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3AE11613D3CA3D68687AB8C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84E2B26E4F77C2BEB0158B73 /* Pods-IOS-Lab.debug.xcconfig */,
+				5AA1AB6A700B9816C821CB88 /* Pods-IOS-Lab.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7F17AB081B0EE2670025CFC6 /* component */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +126,12 @@
 		7F8CE37D1B00AAB000745463 = {
 			isa = PBXGroup;
 			children = (
+				7F6A9E3D1B1C59A3005B0517 /* Podfile */,
 				7F8CE3881B00AAB000745463 /* IOS-Lab */,
 				7F8CE3A51B00AAB000745463 /* IOS-LabTests */,
 				7F8CE3871B00AAB000745463 /* Products */,
+				3AE11613D3CA3D68687AB8C1 /* Pods */,
+				9633C467DC3AB06611E6C811 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +188,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9633C467DC3AB06611E6C811 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FFCBC9180DF265BDB9285A7 /* libPods-IOS-Lab.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F8CE3AC1B00AAB000745463 /* Build configuration list for PBXNativeTarget "IOS-Lab" */;
 			buildPhases = (
+				134CF1932DC01FD05B000EF3 /* Check Pods Manifest.lock */,
 				7F8CE3821B00AAB000745463 /* Sources */,
 				7F8CE3831B00AAB000745463 /* Frameworks */,
 				7F8CE3841B00AAB000745463 /* Resources */,
+				CC933F9145AC2465011A2AFC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,6 +280,7 @@
 			files = (
 				7F8CE3981B00AAB000745463 /* Main.storyboard in Resources */,
 				7F8CE39D1B00AAB000745463 /* LaunchScreen.xib in Resources */,
+				7F6A9E3E1B1C59A3005B0517 /* Podfile in Resources */,
 				7F8CE39A1B00AAB000745463 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +293,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		134CF1932DC01FD05B000EF3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC933F9145AC2465011A2AFC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOS-Lab/Pods-IOS-Lab-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F8CE3821B00AAB000745463 /* Sources */ = {
@@ -401,6 +464,7 @@
 		};
 		7F8CE3AD1B00AAB000745463 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84E2B26E4F77C2BEB0158B73 /* Pods-IOS-Lab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "IOS-Lab/Info.plist";
@@ -411,6 +475,7 @@
 		};
 		7F8CE3AE1B00AAB000745463 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AA1AB6A700B9816C821CB88 /* Pods-IOS-Lab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "IOS-Lab/Info.plist";
