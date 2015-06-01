@@ -7,6 +7,7 @@
 //
 
 #import "CheckInTableViewCell.h"
+#import <UIImageView+AFNetworking.h>
 
 @implementation CheckInTableViewCell
 
@@ -28,13 +29,13 @@
 
     [self.userNameView setText:user.name];
 
-    [self.userImageView setImage:[UIImage imageNamed:user.profileName]];
+    [self.userImageView setImageWithURL:[NSURL URLWithString:user.profileName] placeholderImage:[UIImage imageNamed:@"brand"]];
     self.userImageView.layer.cornerRadius = 40.0;
     self.userImageView.clipsToBounds = YES;
 
     [self.checkInDesView setText:checkIn.checkInDesc];
 
-    [self.checkInImageView setImage:[UIImage imageNamed:checkIn.checkInImageName]];
+    [self.checkInImageView setImageWithURL:[NSURL URLWithString:checkIn.checkInImageName] placeholderImage:[UIImage imageNamed:@"day1_1"]];
     CGFloat aspectRatioMult = self.checkInImageView.image.size.width / self.checkInImageView.image.size.height;
     self.checkInConstrainHeight.constant = self.checkInImageView.frame.size.width / aspectRatioMult;
 }

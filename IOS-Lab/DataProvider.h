@@ -10,31 +10,30 @@
 
 @interface User : NSObject
 
-@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString* name;
 
-@property (nonatomic, readonly) NSString *profileName;
+@property (nonatomic, readonly) NSString* profileName;
 
 @property (nonatomic, readonly) NSInteger identity;
 
 @end
 
-
-
 @interface CheckIn : NSObject
 
-@property (nonatomic, readonly) User *poster;
+@property (nonatomic, readonly) User* poster;
 
-@property (nonatomic, readonly) NSString *checkInDesc;
+@property (nonatomic, readonly) NSString* checkInDesc;
 
-@property (nonatomic, readonly) NSString *checkInImageName;
+@property (nonatomic, readonly) NSString* checkInImageName;
 
 @end
 
-
 @interface DataProvider : NSObject
 
-+ (NSArray *)checkIns;
++ (NSMutableArray*)checkIns;
 
-+ (NSDate *)dateForSection:(NSInteger)section;
++ (NSDate*)dateForSection:(NSInteger)section;
+
++ (void)syncFromServer:(void (^)(bool success))complete;
 
 @end

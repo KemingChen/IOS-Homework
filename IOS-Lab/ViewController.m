@@ -24,7 +24,12 @@ bool isOpenSlideMenu = false;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    checkIns = [NSMutableArray arrayWithArray:[DataProvider checkIns]];
+    [DataProvider syncFromServer:^(bool success) {
+        checkIns = [DataProvider checkIns];
+        NSLog(@"%lu", (unsigned long)checkIns.count);
+        [self.tableView reloadData];
+//        [self.collectionView reloadData];
+    }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChangeNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
@@ -121,7 +126,7 @@ bool isOpenSlideMenu = false;
     NSArray* day = checkIns[indexPath.section];
     CheckIn* checkIn = day[indexPath.row];
     [cell setCheckIn:checkIn];
-    
+
     return cell;
 }
 
@@ -150,7 +155,7 @@ bool isOpenSlideMenu = false;
     NSArray* day = checkIns[indexPath.section];
     CheckIn* checkIn = day[indexPath.row];
     [cell setCheckIn:checkIn];
-    
+
     [cell layoutIfNeeded];
     [tableView layoutIfNeeded];
     return cell.checkInImageView.frame.origin.y + cell.checkInImageView.frame.size.height;

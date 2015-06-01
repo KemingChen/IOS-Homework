@@ -76,37 +76,14 @@
 static NSMutableDictionary* users = nil;
 static NSMutableArray* checkIns = nil;
 
-+ (NSArray*)checkIns
++ (NSMutableArray*)checkIns
 {
-    [self setup];
-
     return checkIns;
 }
 
 + (NSDate*)dateForSection:(NSInteger)section
 {
-    [self setup];
-
     return [NSDate dateWithTimeIntervalSinceNow:(section * 86400)];
-}
-
-+ (void)setup
-{
-    if (checkIns == nil) {
-        AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
-        [manager GET:@"http://140.124.182.88:3000/users" parameters:nil success:^(AFHTTPRequestOperation* operation, id responseObject) {
-            [DataProvider updateUsers:responseObject];
-            
-            [manager GET:@"http://140.124.182.88:3000/checkIns" parameters:nil success:^(AFHTTPRequestOperation* operation, id responseObject) {
-                [DataProvider updateCheckIns:responseObject];
-            } failure:^(AFHTTPRequestOperation* operation, NSError* error) {
-                NSLog(@"Error: %@", error);
-            }];
-
-        } failure:^(AFHTTPRequestOperation* operation, NSError* error) {
-            NSLog(@"Error: %@", error);
-        }];
-    }
 }
 
 + (void)updateUsers:(NSArray*)userResponse
@@ -120,7 +97,6 @@ static NSMutableArray* checkIns = nil;
 
 + (void)updateCheckIns:(NSArray*)days
 {
-    NSLog(@"CheckIn: %@", days);
     checkIns = [[NSMutableArray alloc] initWithCapacity:days.count];
     for (NSArray* day in days) {
         NSMutableArray* dayObject = [NSMutableArray array];
@@ -131,6 +107,28 @@ static NSMutableArray* checkIns = nil;
         }
         [checkIns addObject:dayObject];
     }
+}
+
++ (void)syncFromServer:(void (^)(bool success))complete
+{
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://140.124.182.88:3000/users" parameters:nil success:^(AFHTTPRequestOperation* operation, id responseObject) {
+        [DataProvider updateUsers:responseObject];
+        
+        [manager GET:@"http://140.124.182.88:3000/checkIns" parameters:nil success:^(AFHTTPRequestOperation* operation, id responseObject) {
+            [DataProvider updateCheckIns:responseObject];
+            NSLog(@"finish");
+            complete(YES);
+            
+        } failure:^(AFHTTPRequestOperation* operation, NSError* error) {
+            NSLog(@"Error: %@", error);
+            complete(NO);
+        }];
+        
+    } failure:^(AFHTTPRequestOperation* operation, NSError* error) {
+        NSLog(@"Error: %@", error);
+        complete(NO);
+    }];
 }
 
 @end
