@@ -4,23 +4,21 @@
 #import <CoreData/CoreData.h>
 
 extern const struct UserAttributes {
-    __unsafe_unretained NSString* identity;
-    __unsafe_unretained NSString* imageURL;
-    __unsafe_unretained NSString* name;
+	__unsafe_unretained NSString *identity;
+	__unsafe_unretained NSString *imageURL;
+	__unsafe_unretained NSString *name;
 } UserAttributes;
 
 extern const struct UserRelationships {
-    __unsafe_unretained NSString* checkIn;
+	__unsafe_unretained NSString *checkIn;
 } UserRelationships;
 
 @class CheckIn;
 
-@interface UserID : NSManagedObjectID {
-}
+@interface UserID : NSManagedObjectID {}
 @end
 
-@interface _User : NSManagedObject {
-}
+@interface _User : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
@@ -28,9 +26,9 @@ extern const struct UserRelationships {
 
 @property (nonatomic, strong) NSNumber* identity;
 
-@property (atomic) int32_t identityValue;
-- (int32_t)identityValue;
-- (void)setIdentityValue:(int32_t)value_;
+@property (atomic) int64_t identityValue;
+- (int64_t)identityValue;
+- (void)setIdentityValue:(int64_t)value_;
 
 //- (BOOL)validateIdentity:(id*)value_ error:(NSError**)error_;
 
@@ -42,7 +40,7 @@ extern const struct UserRelationships {
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) CheckIn* checkIn;
+@property (nonatomic, strong) CheckIn *checkIn;
 
 //- (BOOL)validateCheckIn:(id*)value_ error:(NSError**)error_;
 
@@ -53,8 +51,8 @@ extern const struct UserRelationships {
 - (NSNumber*)primitiveIdentity;
 - (void)setPrimitiveIdentity:(NSNumber*)value;
 
-- (int32_t)primitiveIdentityValue;
-- (void)setPrimitiveIdentityValue:(int32_t)value_;
+- (int64_t)primitiveIdentityValue;
+- (void)setPrimitiveIdentityValue:(int64_t)value_;
 
 - (NSString*)primitiveImageURL;
 - (void)setPrimitiveImageURL:(NSString*)value;

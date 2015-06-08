@@ -3,6 +3,7 @@
 
 target 'IOS-Lab' do
     pod 'AFNetworking', '~> 2.5'
+    pod 'MagicalRecord', '~> 2.3'
 end
 
 target 'IOS-LabTests' do

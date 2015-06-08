@@ -1,5 +1,5 @@
 #import "_CheckIn.h"
 
 @interface CheckIn : _CheckIn {}
-// Custom logic goes here.
++ (CheckIn*)checkInWithPoster:(NSInteger)identity user:(User*)user desc:(NSString*)desc imageURL:(NSString*)imageURL;
 @end

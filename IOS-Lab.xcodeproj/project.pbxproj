@@ -61,6 +61,7 @@
 		7F8CE3B31B00AC8700745463 /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
 		7F8CE3BB1B00BB0400745463 /* CheckInTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInTableViewCell.h; sourceTree = "<group>"; };
 		7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTableViewCell.m; sourceTree = "<group>"; };
+		7FDB1A421B25CB700044A034 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7FF15BEF1B25A74300906AAA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7FF15BF21B25A75000906AAA /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
 		7FF15BF31B25A75000906AAA /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 			children = (
 				7F8CE38A1B00AAB000745463 /* Info.plist */,
 				7F8CE38B1B00AAB000745463 /* main.m */,
+				7FDB1A421B25CB700044A034 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

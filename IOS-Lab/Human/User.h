@@ -1,5 +1,5 @@
 #import "_User.h"
 
 @interface User : _User {}
-// Custom logic goes here.
++ (User*)userWithIdentity:(NSInteger)identity name:(NSString*)name imageURL:(NSString*)imageURL;
 @end
