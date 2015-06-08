@@ -15,6 +15,7 @@
 
 @interface ViewController () {
     NSMutableArray* checkIns;
+    DataProvider* dateProvider;
 }
 
 @end
@@ -26,9 +27,9 @@ bool isOpenSlideMenu = false;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [DataProvider syncFromServer:^(bool success) {
+    [[DataProvider sharedProvider] syncFromServer:^(bool success) {
         if (success) {
-            checkIns = [DataProvider checkIns];
+            checkIns = [[DataProvider sharedProvider] checkIns];
             [self.tableView reloadData];
             [self.collectionView reloadData];
         }
@@ -139,7 +140,7 @@ bool isOpenSlideMenu = false;
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
 
-    NSString* stringFromDate = [formatter stringFromDate:[DataProvider dateForSection:section]];
+    NSString* stringFromDate = [formatter stringFromDate:[[DataProvider sharedProvider] dateForSection:section]];
     NSArray* day = checkIns[section];
 
     return [NSString stringWithFormat:@"%@ , 共 %lu 個", stringFromDate, day.count];

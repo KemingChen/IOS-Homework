@@ -13,20 +13,35 @@
 
 @implementation DataProvider
 
-static NSMutableDictionary* users = nil;
-static NSMutableArray* checkIns = nil;
+static DataProvider* dataProvider = nil;
 
-+ (NSMutableArray*)checkIns
+NSMutableDictionary* users = nil;
+NSMutableArray* checkIns = nil;
+
++ (DataProvider*)sharedProvider
+{
+    if (dataProvider == nil) {
+        dataProvider = [[DataProvider alloc] init];
+    }
+    return dataProvider;
+}
+
+- (DataProvider*)init
+{
+    return self;
+}
+
+- (NSMutableArray*)checkIns
 {
     return checkIns;
 }
 
-+ (NSDate*)dateForSection:(NSInteger)section
+- (NSDate*)dateForSection:(NSInteger)section
 {
     return [NSDate dateWithTimeIntervalSinceNow:(section * 86400)];
 }
 
-+ (void)updateUsers:(NSArray*)userResponse
+- (void)updateUsers:(NSArray*)userResponse
 {
     users = [[NSMutableDictionary alloc] initWithCapacity:userResponse.count];
     for (NSDictionary* user in userResponse) {
@@ -35,7 +50,7 @@ static NSMutableArray* checkIns = nil;
     }
 }
 
-+ (void)updateCheckIns:(NSArray*)days
+- (void)updateCheckIns:(NSArray*)days
 {
     checkIns = [[NSMutableArray alloc] initWithCapacity:days.count];
     for (NSArray* day in days) {
@@ -49,18 +64,18 @@ static NSMutableArray* checkIns = nil;
     }
 }
 
-+ (void)syncFromServer:(void (^)(bool success))complete
+- (void)syncFromServer:(void (^)(bool success))complete
 {
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://140.124.182.88:3000/users"
         parameters:nil
         success:^(AFHTTPRequestOperation* operation, id responseObject) {
-            [DataProvider updateUsers:responseObject];
+            [self updateUsers:responseObject];
 
             [manager GET:@"http://140.124.182.88:3000/checkIns"
                 parameters:nil
                 success:^(AFHTTPRequestOperation* operation, id responseObject) {
-                    [DataProvider updateCheckIns:responseObject];
+                    [self updateCheckIns:responseObject];
                     NSLog(@"finish");
                     complete(YES);
 

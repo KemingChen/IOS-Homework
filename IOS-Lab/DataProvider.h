@@ -10,10 +10,12 @@
 
 @interface DataProvider : NSObject
 
-+ (NSMutableArray*)checkIns;
++ (DataProvider*)sharedProvider;
 
-+ (NSDate*)dateForSection:(NSInteger)section;
+- (NSMutableArray*)checkIns;
 
-+ (void)syncFromServer:(void (^)(bool success))complete;
+- (NSDate*)dateForSection:(NSInteger)section;
+
+- (void)syncFromServer:(void (^)(bool success))complete;
 
 @end
