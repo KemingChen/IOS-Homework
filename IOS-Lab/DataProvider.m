@@ -11,68 +11,6 @@
 #import "User.h"
 #import "CheckIn.h"
 
-//@interface User ()
-//
-//+ (User*)userWithIdentity:(NSInteger)identity name:(NSString*)name profileName:(NSString*)profileName;
-//
-//@end
-//
-//@implementation User
-//
-//@synthesize identity = _identity;
-//@synthesize name = _name;
-//@synthesize profileName = _profileName;
-//
-//+ (User*)userWithIdentity:(NSInteger)identity name:(NSString*)name profileName:(NSString*)profileName
-//{
-//    User* user = [[User alloc] init];
-//
-//    [user assignDataWithIdentity:identity name:name profileName:profileName];
-//
-//    return user;
-//}
-//
-//- (void)assignDataWithIdentity:(NSInteger)identity name:(NSString*)name profileName:(NSString*)profileName
-//{
-//    _identity = identity;
-//    _profileName = profileName;
-//    _name = name;
-//}
-//
-//@end
-//
-//@interface CheckIn ()
-//
-//+ (CheckIn*)checkInWithPoster:(User*)poster desc:(NSString*)desc imageName:(NSString*)imageName;
-//
-//- (void)assignDataWithPoster:(User*)poster desc:(NSString*)desc imageName:(NSString*)imageName;
-//
-//@end
-//
-//@implementation CheckIn
-//
-//+ (CheckIn*)checkInWithPoster:(User*)poster desc:(NSString*)desc imageName:(NSString*)imageName
-//{
-//    CheckIn* checkIn = [[CheckIn alloc] init];
-//
-//    [checkIn assignDataWithPoster:poster desc:desc imageName:imageName];
-//
-//    return checkIn;
-//}
-//
-//@synthesize poster = _poster;
-//@synthesize checkInDesc = _checkInDesc;
-//@synthesize checkInImageName = _checkInImageName;
-//
-//- (void)assignDataWithPoster:(User*)poster desc:(NSString*)desc imageName:(NSString*)imageName
-//{
-//    _poster = poster;
-//    _checkInDesc = desc;
-//    _checkInImageName = imageName;
-//}
-//
-//@end
-
 @implementation DataProvider
 
 static NSMutableDictionary* users = nil;
@@ -92,8 +30,8 @@ static NSMutableArray* checkIns = nil;
 {
     users = [[NSMutableDictionary alloc] initWithCapacity:userResponse.count];
     for (NSDictionary* user in userResponse) {
-//        User* userObject = [User userWithIdentity:[user[@"id"] integerValue] name:user[@"name"] profileName:user[@"profile"]];
-//        [users setObject:userObject forKey:user[@"id"]];
+        User* userObject = [User userWithIdentity:[user[@"id"] integerValue] name:user[@"name"] imageURL:user[@"profile"]];
+        [users setObject:userObject forKey:user[@"id"]];
     }
 }
 
@@ -104,8 +42,8 @@ static NSMutableArray* checkIns = nil;
         NSMutableArray* dayObject = [NSMutableArray array];
         for (NSDictionary* checkIn in day) {
             User* user = users[checkIn[@"poster"]];
-//            CheckIn* checkInObject = [CheckIn checkInWithPoster:user desc:checkIn[@"desc"] imageName:checkIn[@"image"]];
-//            [dayObject addObject:checkInObject];
+            CheckIn* checkInObject = [CheckIn checkInWithPoster:[checkIn[@"id"] integerValue] user:user desc:checkIn[@"desc"] imageURL:checkIn[@"image"]];
+            [dayObject addObject:checkInObject];
         }
         [checkIns addObject:dayObject];
     }
@@ -114,23 +52,29 @@ static NSMutableArray* checkIns = nil;
 + (void)syncFromServer:(void (^)(bool success))complete
 {
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://140.124.182.88:3000/users" parameters:nil success:^(AFHTTPRequestOperation* operation, id responseObject) {
-        [DataProvider updateUsers:responseObject];
-        
-        [manager GET:@"http://140.124.182.88:3000/checkIns" parameters:nil success:^(AFHTTPRequestOperation* operation, id responseObject) {
-            [DataProvider updateCheckIns:responseObject];
-            NSLog(@"finish");
-            complete(YES);
-            
-        } failure:^(AFHTTPRequestOperation* operation, NSError* error) {
+    [manager GET:@"http://140.124.182.88:3000/users"
+        parameters:nil
+        success:^(AFHTTPRequestOperation* operation, id responseObject) {
+            [DataProvider updateUsers:responseObject];
+
+            [manager GET:@"http://140.124.182.88:3000/checkIns"
+                parameters:nil
+                success:^(AFHTTPRequestOperation* operation, id responseObject) {
+                    [DataProvider updateCheckIns:responseObject];
+                    NSLog(@"finish");
+                    complete(YES);
+
+                }
+                failure:^(AFHTTPRequestOperation* operation, NSError* error) {
+                    NSLog(@"Error: %@", error);
+                    complete(NO);
+                }];
+
+        }
+        failure:^(AFHTTPRequestOperation* operation, NSError* error) {
             NSLog(@"Error: %@", error);
             complete(NO);
         }];
-        
-    } failure:^(AFHTTPRequestOperation* operation, NSError* error) {
-        NSLog(@"Error: %@", error);
-        complete(NO);
-    }];
 }
 
 @end
