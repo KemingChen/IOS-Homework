@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataProvider.h"
+#import "CheckIn.h"
 
 @interface ChekcInCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView* userImageView;

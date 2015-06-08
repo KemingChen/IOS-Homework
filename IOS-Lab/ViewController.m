@@ -10,6 +10,8 @@
 #import "DataProvider.h"
 #import "CheckInTableViewCell.h"
 #import "ChekcInCollectionViewCell.h"
+#import "CheckIn.h"
+#import "User.h"
 
 @interface ViewController () {
     NSMutableArray* checkIns;
@@ -25,7 +27,7 @@ bool isOpenSlideMenu = false;
 {
     [super viewDidLoad];
     [DataProvider syncFromServer:^(bool success) {
-        if(success){
+        if (success) {
             checkIns = [DataProvider checkIns];
             [self.tableView reloadData];
             [self.collectionView reloadData];
@@ -83,9 +85,10 @@ bool isOpenSlideMenu = false;
 - (void)clickSlideMenuButton:(id)sender
 {
     self.slideMenuButtonWidth.constant = self.view.frame.size.width - 80.0f;
-    [UIView animateWithDuration:0.25 animations:^{
-        [self closeOrOpenSlideMenu];
-    }];
+    [UIView animateWithDuration:0.25
+                     animations:^{
+                         [self closeOrOpenSlideMenu];
+                     }];
 }
 
 #pragma mark - Click Tabs
@@ -207,7 +210,7 @@ bool isOpenSlideMenu = false;
     NSArray* day = checkIns[indexPath.section];
     CheckIn* checkIn = day[indexPath.row];
     [cell setCheckIn:checkIn];
-    
+
     return cell;
 }
 
@@ -221,9 +224,9 @@ bool isOpenSlideMenu = false;
 {
     NSArray* day = checkIns[indexPath.section];
     CheckIn* checkIn = day[indexPath.row];
-    User* user = checkIn.poster;
+    User* user = checkIn.user;
 
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:user.name message:checkIn.checkInDesc delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:user.name message:checkIn.desc delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 
     [alert show];
 }

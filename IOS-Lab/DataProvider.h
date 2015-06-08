@@ -8,25 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
-
-@property (nonatomic, readonly) NSString* name;
-
-@property (nonatomic, readonly) NSString* profileName;
-
-@property (nonatomic, readonly) NSInteger identity;
-
-@end
-
-@interface CheckIn : NSObject
-
-@property (nonatomic, readonly) User* poster;
-
-@property (nonatomic, readonly) NSString* checkInDesc;
-
-@property (nonatomic, readonly) NSString* checkInImageName;
-
-@end
+//@interface User : NSObject
+//
+//@property (nonatomic, readonly) NSString* name;
+//
+//@property (nonatomic, readonly) NSString* profileName;
+//
+//@property (nonatomic, readonly) NSInteger identity;
+//
+//@end
+//
+//@interface CheckIn : NSObject
+//
+//@property (nonatomic, readonly) User* poster;
+//
+//@property (nonatomic, readonly) NSString* checkInDesc;
+//
+//@property (nonatomic, readonly) NSString* checkInImageName;
+//
+//@end
 
 @interface DataProvider : NSObject
 

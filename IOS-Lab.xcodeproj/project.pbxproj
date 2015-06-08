@@ -19,6 +19,11 @@
 		7F8CE3A91B00AAB000745463 /* IOS_LabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3A81B00AAB000745463 /* IOS_LabTests.m */; };
 		7F8CE3B51B00AC8700745463 /* DataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3B31B00AC8700745463 /* DataProvider.m */; };
 		7F8CE3BD1B00BB0400745463 /* CheckInTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */; };
+		7FF15BF01B25A74300906AAA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BEE1B25A74300906AAA /* Model.xcdatamodeld */; };
+		7FF15BFB1B25A75000906AAA /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BF31B25A75000906AAA /* CheckIn.m */; };
+		7FF15BFC1B25A75000906AAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BF51B25A75000906AAA /* User.m */; };
+		7FF15BFD1B25A75000906AAA /* _CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BF81B25A75000906AAA /* _CheckIn.m */; };
+		7FF15BFE1B25A75000906AAA /* _User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BFA1B25A75000906AAA /* _User.m */; };
 		BC17E772C38167C0BFDC20DD /* libPods-IOS-Lab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFCBC9180DF265BDB9285A7 /* libPods-IOS-Lab.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +61,15 @@
 		7F8CE3B31B00AC8700745463 /* DataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataProvider.m; sourceTree = "<group>"; };
 		7F8CE3BB1B00BB0400745463 /* CheckInTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInTableViewCell.h; sourceTree = "<group>"; };
 		7F8CE3BC1B00BB0400745463 /* CheckInTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInTableViewCell.m; sourceTree = "<group>"; };
+		7FF15BEF1B25A74300906AAA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7FF15BF21B25A75000906AAA /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
+		7FF15BF31B25A75000906AAA /* CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIn.m; sourceTree = "<group>"; };
+		7FF15BF41B25A75000906AAA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		7FF15BF51B25A75000906AAA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		7FF15BF71B25A75000906AAA /* _CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CheckIn.h; sourceTree = "<group>"; };
+		7FF15BF81B25A75000906AAA /* _CheckIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CheckIn.m; sourceTree = "<group>"; };
+		7FF15BF91B25A75000906AAA /* _User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _User.h; sourceTree = "<group>"; };
+		7FF15BFA1B25A75000906AAA /* _User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _User.m; sourceTree = "<group>"; };
 		84E2B26E4F77C2BEB0158B73 /* Pods-IOS-Lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-Lab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOS-Lab/Pods-IOS-Lab.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +161,7 @@
 		7F8CE3881B00AAB000745463 /* IOS-Lab */ = {
 			isa = PBXGroup;
 			children = (
+				7FF15BED1B25A73B00906AAA /* model */,
 				7F17AB0B1B0EE2C40025CFC6 /* core */,
 				7F17AB081B0EE2670025CFC6 /* component */,
 				7F8CE38D1B00AAB000745463 /* AppDelegate.h */,
@@ -186,6 +201,38 @@
 				7F8CE3A71B00AAB000745463 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FF15BED1B25A73B00906AAA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7FF15BF11B25A75000906AAA /* Human */,
+				7FF15BF61B25A75000906AAA /* Machine */,
+				7FF15BEE1B25A74300906AAA /* Model.xcdatamodeld */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		7FF15BF11B25A75000906AAA /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				7FF15BF21B25A75000906AAA /* CheckIn.h */,
+				7FF15BF31B25A75000906AAA /* CheckIn.m */,
+				7FF15BF41B25A75000906AAA /* User.h */,
+				7FF15BF51B25A75000906AAA /* User.m */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		7FF15BF61B25A75000906AAA /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				7FF15BF71B25A75000906AAA /* _CheckIn.h */,
+				7FF15BF81B25A75000906AAA /* _CheckIn.m */,
+				7FF15BF91B25A75000906AAA /* _User.h */,
+				7FF15BFA1B25A75000906AAA /* _User.m */,
+			);
+			path = Machine;
 			sourceTree = "<group>";
 		};
 		9633C467DC3AB06611E6C811 /* Frameworks */ = {
@@ -332,12 +379,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF15BFE1B25A75000906AAA /* _User.m in Sources */,
+				7FF15BFD1B25A75000906AAA /* _CheckIn.m in Sources */,
+				7FF15BFC1B25A75000906AAA /* User.m in Sources */,
 				7F8CE38F1B00AAB000745463 /* AppDelegate.m in Sources */,
 				7F8CE3921B00AAB000745463 /* IOS_Lab.xcdatamodeld in Sources */,
 				7F8CE3951B00AAB000745463 /* ViewController.m in Sources */,
+				7FF15BF01B25A74300906AAA /* Model.xcdatamodeld in Sources */,
 				7F8CE3BD1B00BB0400745463 /* CheckInTableViewCell.m in Sources */,
 				7F8CE38C1B00AAB000745463 /* main.m in Sources */,
 				7F2D7E741B01C1D3004538B8 /* ChekcInCollectionViewCell.m in Sources */,
+				7FF15BFB1B25A75000906AAA /* CheckIn.m in Sources */,
 				7F8CE3B51B00AC8700745463 /* DataProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +610,16 @@
 			);
 			currentVersion = 7F8CE3911B00AAB000745463 /* IOS_Lab.xcdatamodel */;
 			path = IOS_Lab.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		7FF15BEE1B25A74300906AAA /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FF15BEF1B25A74300906AAA /* Model.xcdatamodel */,
+			);
+			currentVersion = 7FF15BEF1B25A74300906AAA /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
