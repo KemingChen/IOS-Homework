@@ -101,8 +101,11 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9wO-FK-eJD">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wO-FK-eJD">
                                         <rect key="frame" x="0.0" y="50" width="320" height="498"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="1pI-9h-mot"/>
+                                        </connections>
                                     </mapView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hpX-pb-z0f" userLabel="CheckInCollectionView">
                                         <rect key="frame" x="0.0" y="50" width="320" height="498"/>
