@@ -53,6 +53,7 @@ bool isOpenSlideMenu = false;
     case UIDeviceOrientationPortrait:
         self.tableView.hidden = false;
         self.slideMenuButton.hidden = false;
+        self.mapView.hidden = false;
         self.headerTitle.hidden = false;
         break;
 
@@ -60,6 +61,7 @@ bool isOpenSlideMenu = false;
     case UIDeviceOrientationLandscapeRight:
         self.tableView.hidden = true;
         self.slideMenuButton.hidden = true;
+        self.mapView.hidden = true;
         self.headerTitle.hidden = true;
         if (isOpenSlideMenu) {
             [self closeOrOpenSlideMenu];
