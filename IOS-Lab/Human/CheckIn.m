@@ -35,4 +35,10 @@
     self.imageURL = imageURL;
 }
 
+- (void)assignCheckInLocation:(double)longitude latitude:(double)latitude
+{
+    self.longitudeValue = longitude;
+    self.latitudeValue = latitude;
+}
+
 @end

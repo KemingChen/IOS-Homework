@@ -84,8 +84,11 @@ NSMutableArray* checkIns = nil;
         for (NSDictionary* checkIn in day) {
             User* user = users[checkIn[@"poster"]];
             CheckIn* checkInObject = [CheckIn checkInWithPoster:[checkIn[@"id"] integerValue] user:user desc:checkIn[@"desc"] imageURL:checkIn[@"image"]];
+            double longitude = [checkIn[@"location"][@"longitude"] doubleValue];
+            double latitude = [checkIn[@"location"][@"latitude"] doubleValue];
+            [checkInObject assignCheckInLocation:longitude latitude:latitude];
             checkInObject.groupIdValue = groupId;
-
+            
             [dayObject addObject:checkInObject];
         }
 
