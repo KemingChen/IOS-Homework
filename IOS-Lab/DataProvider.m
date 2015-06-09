@@ -29,12 +29,6 @@ NSMutableArray* checkIns = nil;
 
 - (DataProvider*)init
 {
-    NSArray* tempUsers = [NSMutableArray arrayWithArray:[User MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]]];
-    users = [[NSMutableDictionary alloc] initWithCapacity:tempUsers.count];
-    for (User* user in tempUsers) {
-        [users setObject:user forKey:user.identity];
-    }
-
     NSArray* array = [NSMutableArray arrayWithArray:[CheckIn MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]]];
     NSMutableDictionary* days = [[NSMutableDictionary alloc] init];
     checkIns = [NSMutableArray array];
