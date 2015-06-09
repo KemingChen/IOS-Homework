@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 #import "User.h"
 #import "CheckIn.h"
+#import "PrefixHeader.pch"
 
 @implementation DataProvider
 
@@ -28,6 +29,26 @@ NSMutableArray* checkIns = nil;
 
 - (DataProvider*)init
 {
+    NSArray* tempUsers = [NSMutableArray arrayWithArray:[User MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]]];
+    users = [[NSMutableDictionary alloc] initWithCapacity:tempUsers.count];
+    for (User* user in tempUsers) {
+        [users setObject:user forKey:user.identity];
+    }
+
+    NSArray* array = [NSMutableArray arrayWithArray:[CheckIn MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]]];
+    NSMutableDictionary* days = [[NSMutableDictionary alloc] init];
+    checkIns = [NSMutableArray array];
+    for (CheckIn* checkIn in array) {
+        NSInteger groupId = checkIn.groupIdValue;
+        if (![days objectForKey:@(groupId)]) {
+            NSMutableArray* day = [NSMutableArray array];
+            [checkIns addObject:day];
+            [days setObject:day forKey:@(groupId)];
+        }
+        NSMutableArray* temp = days[@(groupId)];
+        [temp addObject:checkIn];
+    }
+
     return self;
 }
 
@@ -43,7 +64,7 @@ NSMutableArray* checkIns = nil;
 
 - (void)updateUsers:(NSArray*)userResponse
 {
-    users = [[NSMutableDictionary alloc] initWithCapacity:userResponse.count];
+    users = [[NSMutableDictionary alloc] init];
     for (NSDictionary* user in userResponse) {
         User* userObject = [User userWithIdentity:[user[@"id"] integerValue] name:user[@"name"] imageURL:user[@"profile"]];
         [users setObject:userObject forKey:user[@"id"]];
@@ -52,20 +73,30 @@ NSMutableArray* checkIns = nil;
 
 - (void)updateCheckIns:(NSArray*)days
 {
-    checkIns = [[NSMutableArray alloc] initWithCapacity:days.count];
+    checkIns = [[NSMutableArray alloc] init];
+
+    int groupId = 0;
     for (NSArray* day in days) {
         NSMutableArray* dayObject = [NSMutableArray array];
+
+        groupId++;
+
         for (NSDictionary* checkIn in day) {
             User* user = users[checkIn[@"poster"]];
             CheckIn* checkInObject = [CheckIn checkInWithPoster:[checkIn[@"id"] integerValue] user:user desc:checkIn[@"desc"] imageURL:checkIn[@"image"]];
+            checkInObject.groupIdValue = groupId;
+
             [dayObject addObject:checkInObject];
         }
+
         [checkIns addObject:dayObject];
     }
 }
 
 - (void)syncFromServer:(void (^)(bool success))complete
 {
+    complete(YES);
+
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://140.124.182.88:3000/users"
         parameters:nil
@@ -76,7 +107,7 @@ NSMutableArray* checkIns = nil;
                 parameters:nil
                 success:^(AFHTTPRequestOperation* operation, id responseObject) {
                     [self updateCheckIns:responseObject];
-                    NSLog(@"finish");
+                    NSLog(@"update finish");
                     complete(YES);
 
                 }

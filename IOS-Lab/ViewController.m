@@ -27,14 +27,20 @@ bool isOpenSlideMenu = false;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [[DataProvider sharedProvider] syncFromServer:^(bool success) {
-        if (success) {
-            checkIns = [[DataProvider sharedProvider] checkIns];
-            [self.tableView reloadData];
-            [self.collectionView reloadData];
-        }
+        [self syncDataComplete:success];
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChangeNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)syncDataComplete:(bool)success
+{
+    if (success) {
+        checkIns = [[DataProvider sharedProvider] checkIns];
+        [self.tableView reloadData];
+        [self.collectionView reloadData];
+    }
 }
 
 - (void)deviceOrientationDidChangeNotification:(NSNotification*)note
