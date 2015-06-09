@@ -112,6 +112,13 @@ bool isOpenSlideMenu = false;
     [self clickSlideMenuButton:nil];
 }
 
+- (IBAction)clickMapViewButton:(id)sender
+{
+    [self.collectionView reloadData];
+    [self.parentView bringSubviewToFront:self.collectionView];
+    [self clickSlideMenuButton:nil];
+}
+
 #pragma mark - TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {

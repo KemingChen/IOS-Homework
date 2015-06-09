@@ -33,25 +33,25 @@
                                             <action selector="clickTableViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="th9-S0-i6z"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3i-zo-eYL" userLabel="CollectionViewButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-C6-Uia" userLabel="MapViewButton">
                                         <rect key="frame" x="0.0" y="40" width="320" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="CollectionView">
+                                        <color key="tintColor" red="0.14901960784313725" green="0.18823529411764706" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="MapView">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="clickCollectionViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IC4-cE-42E"/>
+                                            <action selector="clickMapViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gfp-8x-N92"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="b3i-zo-eYL" firstAttribute="top" secondItem="YVo-X9-a01" secondAttribute="bottom" constant="5" id="Gch-nN-dsB"/>
                                     <constraint firstItem="YVo-X9-a01" firstAttribute="top" secondItem="nsn-OS-50I" secondAttribute="top" constant="5" id="Mou-e2-Wdf"/>
-                                    <constraint firstItem="YVo-X9-a01" firstAttribute="width" secondItem="b3i-zo-eYL" secondAttribute="width" id="ZvI-XY-3tw"/>
+                                    <constraint firstItem="YVo-X9-a01" firstAttribute="width" secondItem="ZHN-C6-Uia" secondAttribute="width" id="UsD-bn-OUf"/>
+                                    <constraint firstItem="ZHN-C6-Uia" firstAttribute="top" secondItem="YVo-X9-a01" secondAttribute="bottom" constant="5" id="oQG-KQ-zs2"/>
                                     <constraint firstItem="YVo-X9-a01" firstAttribute="leading" secondItem="nsn-OS-50I" secondAttribute="leading" id="uUv-R4-lOt"/>
-                                    <constraint firstItem="YVo-X9-a01" firstAttribute="leading" secondItem="b3i-zo-eYL" secondAttribute="leading" id="zHv-DA-rOE"/>
+                                    <constraint firstItem="YVo-X9-a01" firstAttribute="leading" secondItem="ZHN-C6-Uia" secondAttribute="leading" id="xGB-St-0rd"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuF-E0-hhA" userLabel="Container">

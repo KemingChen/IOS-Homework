@@ -20,5 +20,6 @@
 - (IBAction)clickSlideMenuButton:(id)sender;
 - (IBAction)clickTableViewButton:(id)sender;
 - (IBAction)clickCollectionViewButton:(id)sender;
+- (IBAction)clickMapViewButton:(id)sender;
 
 @end
