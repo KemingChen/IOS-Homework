@@ -114,8 +114,7 @@ bool isOpenSlideMenu = false;
 
 - (IBAction)clickMapViewButton:(id)sender
 {
-    [self.collectionView reloadData];
-    [self.parentView bringSubviewToFront:self.collectionView];
+    [self.parentView bringSubviewToFront:self.mapView];
     [self clickSlideMenuButton:nil];
 }
 

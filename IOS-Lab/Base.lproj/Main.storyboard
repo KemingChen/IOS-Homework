@@ -101,6 +101,9 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9wO-FK-eJD">
+                                        <rect key="frame" x="0.0" y="50" width="320" height="498"/>
+                                    </mapView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hpX-pb-z0f" userLabel="CheckInCollectionView">
                                         <rect key="frame" x="0.0" y="50" width="320" height="498"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,14 +235,18 @@
                                 <constraints>
                                     <constraint firstItem="Unw-tt-Fn5" firstAttribute="top" secondItem="cdp-kU-9Y9" secondAttribute="bottom" id="3jG-0K-heI"/>
                                     <constraint firstAttribute="bottom" secondItem="Unw-tt-Fn5" secondAttribute="bottom" id="8nq-kD-r4C"/>
+                                    <constraint firstAttribute="trailing" secondItem="9wO-FK-eJD" secondAttribute="trailing" id="9JM-xc-DiM"/>
                                     <constraint firstItem="hpX-pb-z0f" firstAttribute="top" secondItem="cdp-kU-9Y9" secondAttribute="bottom" id="AnD-N4-fOA"/>
                                     <constraint firstItem="Unw-tt-Fn5" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="HEy-Xf-pEc"/>
                                     <constraint firstAttribute="bottom" secondItem="hpX-pb-z0f" secondAttribute="bottom" id="T2R-kr-WDa"/>
                                     <constraint firstItem="cdp-kU-9Y9" firstAttribute="top" secondItem="yuF-E0-hhA" secondAttribute="top" id="Txr-de-w0k"/>
+                                    <constraint firstItem="9wO-FK-eJD" firstAttribute="top" secondItem="cdp-kU-9Y9" secondAttribute="bottom" id="XdW-ch-VKV"/>
                                     <constraint firstItem="cdp-kU-9Y9" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="eCv-YK-0yS"/>
+                                    <constraint firstAttribute="bottom" secondItem="9wO-FK-eJD" secondAttribute="bottom" id="efV-Ov-Cg9"/>
                                     <constraint firstAttribute="trailing" secondItem="Unw-tt-Fn5" secondAttribute="trailing" id="i3f-oH-Ueu"/>
                                     <constraint firstAttribute="trailing" secondItem="hpX-pb-z0f" secondAttribute="trailing" id="lli-KC-cTV"/>
                                     <constraint firstAttribute="trailing" secondItem="cdp-kU-9Y9" secondAttribute="trailing" id="mRh-n7-J3I"/>
+                                    <constraint firstItem="9wO-FK-eJD" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="pfj-91-UcX"/>
                                     <constraint firstItem="hpX-pb-z0f" firstAttribute="leading" secondItem="yuF-E0-hhA" secondAttribute="leading" id="veC-0D-HhM"/>
                                 </constraints>
                             </view>
@@ -263,6 +270,7 @@
                         <outlet property="collectionView" destination="hpX-pb-z0f" id="dZt-9a-mYl"/>
                         <outlet property="headerTitle" destination="QMe-Wa-pvI" id="CuZ-wB-SFH"/>
                         <outlet property="leftOffsetConstrain" destination="7oC-Mt-FRq" id="EzQ-R7-ZZ7"/>
+                        <outlet property="mapView" destination="9wO-FK-eJD" id="7nn-Xi-Jjr"/>
                         <outlet property="parentView" destination="yuF-E0-hhA" id="bI7-O8-uvP"/>
                         <outlet property="slideMenuButton" destination="PlT-Cu-0A5" id="Dcs-KN-F0g"/>
                         <outlet property="slideMenuButtonWidth" destination="KvG-Ti-Fbx" id="bGb-XY-iYO"/>
