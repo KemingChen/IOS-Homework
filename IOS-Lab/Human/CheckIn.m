@@ -30,11 +30,6 @@
 
 - (void)assignDataWithPoster:(User*)user desc:(NSString*)desc imageURL:(NSString*)imageURL
 {
-    NSLog(@"Assign CheckIn!!!");
-    NSLog(@"%@", user);
-    NSLog(@"%@", desc);
-    NSLog(@"%@", imageURL);
-    NSLog(@"#########################");
     self.user = user;
     self.desc = desc;
     self.imageURL = imageURL;
