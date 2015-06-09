@@ -9,10 +9,6 @@ const struct UserAttributes UserAttributes = {
 	.name = @"name",
 };
 
-const struct UserRelationships UserRelationships = {
-	.checkIn = @"checkIn",
-};
-
 @implementation UserID
 @end
 
@@ -71,8 +67,6 @@ const struct UserRelationships UserRelationships = {
 @dynamic imageURL;
 
 @dynamic name;
-
-@dynamic checkIn;
 
 @end
 
