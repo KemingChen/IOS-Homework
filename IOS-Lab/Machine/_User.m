@@ -9,6 +9,10 @@ const struct UserAttributes UserAttributes = {
 	.name = @"name",
 };
 
+const struct UserRelationships UserRelationships = {
+	.checkIn = @"checkIn",
+};
+
 @implementation UserID
 @end
 
@@ -67,6 +71,17 @@ const struct UserAttributes UserAttributes = {
 @dynamic imageURL;
 
 @dynamic name;
+
+@dynamic checkIn;
+
+- (NSMutableSet*)checkInSet {
+	[self willAccessValueForKey:@"checkIn"];
+
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"checkIn"];
+
+	[self didAccessValueForKey:@"checkIn"];
+	return result;
+}
 
 @end
 

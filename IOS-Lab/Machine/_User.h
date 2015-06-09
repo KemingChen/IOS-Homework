@@ -9,6 +9,12 @@ extern const struct UserAttributes {
 	__unsafe_unretained NSString *name;
 } UserAttributes;
 
+extern const struct UserRelationships {
+	__unsafe_unretained NSString *checkIn;
+} UserRelationships;
+
+@class CheckIn;
+
 @interface UserID : NSManagedObjectID {}
 @end
 
@@ -34,6 +40,18 @@ extern const struct UserAttributes {
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSSet *checkIn;
+
+- (NSMutableSet*)checkInSet;
+
+@end
+
+@interface _User (CheckInCoreDataGeneratedAccessors)
+- (void)addCheckIn:(NSSet*)value_;
+- (void)removeCheckIn:(NSSet*)value_;
+- (void)addCheckInObject:(CheckIn*)value_;
+- (void)removeCheckInObject:(CheckIn*)value_;
+
 @end
 
 @interface _User (CoreDataGeneratedPrimitiveAccessors)
@@ -49,5 +67,8 @@ extern const struct UserAttributes {
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
+
+- (NSMutableSet*)primitiveCheckIn;
+- (void)setPrimitiveCheckIn:(NSMutableSet*)value;
 
 @end
