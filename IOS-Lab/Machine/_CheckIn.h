@@ -5,6 +5,7 @@
 
 extern const struct CheckInAttributes {
 	__unsafe_unretained NSString *desc;
+	__unsafe_unretained NSString *groupId;
 	__unsafe_unretained NSString *identity;
 	__unsafe_unretained NSString *imageURL;
 	__unsafe_unretained NSString *latitude;
@@ -29,6 +30,14 @@ extern const struct CheckInRelationships {
 @property (nonatomic, strong) NSString* desc;
 
 //- (BOOL)validateDesc:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSNumber* groupId;
+
+@property (atomic) int64_t groupIdValue;
+- (int64_t)groupIdValue;
+- (void)setGroupIdValue:(int64_t)value_;
+
+//- (BOOL)validateGroupId:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* identity;
 
@@ -68,6 +77,12 @@ extern const struct CheckInRelationships {
 
 - (NSString*)primitiveDesc;
 - (void)setPrimitiveDesc:(NSString*)value;
+
+- (NSNumber*)primitiveGroupId;
+- (void)setPrimitiveGroupId:(NSNumber*)value;
+
+- (int64_t)primitiveGroupIdValue;
+- (void)setPrimitiveGroupIdValue:(int64_t)value_;
 
 - (NSNumber*)primitiveIdentity;
 - (void)setPrimitiveIdentity:(NSNumber*)value;

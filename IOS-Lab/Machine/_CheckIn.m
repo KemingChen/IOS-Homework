@@ -5,6 +5,7 @@
 
 const struct CheckInAttributes CheckInAttributes = {
 	.desc = @"desc",
+	.groupId = @"groupId",
 	.identity = @"identity",
 	.imageURL = @"imageURL",
 	.latitude = @"latitude",
@@ -41,6 +42,11 @@ const struct CheckInRelationships CheckInRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
+	if ([key isEqualToString:@"groupIdValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"groupId"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 	if ([key isEqualToString:@"identityValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"identity"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -61,6 +67,26 @@ const struct CheckInRelationships CheckInRelationships = {
 }
 
 @dynamic desc;
+
+@dynamic groupId;
+
+- (int64_t)groupIdValue {
+	NSNumber *result = [self groupId];
+	return [result longLongValue];
+}
+
+- (void)setGroupIdValue:(int64_t)value_ {
+	[self setGroupId:[NSNumber numberWithLongLong:value_]];
+}
+
+- (int64_t)primitiveGroupIdValue {
+	NSNumber *result = [self primitiveGroupId];
+	return [result longLongValue];
+}
+
+- (void)setPrimitiveGroupIdValue:(int64_t)value_ {
+	[self setPrimitiveGroupId:[NSNumber numberWithLongLong:value_]];
+}
 
 @dynamic identity;
 
