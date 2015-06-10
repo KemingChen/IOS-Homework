@@ -348,7 +348,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type what you want say..." translatesAutoresizingMaskIntoConstraints="NO" id="F5F-Ky-CpC" userLabel="CheckInDescription">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-Ky-CpC" userLabel="CheckInDescription">
                                 <rect key="frame" x="25" y="313" width="270" height="150"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -356,6 +356,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rbK-Il-2TG" id="ZhL-ac-tuU"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBP-Qw-wBM" userLabel="Submit">
                                 <rect key="frame" x="25" y="468" width="270" height="30"/>
@@ -365,9 +368,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入打卡留言..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-L1-T2P" userLabel="CheckInTextViewPlaceHolder">
+                                <rect key="frame" x="28" y="316" width="270" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="dOo-Vz-iRh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Uco-L1-T2P" firstAttribute="top" secondItem="F5F-Ky-CpC" secondAttribute="top" constant="3" id="3ew-eH-O3o"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="WD3-lE-Qmf" secondAttribute="leading" constant="25" id="7aj-CX-cZg"/>
                             <constraint firstItem="tko-YF-SqG" firstAttribute="top" secondItem="ayh-ns-xmP" secondAttribute="bottom" constant="5" id="BUw-Xd-Vlh"/>
                             <constraint firstItem="GBP-Qw-wBM" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" id="ELR-Vd-B9Z"/>
@@ -376,10 +389,12 @@
                             <constraint firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" constant="25" id="MKo-5p-4G0"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="width" secondItem="F5F-Ky-CpC" secondAttribute="width" id="Ov6-xV-rfh"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" id="PFB-gu-7Zi"/>
+                            <constraint firstItem="Uco-L1-T2P" firstAttribute="width" secondItem="F5F-Ky-CpC" secondAttribute="width" id="PmX-Dr-wQv"/>
                             <constraint firstItem="GBP-Qw-wBM" firstAttribute="top" secondItem="F5F-Ky-CpC" secondAttribute="bottom" constant="5" id="Tfq-Ux-4sN"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="F5F-Ky-CpC" secondAttribute="leading" id="VNY-hf-KZ4"/>
                             <constraint firstItem="mn7-Q2-qaC" firstAttribute="trailing" secondItem="GBP-Qw-wBM" secondAttribute="trailing" id="Xlw-kj-DHI"/>
                             <constraint firstAttribute="trailing" secondItem="tko-YF-SqG" secondAttribute="trailing" constant="5" id="brv-Cq-jtj"/>
+                            <constraint firstItem="Uco-L1-T2P" firstAttribute="leading" secondItem="F5F-Ky-CpC" secondAttribute="leading" constant="3" id="eRc-1P-Yu0"/>
                             <constraint firstItem="GBP-Qw-wBM" firstAttribute="height" secondItem="BX3-Ac-Tnm" secondAttribute="height" id="fwV-SF-jl1"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="width" secondItem="BX3-Ac-Tnm" secondAttribute="width" multiplier="2" constant="5" id="iij-cY-gbi"/>
                             <constraint firstItem="mn7-Q2-qaC" firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" id="kGA-XT-okd"/>
@@ -390,6 +405,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="checkInDescPlaceHolder" destination="Uco-L1-T2P" id="grN-sj-7aZ"/>
                         <outlet property="checkInDescTextField" destination="F5F-Ky-CpC" id="2z4-Gl-24R"/>
                     </connections>
                 </viewController>

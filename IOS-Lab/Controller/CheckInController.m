@@ -46,7 +46,7 @@
                              }];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
     [self.checkInDescTextField resignFirstResponder];
 }
@@ -72,5 +72,21 @@
                          f.origin.y = 0.0f;
                          self.view.frame = f;
                      }];
+}
+
+#pragma mark - TextView Delegate
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    self.checkInDescPlaceHolder.hidden = YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if (![textView hasText]) {
+        self.checkInDescPlaceHolder.hidden = NO;
+    }
+    else {
+        self.checkInDescPlaceHolder.hidden = YES;
+    }
 }
 @end

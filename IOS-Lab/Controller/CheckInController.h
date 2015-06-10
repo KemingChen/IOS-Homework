@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
-@interface CheckInController : ViewController
+@interface CheckInController : ViewController <UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *checkInDescPlaceHolder;
 @property (weak, nonatomic) IBOutlet UITextView *checkInDescTextField;
 
 - (IBAction)clickCloseButton:(id)sender;
