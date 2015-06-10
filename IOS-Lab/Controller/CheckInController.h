@@ -9,5 +9,6 @@
 #import "ViewController.h"
 
 @interface CheckInController : ViewController
+- (IBAction)clickCloseButton:(id)sender;
 
 @end

@@ -294,12 +294,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-458" y="75"/>
+            <point key="canvasLocation" x="-422" y="76"/>
         </scene>
         <!--CheckInController-->
         <scene sceneID="QdG-qd-w8Y">
             <objects>
-                <viewController id="rbK-Il-2TG" userLabel="CheckInController" sceneMemberID="viewController">
+                <viewController id="rbK-Il-2TG" userLabel="CheckInController" customClass="CheckInController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ayh-ns-xmP"/>
                         <viewControllerLayoutGuide type="bottom" id="qk3-3y-lJ5"/>
@@ -307,13 +307,25 @@
                     <view key="view" contentMode="scaleToFill" id="WD3-lE-Qmf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tko-YF-SqG" userLabel="CloseButton">
+                                <rect key="frame" x="258" y="20" width="46" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="X">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickCloseButton:" destination="rbK-Il-2TG" eventType="touchUpInside" id="7B1-yl-wKV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-IV-cju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="136"/>
+            <point key="canvasLocation" x="267" y="283"/>
         </scene>
     </scenes>
 </document>
