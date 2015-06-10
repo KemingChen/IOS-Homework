@@ -248,17 +248,31 @@ bool isOpenSlideMenu = false;
 }
 
 #pragma mark - MKMapView Delegates
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView;
 {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    for (NSArray *day in checkIns) {
+        for (CheckIn *checkIn in day) {
+            // Add an annotation
+            
+            MKPointAnnotation* point = [[MKPointAnnotation alloc] init];
+            CLLocationCoordinate2D coordinate;
+            coordinate.longitude = checkIn.longitudeValue;
+            coordinate.latitude = checkIn.latitudeValue;
+            point.coordinate = coordinate;
+            point.title = checkIn.user.name;
+            point.subtitle = checkIn.desc;
+            
+            [mapView addAnnotation:point];
+        }
+    }
     
-    // Add an annotation
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = userLocation.coordinate;
-    point.title = @"Where am I?";
-    point.subtitle = @"I'm here!!!";
-    
-    [self.mapView addAnnotation:point];
+    MKMapRect zoomRect = MKMapRectNull;
+    for (id <MKAnnotation> annotation in mapView.annotations)
+    {
+        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
+        zoomRect = MKMapRectUnion(zoomRect, pointRect);
+    }
+    [mapView setVisibleMapRect:zoomRect animated:YES];
 }
 @end
