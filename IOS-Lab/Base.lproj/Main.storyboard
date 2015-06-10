@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--MainController-->
@@ -308,8 +309,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tko-YF-SqG" userLabel="CloseButton">
-                                <rect key="frame" x="258" y="20" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tko-YF-SqG" userLabel="CloseButton">
+                                <rect key="frame" x="265" y="25" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="M3I-4m-ceO"/>
+                                    <constraint firstAttribute="width" constant="50" id="tth-YA-fZd"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="X">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -318,14 +323,76 @@
                                     <action selector="clickCloseButton:" destination="rbK-Il-2TG" eventType="touchUpInside" id="7B1-yl-wKV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KGD-1c-eoX" userLabel="CheckInPreviewImageView">
+                                <rect key="frame" x="25" y="63" width="270" height="200"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="jWJ-fy-oK8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX3-Ac-Tnm" userLabel="TakePicture">
+                                <rect key="frame" x="15" y="283" width="135" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="照相">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mn7-Q2-qaC" userLabel="PhotoLibrary">
+                                <rect key="frame" x="170" y="283" width="135" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="相本">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type what you want say..." translatesAutoresizingMaskIntoConstraints="NO" id="F5F-Ky-CpC" userLabel="CheckInDescription">
+                                <rect key="frame" x="25" y="333" width="270" height="150"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="rqY-tH-cWb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBP-Qw-wBM" userLabel="Submit">
+                                <rect key="frame" x="15" y="503" width="290" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="打卡">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="WD3-lE-Qmf" secondAttribute="leading" constant="25" id="7aj-CX-cZg"/>
+                            <constraint firstItem="tko-YF-SqG" firstAttribute="top" secondItem="ayh-ns-xmP" secondAttribute="bottom" constant="5" id="BUw-Xd-Vlh"/>
+                            <constraint firstItem="GBP-Qw-wBM" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" id="ELR-Vd-B9Z"/>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="top" secondItem="tko-YF-SqG" secondAttribute="bottom" constant="8" id="EcC-Q7-GvD"/>
+                            <constraint firstItem="F5F-Ky-CpC" firstAttribute="top" secondItem="BX3-Ac-Tnm" secondAttribute="bottom" constant="20" id="Ive-Ic-8hQ"/>
+                            <constraint firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" constant="25" id="MKo-5p-4G0"/>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="width" secondItem="F5F-Ky-CpC" secondAttribute="width" id="Ov6-xV-rfh"/>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" constant="10" id="PFB-gu-7Zi"/>
+                            <constraint firstItem="GBP-Qw-wBM" firstAttribute="top" secondItem="F5F-Ky-CpC" secondAttribute="bottom" constant="20" id="Tfq-Ux-4sN"/>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="F5F-Ky-CpC" secondAttribute="leading" id="VNY-hf-KZ4"/>
+                            <constraint firstItem="mn7-Q2-qaC" firstAttribute="trailing" secondItem="GBP-Qw-wBM" secondAttribute="trailing" id="Xlw-kj-DHI"/>
+                            <constraint firstAttribute="trailing" secondItem="tko-YF-SqG" secondAttribute="trailing" constant="5" id="brv-Cq-jtj"/>
+                            <constraint firstItem="GBP-Qw-wBM" firstAttribute="height" secondItem="BX3-Ac-Tnm" secondAttribute="height" id="fwV-SF-jl1"/>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="width" secondItem="BX3-Ac-Tnm" secondAttribute="width" multiplier="2" id="iij-cY-gbi"/>
+                            <constraint firstItem="mn7-Q2-qaC" firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" constant="10" id="kGA-XT-okd"/>
+                            <constraint firstItem="mn7-Q2-qaC" firstAttribute="width" secondItem="BX3-Ac-Tnm" secondAttribute="width" id="pVd-3j-0pz"/>
+                            <constraint firstItem="BX3-Ac-Tnm" firstAttribute="top" secondItem="KGD-1c-eoX" secondAttribute="bottom" constant="20" id="q32-0t-mJI"/>
+                            <constraint firstItem="mn7-Q2-qaC" firstAttribute="top" secondItem="KGD-1c-eoX" secondAttribute="bottom" constant="20" id="t0G-C3-lMP"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-IV-cju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="283"/>
+            <point key="canvasLocation" x="9" y="267"/>
         </scene>
     </scenes>
 </document>
