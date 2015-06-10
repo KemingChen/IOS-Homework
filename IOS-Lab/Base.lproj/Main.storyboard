@@ -329,7 +329,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickCloseButton:" destination="rbK-Il-2TG" eventType="touchUpInside" id="7B1-yl-wKV"/>
+                                    <action selector="clickCloseButton:" destination="rbK-Il-2TG" eventType="touchUpInside" id="btp-Pn-zlc"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KGD-1c-eoX" userLabel="CheckInPreviewImageView">
@@ -350,6 +350,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickTakePhoto:" destination="rbK-Il-2TG" eventType="touchUpInside" id="6PW-a4-8fv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mn7-Q2-qaC" userLabel="PhotoLibrary">
                                 <rect key="frame" x="163" y="268" width="132" height="30"/>
@@ -362,6 +365,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickSelectPhoto:" destination="rbK-Il-2TG" eventType="touchUpInside" id="FJI-92-Vju"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-Ky-CpC" userLabel="CheckInDescription">
                                 <rect key="frame" x="25" y="313" width="270" height="150"/>
@@ -425,6 +431,7 @@
                     <connections>
                         <outlet property="checkInDescPlaceHolder" destination="Uco-L1-T2P" id="grN-sj-7aZ"/>
                         <outlet property="checkInDescTextField" destination="F5F-Ky-CpC" id="2z4-Gl-24R"/>
+                        <outlet property="checkInPreviewImageView" destination="KGD-1c-eoX" id="tGi-ss-m6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-IV-cju" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,13 +17,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self initPickerController];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -38,12 +37,31 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)initPickerController
+{
+    self.pickerController = [[UIImagePickerController alloc] init];
+    self.pickerController.delegate = self;
+    self.pickerController.allowsEditing = YES;
+}
+
 #pragma mark - Click Event
 - (IBAction)clickCloseButton:(id)sender
 {
     [self dismissViewControllerAnimated:YES
                              completion:^{
                              }];
+}
+
+- (IBAction)clickTakePhoto:(id)sender
+{
+    self.pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:self.pickerController animated:YES completion:NULL];
+}
+
+- (IBAction)clickSelectPhoto:(id)sender
+{
+    self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:self.pickerController animated:YES completion:NULL];
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
@@ -75,12 +93,12 @@
 }
 
 #pragma mark - TextView Delegate
-- (void)textViewDidBeginEditing:(UITextView *)textView
+- (void)textViewDidBeginEditing:(UITextView*)textView
 {
     self.checkInDescPlaceHolder.hidden = YES;
 }
 
-- (void)textViewDidEndEditing:(UITextView *)textView
+- (void)textViewDidEndEditing:(UITextView*)textView
 {
     if (![textView hasText]) {
         self.checkInDescPlaceHolder.hidden = NO;
@@ -88,5 +106,21 @@
     else {
         self.checkInDescPlaceHolder.hidden = YES;
     }
+}
+
+#pragma mark - UIImagePickerController Delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.checkInPreviewImageView.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 @end

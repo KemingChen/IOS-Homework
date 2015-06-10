@@ -158,7 +158,7 @@ bool isOpenSlideMenu = false;
     NSString* stringFromDate = [formatter stringFromDate:[[DataProvider sharedProvider] dateForSection:section]];
     NSArray* day = checkIns[section];
 
-    return [NSString stringWithFormat:@"%@ , 共 %lu 個", stringFromDate, day.count];
+    return [NSString stringWithFormat:@"%@ , 共 %lu 個", stringFromDate, (unsigned long)day.count];
 }
 
 #pragma mark - Table View Delegate

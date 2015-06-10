@@ -33,7 +33,7 @@ NSMutableArray* checkIns = nil;
     NSMutableDictionary* days = [[NSMutableDictionary alloc] init];
     checkIns = [NSMutableArray array];
     for (CheckIn* checkIn in array) {
-        NSInteger groupId = checkIn.groupIdValue;
+        long long groupId = checkIn.groupIdValue;
         if (![days objectForKey:@(groupId)]) {
             NSMutableArray* day = [NSMutableArray array];
             [checkIns addObject:day];
