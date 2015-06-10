@@ -389,6 +389,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="checkInDescTextField" destination="F5F-Ky-CpC" id="2z4-Gl-24R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-IV-cju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
