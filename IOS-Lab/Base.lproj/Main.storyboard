@@ -331,7 +331,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX3-Ac-Tnm" userLabel="TakePicture">
-                                <rect key="frame" x="15" y="283" width="135" height="30"/>
+                                <rect key="frame" x="25" y="268" width="133" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -340,7 +340,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mn7-Q2-qaC" userLabel="PhotoLibrary">
-                                <rect key="frame" x="170" y="283" width="135" height="30"/>
+                                <rect key="frame" x="163" y="268" width="132" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -349,7 +349,7 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type what you want say..." translatesAutoresizingMaskIntoConstraints="NO" id="F5F-Ky-CpC" userLabel="CheckInDescription">
-                                <rect key="frame" x="25" y="333" width="270" height="150"/>
+                                <rect key="frame" x="25" y="313" width="270" height="150"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="rqY-tH-cWb"/>
@@ -358,7 +358,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBP-Qw-wBM" userLabel="Submit">
-                                <rect key="frame" x="15" y="503" width="290" height="30"/>
+                                <rect key="frame" x="25" y="468" width="270" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="打卡">
@@ -372,20 +372,20 @@
                             <constraint firstItem="tko-YF-SqG" firstAttribute="top" secondItem="ayh-ns-xmP" secondAttribute="bottom" constant="5" id="BUw-Xd-Vlh"/>
                             <constraint firstItem="GBP-Qw-wBM" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" id="ELR-Vd-B9Z"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="top" secondItem="tko-YF-SqG" secondAttribute="bottom" constant="8" id="EcC-Q7-GvD"/>
-                            <constraint firstItem="F5F-Ky-CpC" firstAttribute="top" secondItem="BX3-Ac-Tnm" secondAttribute="bottom" constant="20" id="Ive-Ic-8hQ"/>
+                            <constraint firstItem="F5F-Ky-CpC" firstAttribute="top" secondItem="BX3-Ac-Tnm" secondAttribute="bottom" constant="15" id="Ive-Ic-8hQ"/>
                             <constraint firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" constant="25" id="MKo-5p-4G0"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="width" secondItem="F5F-Ky-CpC" secondAttribute="width" id="Ov6-xV-rfh"/>
-                            <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" constant="10" id="PFB-gu-7Zi"/>
-                            <constraint firstItem="GBP-Qw-wBM" firstAttribute="top" secondItem="F5F-Ky-CpC" secondAttribute="bottom" constant="20" id="Tfq-Ux-4sN"/>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" id="PFB-gu-7Zi"/>
+                            <constraint firstItem="GBP-Qw-wBM" firstAttribute="top" secondItem="F5F-Ky-CpC" secondAttribute="bottom" constant="5" id="Tfq-Ux-4sN"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="F5F-Ky-CpC" secondAttribute="leading" id="VNY-hf-KZ4"/>
                             <constraint firstItem="mn7-Q2-qaC" firstAttribute="trailing" secondItem="GBP-Qw-wBM" secondAttribute="trailing" id="Xlw-kj-DHI"/>
                             <constraint firstAttribute="trailing" secondItem="tko-YF-SqG" secondAttribute="trailing" constant="5" id="brv-Cq-jtj"/>
                             <constraint firstItem="GBP-Qw-wBM" firstAttribute="height" secondItem="BX3-Ac-Tnm" secondAttribute="height" id="fwV-SF-jl1"/>
-                            <constraint firstItem="KGD-1c-eoX" firstAttribute="width" secondItem="BX3-Ac-Tnm" secondAttribute="width" multiplier="2" id="iij-cY-gbi"/>
-                            <constraint firstItem="mn7-Q2-qaC" firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" constant="10" id="kGA-XT-okd"/>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="width" secondItem="BX3-Ac-Tnm" secondAttribute="width" multiplier="2" constant="5" id="iij-cY-gbi"/>
+                            <constraint firstItem="mn7-Q2-qaC" firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" id="kGA-XT-okd"/>
                             <constraint firstItem="mn7-Q2-qaC" firstAttribute="width" secondItem="BX3-Ac-Tnm" secondAttribute="width" id="pVd-3j-0pz"/>
-                            <constraint firstItem="BX3-Ac-Tnm" firstAttribute="top" secondItem="KGD-1c-eoX" secondAttribute="bottom" constant="20" id="q32-0t-mJI"/>
-                            <constraint firstItem="mn7-Q2-qaC" firstAttribute="top" secondItem="KGD-1c-eoX" secondAttribute="bottom" constant="20" id="t0G-C3-lMP"/>
+                            <constraint firstItem="BX3-Ac-Tnm" firstAttribute="top" secondItem="KGD-1c-eoX" secondAttribute="bottom" constant="5" id="q32-0t-mJI"/>
+                            <constraint firstItem="mn7-Q2-qaC" firstAttribute="top" secondItem="KGD-1c-eoX" secondAttribute="bottom" constant="5" id="t0G-C3-lMP"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
