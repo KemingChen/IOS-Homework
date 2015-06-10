@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="MainController" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AVx-H0-2Tf"/>
                         <viewControllerLayoutGuide type="bottom" id="mTo-3S-PkY"/>
@@ -294,12 +294,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="126"/>
+            <point key="canvasLocation" x="-458" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--CheckInController-->
         <scene sceneID="QdG-qd-w8Y">
             <objects>
-                <viewController id="rbK-Il-2TG" sceneMemberID="viewController">
+                <viewController id="rbK-Il-2TG" userLabel="CheckInController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ayh-ns-xmP"/>
                         <viewControllerLayoutGuide type="bottom" id="qk3-3y-lJ5"/>
