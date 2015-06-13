@@ -18,6 +18,9 @@ typedef void (^FinishCallback)(bool success);
 
 static DataProvider* dataProvider = nil;
 
+NSInteger postCheckInIdentity = 100;
+
+User* iUser = nil;
 NSMutableDictionary* users = nil;
 NSMutableArray* checkIns = nil;
 FinishCallback callback = nil;
@@ -44,9 +47,25 @@ FinishCallback callback = nil;
         }
         NSMutableArray* temp = days[@(groupId)];
         [temp addObject:checkIn];
+
+        if (checkIn.identityValue > postCheckInIdentity) {
+            postCheckInIdentity = checkIn.identityValue;
+        }
     }
 
+    iUser = [User userWithIdentity:-1 name:@"我"];
+    [iUser assignUserImagePhoto:[UIImage imageNamed:@"no_photo"]];
+
     return self;
+}
+
+- (void)postCheckInToDataProvider:(UIImage*)photo desc:(NSString*)desc location:(CLLocationCoordinate2D)location
+{
+    CheckIn* checkIn = [CheckIn checkInWithPoster:postCheckInIdentity user:iUser desc:desc];
+    [checkIn assignCheckInImagePhoto:photo];
+    [checkIn assignCheckInLocation:location.longitude latitude:location.latitude];
+    [checkIns[0] addObject:checkIn];
+    [CheckIn save];
 }
 
 - (NSMutableArray*)checkIns
@@ -63,7 +82,8 @@ FinishCallback callback = nil;
 {
     users = [[NSMutableDictionary alloc] init];
     for (NSDictionary* user in userResponse) {
-        User* userObject = [User userWithIdentity:[user[@"id"] integerValue] name:user[@"name"] imageURL:user[@"profile"]];
+        User* userObject = [User userWithIdentity:[user[@"id"] integerValue] name:user[@"name"]];
+        [userObject assignUserImageURL:user[@"profile"]];
         [users setObject:userObject forKey:user[@"id"]];
     }
     [User save];

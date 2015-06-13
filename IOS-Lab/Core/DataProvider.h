@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LocationProvider.h"
 
 @interface DataProvider : NSObject
 
 + (DataProvider*)sharedProvider;
+
+- (void)postCheckInToDataProvider:(UIImage*)photo desc:(NSString*)desc location:(CLLocationCoordinate2D)location;
 
 - (NSMutableArray*)checkIns;
 

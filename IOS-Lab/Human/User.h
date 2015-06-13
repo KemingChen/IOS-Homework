@@ -3,7 +3,7 @@
 
 @interface User : _User {
 }
-+ (User*)userWithIdentity:(NSInteger)identity name:(NSString*)name imageURL:(NSString*)imageURL;
++ (User*)userWithIdentity:(NSInteger)identity name:(NSString*)name;
 + (void)save;
 
 - (void)assignUserImageURL:(NSString*)url;

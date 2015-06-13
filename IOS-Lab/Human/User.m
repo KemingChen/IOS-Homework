@@ -7,7 +7,7 @@
 
 @implementation User
 
-+ (User*)userWithIdentity:(NSInteger)identity name:(NSString*)name imageURL:(NSString*)imageURL
++ (User*)userWithIdentity:(NSInteger)identity name:(NSString*)name
 {
     User* user = nil;
 
@@ -21,7 +21,6 @@
     }
 
     user.identityValue = identity;
-    user.imageURL = imageURL;
     user.name = name;
 
     return user;
