@@ -7,7 +7,6 @@
 @end
 
 @implementation CheckIn
-@synthesize coordinate = _coordinate;
 
 + (CheckIn*)checkInWithPoster:(NSInteger)identity user:(User*)user desc:(NSString*)desc
 {
@@ -33,12 +32,15 @@
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
+- (CLLocationCoordinate2D)coordinate
+{
+    return CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue);
+}
+
 - (void)assignCheckInLocation:(double)longitude latitude:(double)latitude
 {
     self.longitudeValue = longitude;
     self.latitudeValue = latitude;
-
-    _coordinate = CLLocationCoordinate2DMake(latitude, longitude);
 }
 
 - (void)assignCheckInImageURL:(NSString*)url
