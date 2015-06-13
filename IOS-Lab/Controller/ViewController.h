@@ -10,14 +10,14 @@
 #import <MapKit/MapKit.h>
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, MKMapViewDelegate>
-@property (weak, nonatomic) IBOutlet UIView *parentView;
+@property (weak, nonatomic) IBOutlet UIView* parentView;
 @property (weak, nonatomic) IBOutlet UITableView* tableView;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftOffsetConstrain;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *slideMenuButtonWidth;
-@property (weak, nonatomic) IBOutlet UIButton *slideMenuButton;
-@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
+@property (weak, nonatomic) IBOutlet UICollectionView* collectionView;
+@property (weak, nonatomic) IBOutlet MKMapView* mapView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* leftOffsetConstrain;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* slideMenuButtonWidth;
+@property (weak, nonatomic) IBOutlet UIButton* slideMenuButton;
+@property (weak, nonatomic) IBOutlet UILabel* headerTitle;
 
 - (IBAction)clickSlideMenuButton:(id)sender;
 - (IBAction)clickTableViewButton:(id)sender;

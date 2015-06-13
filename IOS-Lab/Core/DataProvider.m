@@ -82,12 +82,12 @@ NSMutableArray* checkIns = nil;
 
             // update CheckIn Image
             [checkInObject assignCheckInImageURL:checkIn[@"image"]];
-            
+
             // update CheckIn Location
             double longitude = [checkIn[@"location"][@"longitude"] doubleValue];
             double latitude = [checkIn[@"location"][@"latitude"] doubleValue];
             [checkInObject assignCheckInLocation:longitude latitude:latitude];
-            
+
             // add CheckIn Object to List
             checkInObject.groupIdValue = groupId;
             [dayObject addObject:checkInObject];

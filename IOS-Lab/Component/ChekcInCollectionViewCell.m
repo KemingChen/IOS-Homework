@@ -15,7 +15,7 @@
 - (void)setCheckIn:(CheckIn*)checkIn
 {
     User* user = checkIn.user;
-    
+
     [user displayPhoto:self.userImageView];
     [checkIn displayPhoto:self.checkInImageView];
 }

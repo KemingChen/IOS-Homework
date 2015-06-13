@@ -30,9 +30,9 @@
 
     [self.userNameView setText:user.name];
     [self.checkInDesView setText:checkIn.desc];
-    
+
     [user displayPhoto:self.userImageView];
-    
+
     [checkIn displayPhoto:self.checkInImageView];
     CGFloat aspectRatioMult = self.checkInImageView.image.size.width / self.checkInImageView.image.size.height;
     self.checkInConstrainHeight.constant = self.checkInImageView.frame.size.width / aspectRatioMult;

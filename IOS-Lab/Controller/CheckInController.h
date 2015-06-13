@@ -10,9 +10,9 @@
 
 @interface CheckInController : ViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UIImagePickerController *pickerController;
-@property (weak, nonatomic) IBOutlet UIImageView *checkInPreviewImageView;
-@property (weak, nonatomic) IBOutlet UILabel *checkInDescPlaceHolder;
-@property (weak, nonatomic) IBOutlet UITextView *checkInDescTextField;
+@property (strong, nonatomic) IBOutlet UIImagePickerController* pickerController;
+@property (weak, nonatomic) IBOutlet UIImageView* checkInPreviewImageView;
+@property (weak, nonatomic) IBOutlet UILabel* checkInDescPlaceHolder;
+@property (weak, nonatomic) IBOutlet UITextView* checkInDescTextField;
 
 @end

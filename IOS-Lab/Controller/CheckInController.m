@@ -109,18 +109,18 @@
 }
 
 #pragma mark - UIImagePickerController Delegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+- (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
+{
+
+    UIImage* chosenImage = info[UIImagePickerControllerEditedImage];
     self.checkInPreviewImageView.image = chosenImage;
-    
+
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
+- (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker
+{
+
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 @end
