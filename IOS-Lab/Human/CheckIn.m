@@ -8,7 +8,7 @@
 
 @implementation CheckIn
 
-+ (CheckIn*)checkInWithPoster:(NSInteger)identity user:(User*)user desc:(NSString*)desc imageURL:(NSString*)imageURL
++ (CheckIn*)checkInWithPoster:(NSInteger)identity user:(User*)user desc:(NSString*)desc
 {
     CheckIn* checkIn = nil;
 
@@ -23,14 +23,11 @@
 
     checkIn.user = user;
     checkIn.desc = desc;
-    checkIn.isPhotoLocalValue = false;
-    checkIn.imageURL = imageURL;
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 
     return checkIn;
 }
 
-+ (CheckIn*)checkInWithMe:(NSInteger)identity desc:(NSString*)desc imagePhoto:(UIImage*)imagePhoto
++ (CheckIn*)checkInWithPoster:(NSInteger)identity user:(User*)user desc:(NSString*)desc imagePhoto:(UIImage*)imagePhoto
 {
     CheckIn* checkIn = nil;
 
@@ -43,6 +40,7 @@
         checkIn = [CheckIn MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
     }
 
+    checkIn.user = user;
     checkIn.desc = desc;
     checkIn.isPhotoLocalValue = true;
     checkIn.imagePhoto = UIImagePNGRepresentation(imagePhoto);
@@ -59,6 +57,18 @@
 {
     self.longitudeValue = longitude;
     self.latitudeValue = latitude;
+}
+
+- (void)assignCheckInImageURL:(NSString*)url
+{
+    self.isPhotoLocalValue = false;
+    self.imageURL = url;
+}
+
+- (void)assignCheckInImagePhoto:(UIImage*)photo
+{
+    self.isPhotoLocalValue = true;
+    self.imagePhoto = UIImagePNGRepresentation(photo);
 }
 
 - (void)displayPhoto:(UIImageView*)view
