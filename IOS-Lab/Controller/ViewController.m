@@ -28,9 +28,16 @@ bool isOpenSlideMenu = false;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [[DataProvider sharedProvider] syncFromServer:^(bool success) {
         [self syncDataComplete:success];
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChangeNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
