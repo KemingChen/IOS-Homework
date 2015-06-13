@@ -8,7 +8,9 @@
 
 #import "CheckInController.h"
 
-@interface CheckInController ()
+@interface CheckInController (){    
+    CLLocation *_currentLocation;
+}
 
 @end
 
@@ -29,6 +31,8 @@
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [[LocationProvider sharedProvider] requestCurrentLocationWithDelegate:self];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -62,6 +66,9 @@
 {
     self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:self.pickerController animated:YES completion:NULL];
+}
+- (IBAction)clickSubmit:(id)sender {
+    
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
@@ -122,5 +129,12 @@
 {
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - LocationProviderDelegate
+- (void)locationProvider:(LocationProvider *)provider provideCurrentLocation:(CLLocation *)location
+{
+    NSLog(@"%@", location);
+    _currentLocation = location;
 }
 @end

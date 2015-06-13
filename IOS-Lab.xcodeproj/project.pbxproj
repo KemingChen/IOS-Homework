@@ -23,6 +23,7 @@
 		7F8CE39D1B00AAB000745463 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8CE39B1B00AAB000745463 /* LaunchScreen.xib */; };
 		7F8CE3A91B00AAB000745463 /* IOS_LabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3A81B00AAB000745463 /* IOS_LabTests.m */; };
 		7FBB8FF31B2C6512007AF033 /* CheckInAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB8FF21B2C6512007AF033 /* CheckInAnnotationView.m */; };
+		7FBB8FF61B2C77B4007AF033 /* LocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB8FF51B2C77B4007AF033 /* LocationProvider.m */; };
 		7FF15BF01B25A74300906AAA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BEE1B25A74300906AAA /* Model.xcdatamodeld */; };
 		7FF15BFB1B25A75000906AAA /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BF31B25A75000906AAA /* CheckIn.m */; };
 		7FF15BFC1B25A75000906AAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BF51B25A75000906AAA /* User.m */; };
@@ -71,6 +72,8 @@
 		7F8CE3A81B00AAB000745463 /* IOS_LabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOS_LabTests.m; sourceTree = "<group>"; };
 		7FBB8FF11B2C6512007AF033 /* CheckInAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInAnnotationView.h; path = Component/CheckInAnnotationView.h; sourceTree = "<group>"; };
 		7FBB8FF21B2C6512007AF033 /* CheckInAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInAnnotationView.m; path = Component/CheckInAnnotationView.m; sourceTree = "<group>"; };
+		7FBB8FF41B2C77B4007AF033 /* LocationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationProvider.h; path = Core/LocationProvider.h; sourceTree = "<group>"; };
+		7FBB8FF51B2C77B4007AF033 /* LocationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationProvider.m; path = Core/LocationProvider.m; sourceTree = "<group>"; };
 		7FDB1A421B25CB700044A034 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7FF15BEF1B25A74300906AAA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7FF15BF21B25A75000906AAA /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 		7F17AB0B1B0EE2C40025CFC6 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				7FBB8FF41B2C77B4007AF033 /* LocationProvider.h */,
+				7FBB8FF51B2C77B4007AF033 /* LocationProvider.m */,
 				7F3EE7161B280ADC00127AAD /* DataProvider.h */,
 				7F3EE7171B280ADC00127AAD /* DataProvider.m */,
 			);
@@ -433,6 +438,7 @@
 			files = (
 				7F3EE7181B280ADC00127AAD /* DataProvider.m in Sources */,
 				7FF15BFE1B25A75000906AAA /* _User.m in Sources */,
+				7FBB8FF61B2C77B4007AF033 /* LocationProvider.m in Sources */,
 				7FF15BFD1B25A75000906AAA /* _CheckIn.m in Sources */,
 				7FBB8FF31B2C6512007AF033 /* CheckInAnnotationView.m in Sources */,
 				7F3EE7121B280ABF00127AAD /* ChekcInCollectionViewCell.m in Sources */,
