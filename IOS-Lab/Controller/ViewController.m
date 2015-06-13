@@ -28,8 +28,6 @@ bool isOpenSlideMenu = false;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.mapView.delegate = self;
-
     [[DataProvider sharedProvider] syncFromServer:^(bool success) {
         [self syncDataComplete:success];
     }];
@@ -56,7 +54,6 @@ bool isOpenSlideMenu = false;
     for (NSArray* day in checkIns) {
         [self.mapView addAnnotations:day];
     }
-    [self fitMap:self.mapView];
 }
 
 - (void)deviceOrientationDidChangeNotification:(NSNotification*)note
@@ -132,6 +129,7 @@ bool isOpenSlideMenu = false;
 
 - (IBAction)clickMapViewButton:(id)sender
 {
+    [self fitMap:self.mapView];
     [self.parentView bringSubviewToFront:self.mapView];
     [self clickSlideMenuButton:nil];
 }
