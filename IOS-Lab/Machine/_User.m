@@ -5,7 +5,9 @@
 
 const struct UserAttributes UserAttributes = {
 	.identity = @"identity",
+	.imagePhoto = @"imagePhoto",
 	.imageURL = @"imageURL",
+	.isPhotoLocal = @"isPhotoLocal",
 	.name = @"name",
 };
 
@@ -44,6 +46,11 @@ const struct UserRelationships UserRelationships = {
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
+	if ([key isEqualToString:@"isPhotoLocalValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"isPhotoLocal"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 
 	return keyPaths;
 }
@@ -68,7 +75,29 @@ const struct UserRelationships UserRelationships = {
 	[self setPrimitiveIdentity:[NSNumber numberWithLongLong:value_]];
 }
 
+@dynamic imagePhoto;
+
 @dynamic imageURL;
+
+@dynamic isPhotoLocal;
+
+- (BOOL)isPhotoLocalValue {
+	NSNumber *result = [self isPhotoLocal];
+	return [result boolValue];
+}
+
+- (void)setIsPhotoLocalValue:(BOOL)value_ {
+	[self setIsPhotoLocal:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitiveIsPhotoLocalValue {
+	NSNumber *result = [self primitiveIsPhotoLocal];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveIsPhotoLocalValue:(BOOL)value_ {
+	[self setPrimitiveIsPhotoLocal:[NSNumber numberWithBool:value_]];
+}
 
 @dynamic name;
 

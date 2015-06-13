@@ -15,11 +15,8 @@
 - (void)setCheckIn:(CheckIn*)checkIn
 {
     User* user = checkIn.user;
-
-    [self.userImageView setImageWithURL:[NSURL URLWithString:user.imageURL] placeholderImage:[UIImage imageNamed:@"brand"]];
-    self.userImageView.layer.cornerRadius = 40.0;
-    self.userImageView.clipsToBounds = YES;
-
+    
+    [user displayPhoto:self.userImageView];
     [checkIn displayPhoto:self.checkInImageView];
 }
 

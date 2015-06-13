@@ -1,10 +1,8 @@
 #import "User.h"
 #import "PrefixHeader.pch"
+#import <UIImageView+AFNetworking.h>
 
 @interface User ()
-
-- (void)assignDataWithIdentity:(NSInteger)identity name:(NSString*)name imageURL:(NSString*)imageURL;
-
 @end
 
 @implementation User
@@ -22,21 +20,40 @@
         user = [User MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
     }
 
-    [user assignDataWithIdentity:identity name:name imageURL:imageURL];
+    user.identityValue = identity;
+    user.imageURL = imageURL;
+    user.name = name;
 
     return user;
 }
 
-- (void)save
++ (void)save
 {
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
-- (void)assignDataWithIdentity:(NSInteger)identity name:(NSString*)name imageURL:(NSString*)imageURL
+- (void)assignUserImageURL:(NSString*)url
 {
-    self.identityValue = identity;
-    self.imageURL = imageURL;
-    self.name = name;
+    self.isPhotoLocalValue = false;
+    self.imageURL = url;
+}
+
+- (void)assignUserImagePhoto:(UIImage*)photo
+{
+    self.isPhotoLocalValue = true;
+    self.imagePhoto = UIImagePNGRepresentation(photo);
+}
+
+- (void)displayPhoto:(UIImageView*)view
+{
+    view.layer.cornerRadius = 40.0;
+    view.clipsToBounds = YES;
+    if (self.isPhotoLocalValue) {
+        [view setImage:[UIImage imageWithData:self.imagePhoto]];
+    }
+    else {
+        [view setImageWithURL:[NSURL URLWithString:self.imageURL] placeholderImage:[UIImage imageNamed:@"brand"]];
+    }
 }
 
 @end

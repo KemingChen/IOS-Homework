@@ -63,6 +63,7 @@ NSMutableArray* checkIns = nil;
         User* userObject = [User userWithIdentity:[user[@"id"] integerValue] name:user[@"name"] imageURL:user[@"profile"]];
         [users setObject:userObject forKey:user[@"id"]];
     }
+    [User save];
 }
 
 - (void)updateCheckIns:(NSArray*)days

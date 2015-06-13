@@ -29,13 +29,10 @@
     User* user = checkIn.user;
 
     [self.userNameView setText:user.name];
-
-    [self.userImageView setImageWithURL:[NSURL URLWithString:user.imageURL] placeholderImage:[UIImage imageNamed:@"brand"]];
-    self.userImageView.layer.cornerRadius = 40.0;
-    self.userImageView.clipsToBounds = YES;
-
     [self.checkInDesView setText:checkIn.desc];
-
+    
+    [user displayPhoto:self.userImageView];
+    
     [checkIn displayPhoto:self.checkInImageView];
     CGFloat aspectRatioMult = self.checkInImageView.image.size.width / self.checkInImageView.image.size.height;
     self.checkInConstrainHeight.constant = self.checkInImageView.frame.size.width / aspectRatioMult;
