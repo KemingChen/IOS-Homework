@@ -7,14 +7,15 @@
 //
 
 #import "CheckInController.h"
+#import <iToast.h>
+#import "CheckIn.h"
 
-@interface CheckInController (){    
-    CLLocation *_currentLocation;
-}
+@interface CheckInController ()
 
 @end
 
 @implementation CheckInController
+CLLocation* _currentLocation = nil;
 
 - (void)viewDidLoad
 {
@@ -31,7 +32,7 @@
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
+
     [[LocationProvider sharedProvider] requestCurrentLocationWithDelegate:self];
 }
 
@@ -67,8 +68,22 @@
     self.pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:self.pickerController animated:YES completion:NULL];
 }
-- (IBAction)clickSubmit:(id)sender {
+- (IBAction)clickSubmit:(id)sender
+{
+    UIImage* checkInImage = self.checkInPreviewImageView.image;
     
+    if (checkInImage == nil) {
+        [[[iToast makeText:NSLocalizedString(@"請選擇一張照片", @"")] setGravity:iToastGravityBottom] show];
+    }
+    else if (![self.checkInDescTextField hasText]){
+        [[[iToast makeText:NSLocalizedString(@"請輸入一段敘述", @"")] setGravity:iToastGravityBottom] show];
+    }
+    else if (_currentLocation == nil){
+        [[[iToast makeText:NSLocalizedString(@"無法抓到您的位置", @"")] setGravity:iToastGravityBottom] show];
+    }
+    else{
+        NSString* desc = self.checkInDescTextField.text;
+    }
 }
 
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
@@ -132,9 +147,8 @@
 }
 
 #pragma mark - LocationProviderDelegate
-- (void)locationProvider:(LocationProvider *)provider provideCurrentLocation:(CLLocation *)location
+- (void)locationProvider:(LocationProvider*)provider provideCurrentLocation:(CLLocation*)location
 {
-    NSLog(@"%@", location);
     _currentLocation = location;
 }
 @end

@@ -4,6 +4,7 @@
 target 'IOS-Lab' do
     pod 'AFNetworking', '~> 2.5'
     pod 'MagicalRecord', '~> 2.3'
+    pod 'iToast', '~> 0.0'
 end
 
 target 'IOS-LabTests' do
