@@ -1,8 +1,11 @@
 #import "_CheckIn.h"
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface CheckIn : _CheckIn {
-}
+@interface CheckIn : _CheckIn <MKAnnotation>
+
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+
 + (CheckIn*)checkInWithPoster:(NSInteger)identity user:(User*)user desc:(NSString*)desc;
 + (void)save;
 

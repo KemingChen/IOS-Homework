@@ -22,6 +22,7 @@
 		7F8CE39A1B00AAB000745463 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8CE3991B00AAB000745463 /* Images.xcassets */; };
 		7F8CE39D1B00AAB000745463 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8CE39B1B00AAB000745463 /* LaunchScreen.xib */; };
 		7F8CE3A91B00AAB000745463 /* IOS_LabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CE3A81B00AAB000745463 /* IOS_LabTests.m */; };
+		7FBB8FF31B2C6512007AF033 /* CheckInAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB8FF21B2C6512007AF033 /* CheckInAnnotationView.m */; };
 		7FF15BF01B25A74300906AAA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BEE1B25A74300906AAA /* Model.xcdatamodeld */; };
 		7FF15BFB1B25A75000906AAA /* CheckIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BF31B25A75000906AAA /* CheckIn.m */; };
 		7FF15BFC1B25A75000906AAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF15BF51B25A75000906AAA /* User.m */; };
@@ -68,6 +69,8 @@
 		7F8CE3A21B00AAB000745463 /* IOS-LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS-LabTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8CE3A71B00AAB000745463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F8CE3A81B00AAB000745463 /* IOS_LabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOS_LabTests.m; sourceTree = "<group>"; };
+		7FBB8FF11B2C6512007AF033 /* CheckInAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInAnnotationView.h; path = Component/CheckInAnnotationView.h; sourceTree = "<group>"; };
+		7FBB8FF21B2C6512007AF033 /* CheckInAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInAnnotationView.m; path = Component/CheckInAnnotationView.m; sourceTree = "<group>"; };
 		7FDB1A421B25CB700044A034 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7FF15BEF1B25A74300906AAA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7FF15BF21B25A75000906AAA /* CheckIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIn.h; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 		7F17AB081B0EE2670025CFC6 /* component */ = {
 			isa = PBXGroup;
 			children = (
+				7FBB8FF01B2C64F5007AF033 /* CheckInAnnotationView */,
 				7F17AB0A1B0EE2AA0025CFC6 /* CheckInTableView */,
 				7F17AB091B0EE27A0025CFC6 /* CheckInCollectionView */,
 			);
@@ -238,6 +242,15 @@
 				7F8CE3A71B00AAB000745463 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FBB8FF01B2C64F5007AF033 /* CheckInAnnotationView */ = {
+			isa = PBXGroup;
+			children = (
+				7FBB8FF11B2C6512007AF033 /* CheckInAnnotationView.h */,
+				7FBB8FF21B2C6512007AF033 /* CheckInAnnotationView.m */,
+			);
+			name = CheckInAnnotationView;
 			sourceTree = "<group>";
 		};
 		7FF15BED1B25A73B00906AAA /* model */ = {
@@ -421,6 +434,7 @@
 				7F3EE7181B280ADC00127AAD /* DataProvider.m in Sources */,
 				7FF15BFE1B25A75000906AAA /* _User.m in Sources */,
 				7FF15BFD1B25A75000906AAA /* _CheckIn.m in Sources */,
+				7FBB8FF31B2C6512007AF033 /* CheckInAnnotationView.m in Sources */,
 				7F3EE7121B280ABF00127AAD /* ChekcInCollectionViewCell.m in Sources */,
 				7FF15BFC1B25A75000906AAA /* User.m in Sources */,
 				7F3EE70C1B2809F000127AAD /* CheckInController.m in Sources */,

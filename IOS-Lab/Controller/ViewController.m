@@ -12,6 +12,7 @@
 #import "ChekcInCollectionViewCell.h"
 #import "CheckIn.h"
 #import "User.h"
+#import "CheckInAnnotationView.h"
 
 @interface ViewController () {
     NSMutableArray* checkIns;
@@ -41,7 +42,21 @@ bool isOpenSlideMenu = false;
         checkIns = [[DataProvider sharedProvider] checkIns];
         [self.tableView reloadData];
         [self.collectionView reloadData];
+        [self updateMapViewAnnotation];
     }
+}
+
+- (void)updateMapViewAnnotation
+{
+    // Clean All Annotations
+    NSMutableArray* annotationsToRemove = [self.mapView.annotations mutableCopy];
+    [self.mapView removeAnnotations:annotationsToRemove];
+
+    // Add All CheckInAnnotations
+    for (NSArray* day in checkIns) {
+        [self.mapView addAnnotations:day];
+    }
+    [self fitMap:self.mapView];
 }
 
 - (void)deviceOrientationDidChangeNotification:(NSNotification*)note
@@ -133,9 +148,6 @@ bool isOpenSlideMenu = false;
     return days.count;
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
-
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* CellIdentitier = @"CheckInCell";
@@ -214,7 +226,6 @@ bool isOpenSlideMenu = false;
     return [checkIns[section] count];
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell*)collectionView:(UICollectionView*)collectionView cellForItemAtIndexPath:(NSIndexPath*)indexPath
 {
     static NSString* CellIdentitier = @"CheckInCell";
@@ -248,31 +259,39 @@ bool isOpenSlideMenu = false;
 }
 
 #pragma mark - MKMapView Delegates
-- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView;
+- (MKAnnotationView*)mapView:(MKMapView*)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    for (NSArray *day in checkIns) {
-        for (CheckIn *checkIn in day) {
-            // Add an annotation
-            
-            MKPointAnnotation* point = [[MKPointAnnotation alloc] init];
-            CLLocationCoordinate2D coordinate;
-            coordinate.longitude = checkIn.longitudeValue;
-            coordinate.latitude = checkIn.latitudeValue;
-            point.coordinate = coordinate;
-            point.title = checkIn.user.name;
-            point.subtitle = checkIn.desc;
-            
-            [mapView addAnnotation:point];
+    if ([annotation isKindOfClass:[CheckIn class]]) {
+        CheckInAnnotationView* annotationView = [[CheckInAnnotationView alloc] initWithAnnotation:annotation];
+        return annotationView;
+    }
+    else {
+        return nil;
+    }
+}
+
+- (void)mapView:(MKMapView*)mapView didAddAnnotationViews:(NSArray*)views
+{
+}
+
+- (void)fitMap:(MKMapView*)mapView;
+{
+    if (mapView.annotations.count > 0) {
+        MKMapRect zoomRect = MKMapRectNull;
+        for (id<MKAnnotation> annotation in mapView.annotations) {
+            MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+            MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 400, 400);
+
+            zoomRect = MKMapRectUnion(zoomRect, pointRect);
         }
+
+        MKCoordinateRegion region = MKCoordinateRegionForMapRect(zoomRect);
+
+        //add padding so pins aren't scrunched on the edges
+        region.span.latitudeDelta *= 1.2f;
+        region.span.longitudeDelta *= 1.2f;
+
+        [mapView setRegion:region animated:YES];
     }
-    
-    MKMapRect zoomRect = MKMapRectNull;
-    for (id <MKAnnotation> annotation in mapView.annotations)
-    {
-        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
-        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
-        zoomRect = MKMapRectUnion(zoomRect, pointRect);
-    }
-    [mapView setVisibleMapRect:zoomRect animated:YES];
 }
 @end

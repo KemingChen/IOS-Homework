@@ -7,6 +7,7 @@
 @end
 
 @implementation CheckIn
+@synthesize coordinate = _coordinate;
 
 + (CheckIn*)checkInWithPoster:(NSInteger)identity user:(User*)user desc:(NSString*)desc
 {
@@ -57,6 +58,8 @@
 {
     self.longitudeValue = longitude;
     self.latitudeValue = latitude;
+
+    _coordinate = CLLocationCoordinate2DMake(latitude, longitude);
 }
 
 - (void)assignCheckInImageURL:(NSString*)url
