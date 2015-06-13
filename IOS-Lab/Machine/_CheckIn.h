@@ -7,7 +7,9 @@ extern const struct CheckInAttributes {
 	__unsafe_unretained NSString *desc;
 	__unsafe_unretained NSString *groupId;
 	__unsafe_unretained NSString *identity;
+	__unsafe_unretained NSString *imagePhoto;
 	__unsafe_unretained NSString *imageURL;
+	__unsafe_unretained NSString *isPhotoLocal;
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
 } CheckInAttributes;
@@ -47,9 +49,21 @@ extern const struct CheckInRelationships {
 
 //- (BOOL)validateIdentity:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSData* imagePhoto;
+
+//- (BOOL)validateImagePhoto:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* imageURL;
 
 //- (BOOL)validateImageURL:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSNumber* isPhotoLocal;
+
+@property (atomic) BOOL isPhotoLocalValue;
+- (BOOL)isPhotoLocalValue;
+- (void)setIsPhotoLocalValue:(BOOL)value_;
+
+//- (BOOL)validateIsPhotoLocal:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* latitude;
 
@@ -90,8 +104,17 @@ extern const struct CheckInRelationships {
 - (int64_t)primitiveIdentityValue;
 - (void)setPrimitiveIdentityValue:(int64_t)value_;
 
+- (NSData*)primitiveImagePhoto;
+- (void)setPrimitiveImagePhoto:(NSData*)value;
+
 - (NSString*)primitiveImageURL;
 - (void)setPrimitiveImageURL:(NSString*)value;
+
+- (NSNumber*)primitiveIsPhotoLocal;
+- (void)setPrimitiveIsPhotoLocal:(NSNumber*)value;
+
+- (BOOL)primitiveIsPhotoLocalValue;
+- (void)setPrimitiveIsPhotoLocalValue:(BOOL)value_;
 
 - (NSNumber*)primitiveLatitude;
 - (void)setPrimitiveLatitude:(NSNumber*)value;

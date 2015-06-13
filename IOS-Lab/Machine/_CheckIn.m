@@ -7,7 +7,9 @@ const struct CheckInAttributes CheckInAttributes = {
 	.desc = @"desc",
 	.groupId = @"groupId",
 	.identity = @"identity",
+	.imagePhoto = @"imagePhoto",
 	.imageURL = @"imageURL",
+	.isPhotoLocal = @"isPhotoLocal",
 	.latitude = @"latitude",
 	.longitude = @"longitude",
 };
@@ -49,6 +51,11 @@ const struct CheckInRelationships CheckInRelationships = {
 	}
 	if ([key isEqualToString:@"identityValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"identity"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"isPhotoLocalValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"isPhotoLocal"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -108,7 +115,29 @@ const struct CheckInRelationships CheckInRelationships = {
 	[self setPrimitiveIdentity:[NSNumber numberWithLongLong:value_]];
 }
 
+@dynamic imagePhoto;
+
 @dynamic imageURL;
+
+@dynamic isPhotoLocal;
+
+- (BOOL)isPhotoLocalValue {
+	NSNumber *result = [self isPhotoLocal];
+	return [result boolValue];
+}
+
+- (void)setIsPhotoLocalValue:(BOOL)value_ {
+	[self setIsPhotoLocal:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitiveIsPhotoLocalValue {
+	NSNumber *result = [self primitiveIsPhotoLocal];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveIsPhotoLocalValue:(BOOL)value_ {
+	[self setPrimitiveIsPhotoLocal:[NSNumber numberWithBool:value_]];
+}
 
 @dynamic latitude;
 

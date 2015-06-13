@@ -23,9 +23,13 @@
     }
 
     [user assignDataWithIdentity:identity name:name imageURL:imageURL];
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 
     return user;
+}
+
+- (void)save
+{
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 - (void)assignDataWithIdentity:(NSInteger)identity name:(NSString*)name imageURL:(NSString*)imageURL

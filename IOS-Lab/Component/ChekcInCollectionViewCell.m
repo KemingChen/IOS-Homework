@@ -20,7 +20,7 @@
     self.userImageView.layer.cornerRadius = 40.0;
     self.userImageView.clipsToBounds = YES;
 
-    [self.checkInImageView setImageWithURL:[NSURL URLWithString:checkIn.imageURL] placeholderImage:[UIImage imageNamed:@"day1_1"]];
+    [checkIn displayPhoto:self.checkInImageView];
 }
 
 @end

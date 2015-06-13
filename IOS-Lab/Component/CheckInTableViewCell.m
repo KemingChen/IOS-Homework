@@ -36,7 +36,7 @@
 
     [self.checkInDesView setText:checkIn.desc];
 
-    [self.checkInImageView setImageWithURL:[NSURL URLWithString:checkIn.imageURL] placeholderImage:[UIImage imageNamed:@"day1_1"]];
+    [checkIn displayPhoto:self.checkInImageView];
     CGFloat aspectRatioMult = self.checkInImageView.image.size.width / self.checkInImageView.image.size.height;
     self.checkInConstrainHeight.constant = self.checkInImageView.frame.size.width / aspectRatioMult;
 }

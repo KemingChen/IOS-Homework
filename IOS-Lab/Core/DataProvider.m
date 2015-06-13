@@ -88,6 +88,7 @@ NSMutableArray* checkIns = nil;
 
         [checkIns addObject:dayObject];
     }
+    [CheckIn save];
 }
 
 - (void)syncFromServer:(void (^)(bool success))complete
