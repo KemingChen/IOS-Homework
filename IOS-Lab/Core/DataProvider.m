@@ -14,10 +14,13 @@
 
 @implementation DataProvider
 
+typedef void (^FinishCallback)(bool success);
+
 static DataProvider* dataProvider = nil;
 
 NSMutableDictionary* users = nil;
 NSMutableArray* checkIns = nil;
+FinishCallback callback = nil;
 
 + (DataProvider*)sharedProvider
 {
@@ -98,8 +101,10 @@ NSMutableArray* checkIns = nil;
     [CheckIn save];
 }
 
-- (void)syncFromServer:(void (^)(bool success))complete
+- (void)syncFromServer:(FinishCallback)complete
 {
+    callback = complete;
+
     complete(YES);
 
     AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];

@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "LocationProvider.h"
 
-@interface CheckInController : ViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, LocationProviderDelegate>
+@interface CheckInController : UIViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, LocationProviderDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImagePickerController* pickerController;
 @property (weak, nonatomic) IBOutlet UIImageView* checkInPreviewImageView;
