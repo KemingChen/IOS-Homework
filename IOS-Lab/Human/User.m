@@ -51,7 +51,7 @@
         [view setImage:[UIImage imageWithData:self.imagePhoto]];
     }
     else {
-        [view setImageWithURL:[NSURL URLWithString:self.imageURL] placeholderImage:[UIImage imageNamed:@"brand"]];
+        [view setImageWithURL:[NSURL URLWithString:self.imageURL] placeholderImage:[UIImage imageNamed:@"loading"]];
     }
 }
 

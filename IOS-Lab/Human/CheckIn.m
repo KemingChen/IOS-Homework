@@ -62,7 +62,7 @@
         [view setImage:[UIImage imageWithData:self.imagePhoto]];
     }
     else {
-        [view setImageWithURL:[NSURL URLWithString:self.imageURL] placeholderImage:[UIImage imageNamed:@"day1_1"]];
+        [view setImageWithURL:[NSURL URLWithString:self.imageURL] placeholderImage:[UIImage imageNamed:@"loading"]];
     }
 }
 
