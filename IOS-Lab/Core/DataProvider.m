@@ -18,7 +18,7 @@ typedef void (^FinishCallback)(bool success);
 
 static DataProvider* dataProvider = nil;
 
-int postCheckInIdentity = 100;
+int postCheckInIdentity = 1000;
 
 User* iUser = nil;
 NSMutableDictionary* users = nil;
@@ -61,7 +61,7 @@ FinishCallback callback = nil;
         NSMutableArray* temp = days[@(dayId)];
         [temp addObject:checkIn];
         
-        if (checkIn.identityValue > postCheckInIdentity) {
+        if (checkIn.identityValue >= postCheckInIdentity) {
             postCheckInIdentity = [checkIn.identity integerValue];
         }
     }
@@ -69,6 +69,7 @@ FinishCallback callback = nil;
 
 - (void)postCheckInToDataProvider:(UIImage*)photo desc:(NSString*)desc location:(CLLocationCoordinate2D)location
 {
+    postCheckInIdentity++;
     CheckIn* checkIn = [CheckIn checkInWithPoster:postCheckInIdentity user:iUser desc:desc];
     [checkIn assignCheckInImagePhoto:photo];
     [checkIn assignCheckInLocation:location.longitude latitude:location.latitude];
