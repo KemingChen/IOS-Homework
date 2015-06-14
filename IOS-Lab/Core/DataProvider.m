@@ -35,7 +35,20 @@ FinishCallback callback = nil;
 
 - (DataProvider*)init
 {
-    NSArray* array = [NSMutableArray arrayWithArray:[CheckIn MR_findAllInContext:[NSManagedObjectContext MR_defaultContext]]];
+    [self loadLocalCheckIns];
+
+    iUser = [User userWithIdentity:-1 name:@"我"];
+    [iUser assignUserImagePhoto:[UIImage imageNamed:@"no_photo"]];
+
+    return self;
+}
+
+- (void)loadLocalCheckIns
+{
+    checkIns = [[NSMutableArray alloc] init];
+    users = [[NSMutableDictionary alloc] init];
+    
+    NSArray* array = [NSMutableArray arrayWithArray:[CheckIn MR_findAllSortedBy:@"identity" ascending:false inContext:[NSManagedObjectContext MR_defaultContext]]];
     NSMutableDictionary* days = [[NSMutableDictionary alloc] init];
     checkIns = [NSMutableArray array];
     for (CheckIn* checkIn in array) {
@@ -47,16 +60,11 @@ FinishCallback callback = nil;
         }
         NSMutableArray* temp = days[@(dayId)];
         [temp addObject:checkIn];
-
+        
         if (checkIn.identityValue > postCheckInIdentity) {
             postCheckInIdentity = [checkIn.identity integerValue];
         }
     }
-
-    iUser = [User userWithIdentity:-1 name:@"我"];
-    [iUser assignUserImagePhoto:[UIImage imageNamed:@"no_photo"]];
-
-    return self;
 }
 
 - (void)postCheckInToDataProvider:(UIImage*)photo desc:(NSString*)desc location:(CLLocationCoordinate2D)location
@@ -67,7 +75,7 @@ FinishCallback callback = nil;
     [checkIns[0] addObject:checkIn];
     checkIn.dayIdValue = 0;
     [CheckIn save];
-    
+
     callback(YES);
 }
 
@@ -78,12 +86,11 @@ FinishCallback callback = nil;
 
 - (NSDate*)dateForSection:(NSInteger)section
 {
-    return [NSDate dateWithTimeIntervalSinceNow:(section * 86400)];
+    return [NSDate dateWithTimeIntervalSinceNow:(([checkIns count] - 1 - section) * 86400)];
 }
 
 - (void)updateUsers:(NSArray*)userResponse
 {
-    users = [[NSMutableDictionary alloc] init];
     for (NSDictionary* user in userResponse) {
         User* userObject = [User userWithIdentity:[user[@"id"] integerValue] name:user[@"name"]];
         [userObject assignUserImageURL:user[@"profile"]];
@@ -94,13 +101,8 @@ FinishCallback callback = nil;
 
 - (void)updateCheckIns:(NSArray*)days
 {
-    checkIns = [[NSMutableArray alloc] init];
-
     int dayId = 0;
     for (NSArray* day in days) {
-        NSMutableArray* dayObject = [NSMutableArray array];
-
-
         for (NSDictionary* checkIn in day) {
             User* user = users[checkIn[@"poster"]];
             CheckIn* checkInObject = [CheckIn checkInWithPoster:[checkIn[@"id"] integerValue] user:user desc:checkIn[@"desc"]];
@@ -114,14 +116,17 @@ FinishCallback callback = nil;
             [checkInObject assignCheckInLocation:longitude latitude:latitude];
 
             // add CheckIn Object to List
-            [dayObject addObject:checkInObject];
             checkInObject.dayIdValue = dayId;
         }
 
-        [checkIns addObject:dayObject];
         dayId++;
     }
     [CheckIn save];
+    
+    [self loadLocalCheckIns];
+    if (callback != nil) {
+        callback(YES);
+    }
 }
 
 - (void)syncFromServer:(FinishCallback)complete
@@ -140,8 +145,6 @@ FinishCallback callback = nil;
                 parameters:nil
                 success:^(AFHTTPRequestOperation* operation, id responseObject) {
                     [self updateCheckIns:responseObject];
-                    NSLog(@"update finish");
-                    complete(YES);
 
                 }
                 failure:^(AFHTTPRequestOperation* operation, NSError* error) {
