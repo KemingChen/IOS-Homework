@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F16074C1B2DC44A009BD810 /* MotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F16074B1B2DC44A009BD810 /* MotionManager.m */; };
+		7F16074E1B2DC466009BD810 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F16074D1B2DC466009BD810 /* CoreMotion.framework */; };
 		7F1F65121B27416C00BC3747 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1F65111B27416C00BC3747 /* MapKit.framework */; };
 		7F1F65141B27455600BC3747 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1F65131B27455600BC3747 /* CoreLocation.framework */; };
 		7F3EE70C1B2809F000127AAD /* CheckInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3EE70B1B2809F000127AAD /* CheckInController.m */; };
@@ -45,6 +47,9 @@
 /* Begin PBXFileReference section */
 		5AA1AB6A700B9816C821CB88 /* Pods-IOS-Lab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS-Lab.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOS-Lab/Pods-IOS-Lab.release.xcconfig"; sourceTree = "<group>"; };
 		5FFCBC9180DF265BDB9285A7 /* libPods-IOS-Lab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOS-Lab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F16074A1B2DC44A009BD810 /* MotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionManager.h; path = Core/MotionManager.h; sourceTree = "<group>"; };
+		7F16074B1B2DC44A009BD810 /* MotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionManager.m; path = Core/MotionManager.m; sourceTree = "<group>"; };
+		7F16074D1B2DC466009BD810 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7F1F65111B27416C00BC3747 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7F1F65131B27455600BC3747 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7F3EE70A1B2809F000127AAD /* CheckInController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInController.h; path = Controller/CheckInController.h; sourceTree = "<group>"; };
@@ -92,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F16074E1B2DC466009BD810 /* CoreMotion.framework in Frameworks */,
 				7F1F65141B27455600BC3747 /* CoreLocation.framework in Frameworks */,
 				7F1F65121B27416C00BC3747 /* MapKit.framework in Frameworks */,
 				BC17E772C38167C0BFDC20DD /* libPods-IOS-Lab.a in Frameworks */,
@@ -148,6 +154,8 @@
 		7F17AB0B1B0EE2C40025CFC6 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				7F16074A1B2DC44A009BD810 /* MotionManager.h */,
+				7F16074B1B2DC44A009BD810 /* MotionManager.m */,
 				7FBB8FF41B2C77B4007AF033 /* LocationProvider.h */,
 				7FBB8FF51B2C77B4007AF033 /* LocationProvider.m */,
 				7F3EE7161B280ADC00127AAD /* DataProvider.h */,
@@ -293,6 +301,7 @@
 		9633C467DC3AB06611E6C811 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F16074D1B2DC466009BD810 /* CoreMotion.framework */,
 				7F1F65131B27455600BC3747 /* CoreLocation.framework */,
 				7F1F65111B27416C00BC3747 /* MapKit.framework */,
 				5FFCBC9180DF265BDB9285A7 /* libPods-IOS-Lab.a */,
@@ -447,6 +456,7 @@
 				7F8CE38F1B00AAB000745463 /* AppDelegate.m in Sources */,
 				7F3EE7151B280ACF00127AAD /* ViewController.m in Sources */,
 				7F8CE3921B00AAB000745463 /* IOS_Lab.xcdatamodeld in Sources */,
+				7F16074C1B2DC44A009BD810 /* MotionManager.m in Sources */,
 				7FF15BF01B25A74300906AAA /* Model.xcdatamodeld in Sources */,
 				7F8CE38C1B00AAB000745463 /* main.m in Sources */,
 				7FF15BFB1B25A75000906AAA /* CheckIn.m in Sources */,
