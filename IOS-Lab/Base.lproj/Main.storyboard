@@ -333,14 +333,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KGD-1c-eoX" userLabel="CheckInPreviewImageView">
-                                <rect key="frame" x="25" y="63" width="270" height="200"/>
+                                <rect key="frame" x="20" y="63" width="280" height="150"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="jWJ-fy-oK8"/>
+                                    <constraint firstAttribute="height" constant="150" id="jWJ-fy-oK8"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BX3-Ac-Tnm" userLabel="TakePicture">
-                                <rect key="frame" x="25" y="268" width="133" height="30"/>
+                                <rect key="frame" x="20" y="218" width="138" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -355,7 +355,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mn7-Q2-qaC" userLabel="PhotoLibrary">
-                                <rect key="frame" x="163" y="268" width="132" height="30"/>
+                                <rect key="frame" x="163" y="218" width="137" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -370,10 +370,10 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5F-Ky-CpC" userLabel="CheckInDescription">
-                                <rect key="frame" x="25" y="313" width="270" height="150"/>
+                                <rect key="frame" x="20" y="263" width="280" height="100"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="rqY-tH-cWb"/>
+                                    <constraint firstAttribute="height" constant="100" id="rqY-tH-cWb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -382,7 +382,7 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBP-Qw-wBM" userLabel="Submit">
-                                <rect key="frame" x="25" y="468" width="270" height="30"/>
+                                <rect key="frame" x="20" y="368" width="280" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="打卡">
@@ -396,7 +396,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請輸入打卡留言..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-L1-T2P" userLabel="CheckInTextViewPlaceHolder">
-                                <rect key="frame" x="28" y="316" width="270" height="25"/>
+                                <rect key="frame" x="23" y="266" width="280" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="dOo-Vz-iRh"/>
                                 </constraints>
@@ -408,12 +408,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Uco-L1-T2P" firstAttribute="top" secondItem="F5F-Ky-CpC" secondAttribute="top" constant="3" id="3ew-eH-O3o"/>
-                            <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="WD3-lE-Qmf" secondAttribute="leading" constant="25" id="7aj-CX-cZg"/>
+                            <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="WD3-lE-Qmf" secondAttribute="leading" constant="20" id="7aj-CX-cZg"/>
                             <constraint firstItem="tko-YF-SqG" firstAttribute="top" secondItem="ayh-ns-xmP" secondAttribute="bottom" constant="5" id="BUw-Xd-Vlh"/>
                             <constraint firstItem="GBP-Qw-wBM" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" id="ELR-Vd-B9Z"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="top" secondItem="tko-YF-SqG" secondAttribute="bottom" constant="8" id="EcC-Q7-GvD"/>
                             <constraint firstItem="F5F-Ky-CpC" firstAttribute="top" secondItem="BX3-Ac-Tnm" secondAttribute="bottom" constant="15" id="Ive-Ic-8hQ"/>
-                            <constraint firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" constant="25" id="MKo-5p-4G0"/>
+                            <constraint firstAttribute="trailing" secondItem="KGD-1c-eoX" secondAttribute="trailing" constant="20" id="MKo-5p-4G0"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="width" secondItem="F5F-Ky-CpC" secondAttribute="width" id="Ov6-xV-rfh"/>
                             <constraint firstItem="KGD-1c-eoX" firstAttribute="leading" secondItem="BX3-Ac-Tnm" secondAttribute="leading" id="PFB-gu-7Zi"/>
                             <constraint firstItem="Uco-L1-T2P" firstAttribute="width" secondItem="F5F-Ky-CpC" secondAttribute="width" id="PmX-Dr-wQv"/>
@@ -435,6 +435,7 @@
                         <outlet property="checkInDescPlaceHolder" destination="Uco-L1-T2P" id="grN-sj-7aZ"/>
                         <outlet property="checkInDescTextField" destination="F5F-Ky-CpC" id="2z4-Gl-24R"/>
                         <outlet property="checkInPreviewImageView" destination="KGD-1c-eoX" id="tGi-ss-m6q"/>
+                        <outlet property="previewImageViewHeightConstraint" destination="jWJ-fy-oK8" id="CWB-ZT-oh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1A-IV-cju" userLabel="First Responder" sceneMemberID="firstResponder"/>

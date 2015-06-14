@@ -11,6 +11,7 @@
 
 @interface CheckInController : UIViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, LocationProviderDelegate>
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *previewImageViewHeightConstraint;
 @property (strong, nonatomic) IBOutlet UIImagePickerController* pickerController;
 @property (weak, nonatomic) IBOutlet UIImageView* checkInPreviewImageView;
 @property (weak, nonatomic) IBOutlet UILabel* checkInDescPlaceHolder;

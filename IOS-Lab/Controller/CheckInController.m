@@ -72,19 +72,19 @@ CLLocation* _currentLocation = nil;
 - (IBAction)clickSubmit:(id)sender
 {
     UIImage* checkInImage = self.checkInPreviewImageView.image;
-    
+
     if (checkInImage == nil) {
         [[[iToast makeText:NSLocalizedString(@"請選擇一張照片", @"")] setGravity:iToastGravityBottom] show];
     }
-    else if (![self.checkInDescTextField hasText]){
+    else if (![self.checkInDescTextField hasText]) {
         [[[iToast makeText:NSLocalizedString(@"請輸入一段敘述", @"")] setGravity:iToastGravityBottom] show];
     }
-    else if (_currentLocation == nil){
+    else if (_currentLocation == nil) {
         [[[iToast makeText:NSLocalizedString(@"無法抓到您的位置", @"")] setGravity:iToastGravityBottom] show];
     }
-    else{
+    else {
         NSString* desc = self.checkInDescTextField.text;
-        [[DataProvider sharedProvider]postCheckInToDataProvider:checkInImage desc:desc location:[_currentLocation coordinate]];
+        [[DataProvider sharedProvider] postCheckInToDataProvider:checkInImage desc:desc location:[_currentLocation coordinate]];
         [self touchesBegan:nil withEvent:nil];
         [self clickCloseButton:nil];
     }
@@ -140,6 +140,8 @@ CLLocation* _currentLocation = nil;
 
     UIImage* chosenImage = info[UIImagePickerControllerEditedImage];
     self.checkInPreviewImageView.image = chosenImage;
+    CGFloat aspectRatioMult = self.checkInPreviewImageView.image.size.width / self.checkInPreviewImageView.image.size.height;
+    self.previewImageViewHeightConstraint.constant = self.checkInPreviewImageView.frame.size.width / aspectRatioMult;
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
