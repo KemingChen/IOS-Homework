@@ -20,7 +20,8 @@
     else {
         checkIn = [CheckIn MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
     }
-
+    
+    checkIn.identityValue = identity;
     checkIn.user = user;
     checkIn.desc = desc;
 
