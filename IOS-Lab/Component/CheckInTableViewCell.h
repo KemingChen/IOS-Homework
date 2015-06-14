@@ -16,6 +16,11 @@
 @property (weak, nonatomic) IBOutlet UILabel* checkInDesView;
 @property (weak, nonatomic) IBOutlet UIImageView* checkInImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* checkInConstrainHeight;
+@property (weak, nonatomic) IBOutlet UILabel *motionX;
+@property (weak, nonatomic) IBOutlet UILabel *motionY;
+@property (weak, nonatomic) IBOutlet UILabel *motionZ;
+@property (weak, nonatomic) IBOutlet UILabel *longitude;
+@property (weak, nonatomic) IBOutlet UILabel *latitude;
 
 - (void)setCheckIn:(CheckIn*)checkIn;
 
