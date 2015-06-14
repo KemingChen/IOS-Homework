@@ -85,6 +85,7 @@ CLLocation* _currentLocation = nil;
     else{
         NSString* desc = self.checkInDescTextField.text;
         [[DataProvider sharedProvider]postCheckInToDataProvider:checkInImage desc:desc location:[_currentLocation coordinate]];
+        [self touchesBegan:nil withEvent:nil];
         [self clickCloseButton:nil];
     }
 }
