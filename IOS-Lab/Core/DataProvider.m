@@ -37,8 +37,8 @@ FinishCallback callback = nil;
 {
     [self loadLocalCheckIns];
 
-    iUser = [User userWithIdentity:-1 name:@"我"];
-    [iUser assignUserImagePhoto:[UIImage imageNamed:@"no_photo"]];
+    iUser = [User userWithIdentity:-1 name:@"KemingChen"];
+    [iUser assignUserImagePhoto:[UIImage imageNamed:@"KemingChen"]];
 
     return self;
 }
