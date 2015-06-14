@@ -12,6 +12,9 @@ extern const struct CheckInAttributes {
 	__unsafe_unretained NSString *isPhotoLocal;
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
+	__unsafe_unretained NSString *motionX;
+	__unsafe_unretained NSString *motionY;
+	__unsafe_unretained NSString *motionZ;
 } CheckInAttributes;
 
 extern const struct CheckInRelationships {
@@ -81,6 +84,30 @@ extern const struct CheckInRelationships {
 
 //- (BOOL)validateLongitude:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSNumber* motionX;
+
+@property (atomic) double motionXValue;
+- (double)motionXValue;
+- (void)setMotionXValue:(double)value_;
+
+//- (BOOL)validateMotionX:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSNumber* motionY;
+
+@property (atomic) double motionYValue;
+- (double)motionYValue;
+- (void)setMotionYValue:(double)value_;
+
+//- (BOOL)validateMotionY:(id*)value_ error:(NSError**)error_;
+
+@property (nonatomic, strong) NSNumber* motionZ;
+
+@property (atomic) double motionZValue;
+- (double)motionZValue;
+- (void)setMotionZValue:(double)value_;
+
+//- (BOOL)validateMotionZ:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) User *user;
 
 //- (BOOL)validateUser:(id*)value_ error:(NSError**)error_;
@@ -127,6 +154,24 @@ extern const struct CheckInRelationships {
 
 - (double)primitiveLongitudeValue;
 - (void)setPrimitiveLongitudeValue:(double)value_;
+
+- (NSNumber*)primitiveMotionX;
+- (void)setPrimitiveMotionX:(NSNumber*)value;
+
+- (double)primitiveMotionXValue;
+- (void)setPrimitiveMotionXValue:(double)value_;
+
+- (NSNumber*)primitiveMotionY;
+- (void)setPrimitiveMotionY:(NSNumber*)value;
+
+- (double)primitiveMotionYValue;
+- (void)setPrimitiveMotionYValue:(double)value_;
+
+- (NSNumber*)primitiveMotionZ;
+- (void)setPrimitiveMotionZ:(NSNumber*)value;
+
+- (double)primitiveMotionZValue;
+- (void)setPrimitiveMotionZValue:(double)value_;
 
 - (User*)primitiveUser;
 - (void)setPrimitiveUser:(User*)value;

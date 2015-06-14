@@ -20,7 +20,7 @@
     else {
         checkIn = [CheckIn MR_createEntityInContext:[NSManagedObjectContext MR_defaultContext]];
     }
-    
+
     checkIn.identityValue = identity;
     checkIn.user = user;
     checkIn.desc = desc;
@@ -42,6 +42,13 @@
 {
     self.longitudeValue = longitude;
     self.latitudeValue = latitude;
+}
+
+- (void)assignCheckInMotion:(double)x y:(double)y z:(double)z
+{
+    self.motionXValue = x;
+    self.motionYValue = y;
+    self.motionZValue = z;
 }
 
 - (void)assignCheckInImageURL:(NSString*)url

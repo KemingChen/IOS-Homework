@@ -12,6 +12,9 @@ const struct CheckInAttributes CheckInAttributes = {
 	.isPhotoLocal = @"isPhotoLocal",
 	.latitude = @"latitude",
 	.longitude = @"longitude",
+	.motionX = @"motionX",
+	.motionY = @"motionY",
+	.motionZ = @"motionZ",
 };
 
 const struct CheckInRelationships CheckInRelationships = {
@@ -66,6 +69,21 @@ const struct CheckInRelationships CheckInRelationships = {
 	}
 	if ([key isEqualToString:@"longitudeValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"longitude"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"motionXValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"motionX"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"motionYValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"motionY"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
+	if ([key isEqualToString:@"motionZValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"motionZ"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -177,6 +195,66 @@ const struct CheckInRelationships CheckInRelationships = {
 
 - (void)setPrimitiveLongitudeValue:(double)value_ {
 	[self setPrimitiveLongitude:[NSNumber numberWithDouble:value_]];
+}
+
+@dynamic motionX;
+
+- (double)motionXValue {
+	NSNumber *result = [self motionX];
+	return [result doubleValue];
+}
+
+- (void)setMotionXValue:(double)value_ {
+	[self setMotionX:[NSNumber numberWithDouble:value_]];
+}
+
+- (double)primitiveMotionXValue {
+	NSNumber *result = [self primitiveMotionX];
+	return [result doubleValue];
+}
+
+- (void)setPrimitiveMotionXValue:(double)value_ {
+	[self setPrimitiveMotionX:[NSNumber numberWithDouble:value_]];
+}
+
+@dynamic motionY;
+
+- (double)motionYValue {
+	NSNumber *result = [self motionY];
+	return [result doubleValue];
+}
+
+- (void)setMotionYValue:(double)value_ {
+	[self setMotionY:[NSNumber numberWithDouble:value_]];
+}
+
+- (double)primitiveMotionYValue {
+	NSNumber *result = [self primitiveMotionY];
+	return [result doubleValue];
+}
+
+- (void)setPrimitiveMotionYValue:(double)value_ {
+	[self setPrimitiveMotionY:[NSNumber numberWithDouble:value_]];
+}
+
+@dynamic motionZ;
+
+- (double)motionZValue {
+	NSNumber *result = [self motionZ];
+	return [result doubleValue];
+}
+
+- (void)setMotionZValue:(double)value_ {
+	[self setMotionZ:[NSNumber numberWithDouble:value_]];
+}
+
+- (double)primitiveMotionZValue {
+	NSNumber *result = [self primitiveMotionZ];
+	return [result doubleValue];
+}
+
+- (void)setPrimitiveMotionZValue:(double)value_ {
+	[self setPrimitiveMotionZ:[NSNumber numberWithDouble:value_]];
 }
 
 @dynamic user;
