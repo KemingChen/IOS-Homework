@@ -18,7 +18,7 @@ typedef void (^FinishCallback)(bool success);
 
 static DataProvider* dataProvider = nil;
 
-NSInteger postCheckInIdentity = 100;
+int postCheckInIdentity = 100;
 
 User* iUser = nil;
 NSMutableDictionary* users = nil;
@@ -49,7 +49,7 @@ FinishCallback callback = nil;
         [temp addObject:checkIn];
 
         if (checkIn.identityValue > postCheckInIdentity) {
-            postCheckInIdentity = checkIn.identityValue;
+            postCheckInIdentity = [checkIn.identity integerValue];
         }
     }
 
@@ -65,7 +65,10 @@ FinishCallback callback = nil;
     [checkIn assignCheckInImagePhoto:photo];
     [checkIn assignCheckInLocation:location.longitude latitude:location.latitude];
     [checkIns[0] addObject:checkIn];
+    checkIn.groupId = @(1);
     [CheckIn save];
+    
+    callback(YES);
 }
 
 - (NSMutableArray*)checkIns

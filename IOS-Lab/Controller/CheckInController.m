@@ -9,6 +9,7 @@
 #import "CheckInController.h"
 #import <iToast.h>
 #import "CheckIn.h"
+#import "DataProvider.h"
 
 @interface CheckInController ()
 
@@ -83,6 +84,8 @@ CLLocation* _currentLocation = nil;
     }
     else{
         NSString* desc = self.checkInDescTextField.text;
+        [[DataProvider sharedProvider]postCheckInToDataProvider:checkInImage desc:desc location:[_currentLocation coordinate]];
+        [self clickCloseButton:nil];
     }
 }
 
