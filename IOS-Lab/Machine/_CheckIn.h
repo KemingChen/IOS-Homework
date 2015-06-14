@@ -4,8 +4,8 @@
 #import <CoreData/CoreData.h>
 
 extern const struct CheckInAttributes {
+	__unsafe_unretained NSString *dayId;
 	__unsafe_unretained NSString *desc;
-	__unsafe_unretained NSString *groupId;
 	__unsafe_unretained NSString *identity;
 	__unsafe_unretained NSString *imagePhoto;
 	__unsafe_unretained NSString *imageURL;
@@ -29,17 +29,17 @@ extern const struct CheckInRelationships {
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) CheckInID* objectID;
 
+@property (nonatomic, strong) NSNumber* dayId;
+
+@property (atomic) int64_t dayIdValue;
+- (int64_t)dayIdValue;
+- (void)setDayIdValue:(int64_t)value_;
+
+//- (BOOL)validateDayId:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSString* desc;
 
 //- (BOOL)validateDesc:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, strong) NSNumber* groupId;
-
-@property (atomic) int64_t groupIdValue;
-- (int64_t)groupIdValue;
-- (void)setGroupIdValue:(int64_t)value_;
-
-//- (BOOL)validateGroupId:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSNumber* identity;
 
@@ -89,14 +89,14 @@ extern const struct CheckInRelationships {
 
 @interface _CheckIn (CoreDataGeneratedPrimitiveAccessors)
 
+- (NSNumber*)primitiveDayId;
+- (void)setPrimitiveDayId:(NSNumber*)value;
+
+- (int64_t)primitiveDayIdValue;
+- (void)setPrimitiveDayIdValue:(int64_t)value_;
+
 - (NSString*)primitiveDesc;
 - (void)setPrimitiveDesc:(NSString*)value;
-
-- (NSNumber*)primitiveGroupId;
-- (void)setPrimitiveGroupId:(NSNumber*)value;
-
-- (int64_t)primitiveGroupIdValue;
-- (void)setPrimitiveGroupIdValue:(int64_t)value_;
 
 - (NSNumber*)primitiveIdentity;
 - (void)setPrimitiveIdentity:(NSNumber*)value;

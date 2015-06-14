@@ -39,13 +39,13 @@ FinishCallback callback = nil;
     NSMutableDictionary* days = [[NSMutableDictionary alloc] init];
     checkIns = [NSMutableArray array];
     for (CheckIn* checkIn in array) {
-        long long groupId = checkIn.groupIdValue;
-        if (![days objectForKey:@(groupId)]) {
+        long long dayId = checkIn.dayIdValue;
+        if (![days objectForKey:@(dayId)]) {
             NSMutableArray* day = [NSMutableArray array];
             [checkIns addObject:day];
-            [days setObject:day forKey:@(groupId)];
+            [days setObject:day forKey:@(dayId)];
         }
-        NSMutableArray* temp = days[@(groupId)];
+        NSMutableArray* temp = days[@(dayId)];
         [temp addObject:checkIn];
 
         if (checkIn.identityValue > postCheckInIdentity) {
@@ -65,7 +65,7 @@ FinishCallback callback = nil;
     [checkIn assignCheckInImagePhoto:photo];
     [checkIn assignCheckInLocation:location.longitude latitude:location.latitude];
     [checkIns[0] addObject:checkIn];
-    checkIn.groupId = @(1);
+    checkIn.dayIdValue = 0;
     [CheckIn save];
     
     callback(YES);
@@ -96,11 +96,10 @@ FinishCallback callback = nil;
 {
     checkIns = [[NSMutableArray alloc] init];
 
-    int groupId = 0;
+    int dayId = 0;
     for (NSArray* day in days) {
         NSMutableArray* dayObject = [NSMutableArray array];
 
-        groupId++;
 
         for (NSDictionary* checkIn in day) {
             User* user = users[checkIn[@"poster"]];
@@ -115,11 +114,12 @@ FinishCallback callback = nil;
             [checkInObject assignCheckInLocation:longitude latitude:latitude];
 
             // add CheckIn Object to List
-            checkInObject.groupIdValue = groupId;
             [dayObject addObject:checkInObject];
+            checkInObject.dayIdValue = dayId;
         }
 
         [checkIns addObject:dayObject];
+        dayId++;
     }
     [CheckIn save];
 }

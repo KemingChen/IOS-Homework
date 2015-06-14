@@ -4,8 +4,8 @@
 #import "_CheckIn.h"
 
 const struct CheckInAttributes CheckInAttributes = {
+	.dayId = @"dayId",
 	.desc = @"desc",
-	.groupId = @"groupId",
 	.identity = @"identity",
 	.imagePhoto = @"imagePhoto",
 	.imageURL = @"imageURL",
@@ -44,8 +44,8 @@ const struct CheckInRelationships CheckInRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
-	if ([key isEqualToString:@"groupIdValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"groupId"];
+	if ([key isEqualToString:@"dayIdValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"dayId"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -73,27 +73,27 @@ const struct CheckInRelationships CheckInRelationships = {
 	return keyPaths;
 }
 
+@dynamic dayId;
+
+- (int64_t)dayIdValue {
+	NSNumber *result = [self dayId];
+	return [result longLongValue];
+}
+
+- (void)setDayIdValue:(int64_t)value_ {
+	[self setDayId:[NSNumber numberWithLongLong:value_]];
+}
+
+- (int64_t)primitiveDayIdValue {
+	NSNumber *result = [self primitiveDayId];
+	return [result longLongValue];
+}
+
+- (void)setPrimitiveDayIdValue:(int64_t)value_ {
+	[self setPrimitiveDayId:[NSNumber numberWithLongLong:value_]];
+}
+
 @dynamic desc;
-
-@dynamic groupId;
-
-- (int64_t)groupIdValue {
-	NSNumber *result = [self groupId];
-	return [result longLongValue];
-}
-
-- (void)setGroupIdValue:(int64_t)value_ {
-	[self setGroupId:[NSNumber numberWithLongLong:value_]];
-}
-
-- (int64_t)primitiveGroupIdValue {
-	NSNumber *result = [self primitiveGroupId];
-	return [result longLongValue];
-}
-
-- (void)setPrimitiveGroupIdValue:(int64_t)value_ {
-	[self setPrimitiveGroupId:[NSNumber numberWithLongLong:value_]];
-}
 
 @dynamic identity;
 
