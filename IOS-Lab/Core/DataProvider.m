@@ -72,8 +72,8 @@ FinishCallback callback = nil;
     CheckIn* checkIn = [CheckIn checkInWithPoster:postCheckInIdentity user:iUser desc:desc];
     [checkIn assignCheckInImagePhoto:photo];
     [checkIn assignCheckInLocation:location.longitude latitude:location.latitude];
-    [checkIns[0] addObject:checkIn];
-    checkIn.dayIdValue = 0;
+    [checkIns[0] insertObject:checkIn atIndex:0];
+    checkIn.dayIdValue = [checkIns count] - 1;
     [CheckIn save];
 
     callback(YES);
