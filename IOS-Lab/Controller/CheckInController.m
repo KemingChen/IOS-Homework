@@ -17,6 +17,7 @@
 
 @implementation CheckInController
 CLLocation* _currentLocation = nil;
+CMAttitude* _currentMotion = nil;
 
 - (void)viewDidLoad
 {
@@ -35,6 +36,7 @@ CLLocation* _currentLocation = nil;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 
     [[LocationProvider sharedProvider] requestCurrentLocationWithDelegate:self];
+    [[MotionManager sharedMotionMangaer] startDetectMotionWithDelegate:self];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -82,9 +84,12 @@ CLLocation* _currentLocation = nil;
     else if (_currentLocation == nil) {
         [[[iToast makeText:NSLocalizedString(@"無法抓到您的位置", @"")] setGravity:iToastGravityBottom] show];
     }
+    else if (_currentMotion == nil) {
+        [[[iToast makeText:NSLocalizedString(@"無法抓到您的動作", @"")] setGravity:iToastGravityBottom] show];
+    }
     else {
         NSString* desc = self.checkInDescTextField.text;
-        [[DataProvider sharedProvider] postCheckInToDataProvider:checkInImage desc:desc location:[_currentLocation coordinate]];
+        [[DataProvider sharedProvider] postCheckInToDataProvider:checkInImage desc:desc location:[_currentLocation coordinate] motion:_currentMotion];
         [self touchesBegan:nil withEvent:nil];
         [self clickCloseButton:nil];
     }
@@ -156,5 +161,11 @@ CLLocation* _currentLocation = nil;
 - (void)locationProvider:(LocationProvider*)provider provideCurrentLocation:(CLLocation*)location
 {
     _currentLocation = location;
+}
+
+#pragma mark - MotionManagerDelegate
+- (void)motionManager:(MotionManager *)motionManager didChangedAttitude:(CMAttitude *)attitude
+{
+    _currentMotion = attitude;
 }
 @end

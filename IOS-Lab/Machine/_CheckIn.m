@@ -12,9 +12,9 @@ const struct CheckInAttributes CheckInAttributes = {
 	.isPhotoLocal = @"isPhotoLocal",
 	.latitude = @"latitude",
 	.longitude = @"longitude",
-	.motionX = @"motionX",
-	.motionY = @"motionY",
-	.motionZ = @"motionZ",
+	.motionPitch = @"motionPitch",
+	.motionRoll = @"motionRoll",
+	.motionYaw = @"motionYaw",
 };
 
 const struct CheckInRelationships CheckInRelationships = {
@@ -72,18 +72,18 @@ const struct CheckInRelationships CheckInRelationships = {
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
-	if ([key isEqualToString:@"motionXValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"motionX"];
+	if ([key isEqualToString:@"motionPitchValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"motionPitch"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
-	if ([key isEqualToString:@"motionYValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"motionY"];
+	if ([key isEqualToString:@"motionRollValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"motionRoll"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
-	if ([key isEqualToString:@"motionZValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"motionZ"];
+	if ([key isEqualToString:@"motionYawValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"motionYaw"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -197,64 +197,64 @@ const struct CheckInRelationships CheckInRelationships = {
 	[self setPrimitiveLongitude:[NSNumber numberWithDouble:value_]];
 }
 
-@dynamic motionX;
+@dynamic motionPitch;
 
-- (double)motionXValue {
-	NSNumber *result = [self motionX];
+- (double)motionPitchValue {
+	NSNumber *result = [self motionPitch];
 	return [result doubleValue];
 }
 
-- (void)setMotionXValue:(double)value_ {
-	[self setMotionX:[NSNumber numberWithDouble:value_]];
+- (void)setMotionPitchValue:(double)value_ {
+	[self setMotionPitch:[NSNumber numberWithDouble:value_]];
 }
 
-- (double)primitiveMotionXValue {
-	NSNumber *result = [self primitiveMotionX];
+- (double)primitiveMotionPitchValue {
+	NSNumber *result = [self primitiveMotionPitch];
 	return [result doubleValue];
 }
 
-- (void)setPrimitiveMotionXValue:(double)value_ {
-	[self setPrimitiveMotionX:[NSNumber numberWithDouble:value_]];
+- (void)setPrimitiveMotionPitchValue:(double)value_ {
+	[self setPrimitiveMotionPitch:[NSNumber numberWithDouble:value_]];
 }
 
-@dynamic motionY;
+@dynamic motionRoll;
 
-- (double)motionYValue {
-	NSNumber *result = [self motionY];
+- (double)motionRollValue {
+	NSNumber *result = [self motionRoll];
 	return [result doubleValue];
 }
 
-- (void)setMotionYValue:(double)value_ {
-	[self setMotionY:[NSNumber numberWithDouble:value_]];
+- (void)setMotionRollValue:(double)value_ {
+	[self setMotionRoll:[NSNumber numberWithDouble:value_]];
 }
 
-- (double)primitiveMotionYValue {
-	NSNumber *result = [self primitiveMotionY];
+- (double)primitiveMotionRollValue {
+	NSNumber *result = [self primitiveMotionRoll];
 	return [result doubleValue];
 }
 
-- (void)setPrimitiveMotionYValue:(double)value_ {
-	[self setPrimitiveMotionY:[NSNumber numberWithDouble:value_]];
+- (void)setPrimitiveMotionRollValue:(double)value_ {
+	[self setPrimitiveMotionRoll:[NSNumber numberWithDouble:value_]];
 }
 
-@dynamic motionZ;
+@dynamic motionYaw;
 
-- (double)motionZValue {
-	NSNumber *result = [self motionZ];
+- (double)motionYawValue {
+	NSNumber *result = [self motionYaw];
 	return [result doubleValue];
 }
 
-- (void)setMotionZValue:(double)value_ {
-	[self setMotionZ:[NSNumber numberWithDouble:value_]];
+- (void)setMotionYawValue:(double)value_ {
+	[self setMotionYaw:[NSNumber numberWithDouble:value_]];
 }
 
-- (double)primitiveMotionZValue {
-	NSNumber *result = [self primitiveMotionZ];
+- (double)primitiveMotionYawValue {
+	NSNumber *result = [self primitiveMotionYaw];
 	return [result doubleValue];
 }
 
-- (void)setPrimitiveMotionZValue:(double)value_ {
-	[self setPrimitiveMotionZ:[NSNumber numberWithDouble:value_]];
+- (void)setPrimitiveMotionYawValue:(double)value_ {
+	[self setPrimitiveMotionYaw:[NSNumber numberWithDouble:value_]];
 }
 
 @dynamic user;

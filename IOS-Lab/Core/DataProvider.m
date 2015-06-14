@@ -47,7 +47,7 @@ FinishCallback callback = nil;
 {
     checkIns = [[NSMutableArray alloc] init];
     users = [[NSMutableDictionary alloc] init];
-    
+
     NSArray* array = [NSMutableArray arrayWithArray:[CheckIn MR_findAllSortedBy:@"identity" ascending:false inContext:[NSManagedObjectContext MR_defaultContext]]];
     NSMutableDictionary* days = [[NSMutableDictionary alloc] init];
     checkIns = [NSMutableArray array];
@@ -60,19 +60,19 @@ FinishCallback callback = nil;
         }
         NSMutableArray* temp = days[@(dayId)];
         [temp addObject:checkIn];
-        
+
         if (checkIn.identityValue >= postCheckInIdentity) {
             postCheckInIdentity = [checkIn.identity integerValue];
         }
     }
 }
-
-- (void)postCheckInToDataProvider:(UIImage*)photo desc:(NSString*)desc location:(CLLocationCoordinate2D)location
+- (void)postCheckInToDataProvider:(UIImage*)photo desc:(NSString*)desc location:(CLLocationCoordinate2D)location motion:(CMAttitude*)motion
 {
     postCheckInIdentity++;
     CheckIn* checkIn = [CheckIn checkInWithPoster:postCheckInIdentity user:iUser desc:desc];
     [checkIn assignCheckInImagePhoto:photo];
     [checkIn assignCheckInLocation:location.longitude latitude:location.latitude];
+    [checkIn assignCheckInMotion:motion.pitch roll:motion.roll yaw:motion.yaw];
     [checkIns[0] insertObject:checkIn atIndex:0];
     checkIn.dayIdValue = [checkIns count] - 1;
     [CheckIn save];
@@ -123,7 +123,7 @@ FinishCallback callback = nil;
         dayId++;
     }
     [CheckIn save];
-    
+
     [self loadLocalCheckIns];
     if (callback != nil) {
         callback(YES);

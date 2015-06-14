@@ -44,11 +44,11 @@
     self.latitudeValue = latitude;
 }
 
-- (void)assignCheckInMotion:(double)x y:(double)y z:(double)z
+- (void)assignCheckInMotion:(double)pitch roll:(double)roll yaw:(double)yaw
 {
-    self.motionXValue = x;
-    self.motionYValue = y;
-    self.motionZValue = z;
+    self.motionPitchValue = pitch;
+    self.motionRollValue = roll;
+    self.motionYawValue = yaw;
 }
 
 - (void)assignCheckInImageURL:(NSString*)url

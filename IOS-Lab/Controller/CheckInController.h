@@ -8,10 +8,11 @@
 
 #import "ViewController.h"
 #import "LocationProvider.h"
+#import "MotionManager.h"
 
-@interface CheckInController : UIViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, LocationProviderDelegate>
+@interface CheckInController : UIViewController <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, LocationProviderDelegate, MotionManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *previewImageViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint* previewImageViewHeightConstraint;
 @property (strong, nonatomic) IBOutlet UIImagePickerController* pickerController;
 @property (weak, nonatomic) IBOutlet UIImageView* checkInPreviewImageView;
 @property (weak, nonatomic) IBOutlet UILabel* checkInDescPlaceHolder;

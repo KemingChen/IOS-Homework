@@ -12,9 +12,9 @@ extern const struct CheckInAttributes {
 	__unsafe_unretained NSString *isPhotoLocal;
 	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *longitude;
-	__unsafe_unretained NSString *motionX;
-	__unsafe_unretained NSString *motionY;
-	__unsafe_unretained NSString *motionZ;
+	__unsafe_unretained NSString *motionPitch;
+	__unsafe_unretained NSString *motionRoll;
+	__unsafe_unretained NSString *motionYaw;
 } CheckInAttributes;
 
 extern const struct CheckInRelationships {
@@ -84,29 +84,29 @@ extern const struct CheckInRelationships {
 
 //- (BOOL)validateLongitude:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* motionX;
+@property (nonatomic, strong) NSNumber* motionPitch;
 
-@property (atomic) double motionXValue;
-- (double)motionXValue;
-- (void)setMotionXValue:(double)value_;
+@property (atomic) double motionPitchValue;
+- (double)motionPitchValue;
+- (void)setMotionPitchValue:(double)value_;
 
-//- (BOOL)validateMotionX:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateMotionPitch:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* motionY;
+@property (nonatomic, strong) NSNumber* motionRoll;
 
-@property (atomic) double motionYValue;
-- (double)motionYValue;
-- (void)setMotionYValue:(double)value_;
+@property (atomic) double motionRollValue;
+- (double)motionRollValue;
+- (void)setMotionRollValue:(double)value_;
 
-//- (BOOL)validateMotionY:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateMotionRoll:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* motionZ;
+@property (nonatomic, strong) NSNumber* motionYaw;
 
-@property (atomic) double motionZValue;
-- (double)motionZValue;
-- (void)setMotionZValue:(double)value_;
+@property (atomic) double motionYawValue;
+- (double)motionYawValue;
+- (void)setMotionYawValue:(double)value_;
 
-//- (BOOL)validateMotionZ:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateMotionYaw:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) User *user;
 
@@ -155,23 +155,23 @@ extern const struct CheckInRelationships {
 - (double)primitiveLongitudeValue;
 - (void)setPrimitiveLongitudeValue:(double)value_;
 
-- (NSNumber*)primitiveMotionX;
-- (void)setPrimitiveMotionX:(NSNumber*)value;
+- (NSNumber*)primitiveMotionPitch;
+- (void)setPrimitiveMotionPitch:(NSNumber*)value;
 
-- (double)primitiveMotionXValue;
-- (void)setPrimitiveMotionXValue:(double)value_;
+- (double)primitiveMotionPitchValue;
+- (void)setPrimitiveMotionPitchValue:(double)value_;
 
-- (NSNumber*)primitiveMotionY;
-- (void)setPrimitiveMotionY:(NSNumber*)value;
+- (NSNumber*)primitiveMotionRoll;
+- (void)setPrimitiveMotionRoll:(NSNumber*)value;
 
-- (double)primitiveMotionYValue;
-- (void)setPrimitiveMotionYValue:(double)value_;
+- (double)primitiveMotionRollValue;
+- (void)setPrimitiveMotionRollValue:(double)value_;
 
-- (NSNumber*)primitiveMotionZ;
-- (void)setPrimitiveMotionZ:(NSNumber*)value;
+- (NSNumber*)primitiveMotionYaw;
+- (void)setPrimitiveMotionYaw:(NSNumber*)value;
 
-- (double)primitiveMotionZValue;
-- (void)setPrimitiveMotionZValue:(double)value_;
+- (double)primitiveMotionYawValue;
+- (void)setPrimitiveMotionYawValue:(double)value_;
 
 - (User*)primitiveUser;
 - (void)setPrimitiveUser:(User*)value;

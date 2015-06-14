@@ -35,10 +35,10 @@
 
     [self.longitude setText:[NSString stringWithFormat:@"%.7f", checkIn.longitudeValue]];
     [self.latitude setText:[NSString stringWithFormat:@"%.7f", checkIn.latitudeValue]];
-
-    [self.motionX setText:[NSString stringWithFormat:@"X -> %.4f", checkIn.motionXValue]];
-    [self.motionY setText:[NSString stringWithFormat:@"Y -> %.4f", checkIn.motionYValue]];
-    [self.motionZ setText:[NSString stringWithFormat:@"Z -> %.4f", checkIn.motionZValue]];
+    
+    [self.motionX setText:[NSString stringWithFormat:@"P -> %.5f", checkIn.motionPitchValue]];
+    [self.motionY setText:[NSString stringWithFormat:@"R -> %.5f", checkIn.motionRollValue]];
+    [self.motionZ setText:[NSString stringWithFormat:@"Y -> %.5f", checkIn.motionYawValue]];
 
     [checkIn displayPhoto:self.checkInImageView];
     CGFloat aspectRatioMult = self.checkInImageView.image.size.width / self.checkInImageView.image.size.height;

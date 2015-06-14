@@ -12,6 +12,6 @@
 - (void)assignCheckInLocation:(double)longitude latitude:(double)latitude;
 - (void)assignCheckInImageURL:(NSString*)url;
 - (void)assignCheckInImagePhoto:(UIImage*)photo;
-- (void)assignCheckInMotion:(double)x y:(double)y z:(double)z;
+- (void)assignCheckInMotion:(double)pitch roll:(double)roll yaw:(double)yaw;
 - (void)displayPhoto:(UIImageView*)view;
 @end
