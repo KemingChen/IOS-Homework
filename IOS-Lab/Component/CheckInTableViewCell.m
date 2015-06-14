@@ -33,6 +33,9 @@
 
     [user displayPhoto:self.userImageView];
 
+    [self.longitude setText:[NSString stringWithFormat:@"%.7f", checkIn.longitudeValue]];
+    [self.latitude setText:[NSString stringWithFormat:@"%.7f", checkIn.latitudeValue]];
+
     [checkIn displayPhoto:self.checkInImageView];
     CGFloat aspectRatioMult = self.checkInImageView.image.size.width / self.checkInImageView.image.size.height;
     self.checkInConstrainHeight.constant = self.checkInImageView.frame.size.width / aspectRatioMult;
